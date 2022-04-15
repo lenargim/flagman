@@ -1,0 +1,112 @@
+.banner
+  background: #D5D1D1
+  position: relative
+  &__wrap
+    position: relative
+  &::after
+    content: ''
+    position: absolute
+    width: 663px
+    height: 500px
+    border-radius: 50%
+    background: #F2F4F6
+    filter: blur(100px)
+    top: 0
+    left: 10vw
+  &__item
+    padding: 65px 0 76px
+    position: relative
+    height: 520px
+    &-title
+      color: $lightBlue
+      font-size: 45px
+      line-height: 65px
+      padding-bottom: 10px
+      width: 640px
+    &-desc
+      font-size: 20px
+      line-height: 1.25
+      margin-bottom: 50px
+      width: 540px
+    &-buttonrow
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 50px
+      position: absolute
+      left: 0
+      bottom: 130px
+    &-img
+      position: absolute
+      right: 0
+      bottom: 15px
+      width: 540px
+      aspect-ratio: 540/406
+      border-radius: 30px
+  &__arrows
+    position: absolute
+    z-index: 2
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    gap: 15px
+    bottom: 100px
+    right: 25px
+    .swiper-arrow
+      width: 35px
+      height: 35px
+      background: linear-gradient(180deg, #1F79B5 0%, #7C598C 100%)
+      border-radius: 50%
+    .swiper-next
+      transform: rotate(180deg)
+  .pagination
+    position: absolute
+    bottom: 75px !important
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 16px
+    &__item
+      display: block
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      background: $white
+      cursor: pointer
+      &_active
+        display: flex
+        align-items: center
+        justify-content: center
+        &::after
+          content: ''
+          width: 12px
+          height: 12px
+          background: $purple
+          border-radius: 50%
+  &__box
+    position: absolute
+    left: 0
+    right: 0
+    top: -45px
+    background: linear-gradient(267.27deg, #7C598C 2.73%, #117DC1 112.12%)
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+    border-radius: 50px
+    z-index: 2
+    color: $white
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    padding: 45px 60px
+    grid-gap: 50px
+    &-wrap
+      position: relative
+    &-item
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 25px
+      font-weight: 800
+    &-svg
+      width: 50px
+      height: 50px
+      flex-shrink: 0

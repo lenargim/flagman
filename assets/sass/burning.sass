@@ -1,0 +1,81 @@
+.burning
+  padding: 170px 0 60px
+  background: #f9f8f9
+  &__wrap
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    gap: 10px
+    margin-bottom: 50px
+  &__list
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    gap: 30px
+  &__item
+    background: $white
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2)
+    border-radius: 30px
+    padding: 25px 35px
+    width: 600px
+    height: 280px
+    position: relative
+    &-title
+      margin-bottom: 2px
+    &-sale
+      color: $blue
+      font-weight: 800
+      padding-bottom: 13px
+      border-bottom: 1px solid $blue
+      width: 200px
+      margin-bottom: 10px
+    &-date
+      font-weight: 200
+      margin-bottom: 2px
+    &-name
+      font-weight: 200
+    &-button
+      position: absolute
+      left: 35px
+      bottom: 25px
+    &-img
+      position: absolute
+      right: 0
+      bottom: 0
+      max-height: 100%
+      max-width: 240px
+    &-padding
+      padding-right: 200px
+  &__box
+    background: linear-gradient(87.32deg, rgba(31, 121, 181, 0.15) 32.2%, rgba(158, 155, 155, 0.14) 70.07%)
+    border-radius: 30px
+    width: 400px
+    padding: 35px 18px
+    &-item
+      display: flex
+      align-items: flex-start
+      justify-content: flex-start
+      gap: 20px
+      &:not(:last-of-type)
+        padding-bottom: 15px
+    &-title
+      font-weight: 800
+      font-size: 20px
+      line-height: 27px
+      letter-spacing: 0.02em
+      margin-bottom: 38px
+    svg
+      width: 28px
+      height: 28px
+      flex-shrink: 0
+    a
+      color: $blue
+  &__row
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 50px
+    .button
+      width: 320px
+    p
+      font-weight: 800

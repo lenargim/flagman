@@ -1,0 +1,105 @@
+.header
+  border-bottom: 1px solid $border
+  &__wrap
+    padding: 16px 0 0
+  &__top
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 50px
+    .button
+      width: 240px
+  &__phone
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 14px
+    color: $black
+    font: 800 17px/20px $mainFont
+    margin-left: auto
+    svg
+      width: 20px
+      height: 20px
+  &__address
+    font-size: 14px
+    .city
+      font-weight: 800
+    .street
+      font-weight: 200
+  &__menu
+    margin-top: 25px
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 40px
+    .sub-menu
+      position: absolute
+      left: 0
+      top: 50%
+      width: 340px
+      padding: 35px 20px 50px
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+      z-index: -1
+      background: $white
+      opacity: 0
+      transition: all 0.2s ease
+      .menu-item
+        padding: 15px 0
+        border-bottom: 1px solid $border
+        a
+          font-size: 17px
+    .menu-item
+      a
+        font-weight: 800
+        transition: color 0.2s ease
+        &:hover
+          color: $lightBlue
+    &>.menu-item
+      position: relative
+      padding-bottom: 20px
+      &:after
+        content: ''
+        position: absolute
+        top: 0
+        right: -20px
+        width: 1px
+        height: 25px
+        background: $border
+      a
+        color: $black
+        font-size: 14px
+      &.current-menu-item
+        a
+          color: $lightBlue
+        &.menu-item-has-children:before
+          border-color: $lightBlue
+      &.menu-item-has-children
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        flex-direction: row-reverse
+        gap: 7px
+        cursor: pointer
+        &::before
+          content: ''
+          border-top: 1px solid $black
+          border-left: 1px solid $black
+          width: 7px
+          height: 7px
+          display: block
+          border-radius: 1px
+          transform: rotate(-135deg)
+          transition: all 0.2s ease
+        &:hover
+          &>a
+            color: $lightBlue
+          &::before
+            border-color: $lightBlue
+            transform: rotate(45deg)
+          .sub-menu
+            opacity: 1
+            top: 100%
+            z-index: 10
