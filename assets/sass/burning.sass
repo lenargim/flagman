@@ -1,17 +1,30 @@
 .burning
-  padding: 170px 0 60px
-  background: #f9f8f9
+  padding: 180px 0 60px
+  background: $bgLight
+  @include max($tabletG)
+    padding: 30px 0 80px
   &__wrap
     display: flex
     justify-content: space-between
     align-items: flex-start
     gap: 10px
     margin-bottom: 50px
+    @include max($tabletG - 1)
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+      gap: 30px
+    @include max($tabletV - 1)
+      align-items: stretch
   &__list
     display: flex
     flex-direction: column
     justify-content: flex-start
+    align-items: flex-start
     gap: 30px
+    @include max($tabletG - 1)
+      align-items: center
+      gap: 20px
   &__item
     background: $white
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2)
@@ -20,8 +33,18 @@
     width: 600px
     height: 280px
     position: relative
+    @include between($tabletG, $netbook)
+      width: 500px
+      padding: 25px
+    @include max($tabletV - 1)
+      width: 100%
+      height: 270px
+      padding: 30px 20px
     &-title
       margin-bottom: 2px
+      @include max($tabletV - 1)
+        font-weight: 800
+        margin-bottom: 10px
     &-sale
       color: $blue
       font-weight: 800
@@ -29,6 +52,12 @@
       border-bottom: 1px solid $blue
       width: 200px
       margin-bottom: 10px
+      @include max($tabletV - 1)
+        text-transform: uppercase
+        width: 232px
+        font-size: 15px
+        line-height: 20px
+        padding-bottom: 10px
     &-date
       font-weight: 200
       margin-bottom: 2px
@@ -38,32 +67,64 @@
       position: absolute
       left: 35px
       bottom: 25px
+      z-index: 1
+      @include between($tabletG, $netbook)
+        left: 25px
+      @include max($tabletV - 1)
+        left: 20px
+        bottom: 30px
+      &.disabled
+        opacity: 0.7
+        cursor: initial
     &-img
       position: absolute
       right: 0
       bottom: 0
       max-height: 100%
       max-width: 240px
+      aspect-ratio: 300/400
+      @include between($tabletG, $netbook)
+        max-width: 220px
+      @include max($tabletV - 1)
+        max-width: 106px
     &-padding
       padding-right: 200px
+      @include between($tabletG, $netbook)
+        padding-right: 180px
+      @include max($tabletV - 1)
+        padding-right: 40px
   &__box
     background: linear-gradient(87.32deg, rgba(31, 121, 181, 0.15) 32.2%, rgba(158, 155, 155, 0.14) 70.07%)
     border-radius: 30px
     width: 400px
     padding: 35px 18px
+    @include max($tabletV - 1)
+      width: 100%
+      max-width: 400px
+      margin: 0 auto
+      border-radius: 20px
+      padding: 30px 10px
     &-item
       display: flex
       align-items: flex-start
       justify-content: flex-start
       gap: 20px
+      @include max($tabletV - 1)
+        gap: 10px
       &:not(:last-of-type)
         padding-bottom: 15px
+        @include max($tabletV - 1)
+          padding-bottom: 20px
     &-title
       font-weight: 800
       font-size: 20px
       line-height: 27px
       letter-spacing: 0.02em
       margin-bottom: 38px
+      @include max($tabletV - 1)
+        font-size: 15px
+        line-height: 20px
+        margin-bottom: 18px
     svg
       width: 28px
       height: 28px
@@ -75,7 +136,11 @@
     align-items: center
     justify-content: flex-start
     gap: 50px
+    @include max($tabletG - 1)
+      justify-content: center
     .button
       width: 320px
+      @include max($tabletG - 1)
+        width: 240px
     p
       font-weight: 800

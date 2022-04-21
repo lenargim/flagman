@@ -1,21 +1,59 @@
 .reviews
   padding: 50px 0
+  @include max($tabletV - 1)
+    padding: 30px 0
   &__desc
     margin-bottom: 80px
+    p
+      font-size: 20px
+      line-height: 27px
+      letter-spacing: 0.02em
+      font-weight: 800
+      strong
+        font-size: 34px
+        line-height: 46px
+        white-space: nowrap
+    @include between($tabletV, $netbook)
+      margin-bottom: 50px
+    @include max($tabletV - 1)
+      margin-bottom: 45px
+      p
+        font-size: 14px
+        line-height: 20px
+        font-weight: 400
+        strong
+          font-size: 14px
+          line-height: 20px
   &__wrap
     margin-top: 100px
     display: grid
     grid-template-columns: repeat(2, 1fr)
     grid-gap: 50px 60px
+    @include between($tabletG, $netbook)
+      grid-gap: 30px
+      margin-top: 60px
+    @include max($tabletG - 1)
+      grid-template-columns: 1fr
+      gap: 33px
+      margin-top: 50px
   &__item
     padding: 23px 30px
-    background: #F9F8F9
+    background: $bgLight
     border-radius: 30px
+    @include max($tabletV - 1)
+      display: flex
+      flex-direction: column-reverse
+      padding: 30px 10px
     &-row
-      margin-top: 30px
+      margin: 30px 0 0
       display: flex
       align-items: center
       justify-content: flex-start
+      @include max($tabletV - 1)
+        margin: 0 0 20px
+        flex-wrap: wrap
+        gap: 8px 15px
+        justify-content: space-between
     &-text
       display: inline-block
       font: 14px/20px $mainFont
@@ -24,12 +62,23 @@
       font-weight: 200
       margin-right: 28px
       text-decoration: underline
+      @include max($tabletV - 1)
+        order: 3
+        margin-right: 0
     &-name
       font-weight: 800
       margin-right: 14px
+      white-space: nowrap
+      @include max($tabletV - 1)
+        order: 0
+        width: 100%
+        margin: 0
     &-date
       font-weight: 200
       margin-right: 14px
+      @include max($tabletV - 1)
+        margin-right: 0
+        order: 4
     &-rating
       width: 90px
       height: 15px
@@ -37,6 +86,8 @@
       align-items: center
       justify-content: flex-start
       gap: 5px
+      @include max($tabletV - 1)
+        order: 1
       i
         display: block
         width: 15px
@@ -48,3 +99,6 @@
     position: relative
     left: 50%
     transform: translateX(-50%)
+    @include max($tabletV - 1)
+      width: 240px
+      height: 50px

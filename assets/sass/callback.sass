@@ -1,0 +1,143 @@
+.callback
+  background: $bgLight
+  @include max($tabletG - 1)
+    background: linear-gradient(87.32deg, rgba(31, 121, 181, 0.3) 43.86%, rgba(158, 155, 155, 0.28) 88.6%)
+  &__title
+    margin-bottom: 30px
+  &__box
+    background: linear-gradient(87.32deg, rgba(31, 121, 181, 0.3) 43.86%, rgba(158, 155, 155, 0.28) 88.6%)
+    padding: 100px 100px 130px
+    border-radius: 30px 30px 0 0
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    gap: 170px
+    @include between($netbook, $notebook)
+      gap: 100px
+      padding: 80px 80px 110px
+    @include between($tabletG, $netbook)
+      gap: 30px
+      padding: 40px
+    @include max($tabletG - 1)
+      background: transparent
+      padding: 50px 0
+      gap: 45px
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+  &__wrap
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 50px 70px
+    @include between($tabletG, $netbook)
+      gap: 25px
+    @include between($tabletV, $tabletG)
+      gap: 30px
+    @include max($tabletV - 1)
+      grid-template-columns: 1fr
+      gap: 30px
+  &__item
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    gap: 10px
+    line-height: 25px
+    &-title
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 20px
+      font-weight: 800
+      @include between($tabletG, $netbook)
+        gap: 10px
+      @include max($tabletV - 1)
+        font-size: 15px
+      svg
+        width: 40px
+        height: 40px
+        flex-shrink: 0
+        @include between($tabletG, $netbook)
+          width: 35px
+          height: 35px
+  &__logo
+    background: linear-gradient(267.27deg, #117DC1 2.73%, #7C598C 112.12%)
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+    padding: 58px 100px
+    border-radius: 30px
+    position: relative
+    top: -30px
+    @include between($tabletG, $netbook)
+      padding: 40px 60px
+      border-radius: 20px
+      top: -20px
+      img
+        width: 250px
+    @include max($tabletG - 1)
+      padding: 30px 10px
+      top: 0
+      left: -10px
+      width: calc(100% + 20px)
+      border-radius: 0
+    @include max($tabletV - 1)
+      img
+        display: block
+        margin: 0 auto
+        width: 100%
+        max-width: 300px
+  &__form
+    &-wrap
+      width: 360px
+      background: $white
+      flex-shrink: 0
+      border-radius: 30px
+      padding: 50px 20px
+      text-align: center
+      @include max($tabletV - 1)
+        width: 100%
+        padding: 30px 15px
+  &__subtitle
+    position: relative
+    font-size: 20px
+    line-height: 30px
+    padding-bottom: 20px
+    margin-bottom: 18px
+    @include max($tabletV - 1)
+      padding-bottom: 10px
+      margin-bottom: 30px
+    &::after
+      content: ''
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      bottom: 0
+      width: 150px
+      height: 5px
+      background: linear-gradient(267.27deg, #7C598C 2.73%, #117DC1 112.12%)
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+      border-radius: 50px
+  form
+    margin: 0 10px
+  .input
+    background: #F2F4F6
+    border-radius: 10px
+    padding: 10px 8px
+    &::placeholder
+      color: #9E9B9B
+  &__submit
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+    margin: 0 0 10px
+    @include max($tabletV - 1)
+      width: calc(100% - 30px)
+      margin-bottom: 20px
+  &__policy
+    font-size: 14px
+    font-weight: 200
+    @include max($tabletV - 1)
+      font-size: 14px
+      line-height: 17px
+    a
+      white-space: nowrap
+      color: #47577B
+      text-decoration: underline

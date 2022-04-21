@@ -6,31 +6,34 @@
   <div class="container">
     <div class="header__wrap">
       <div class="header__top">
-        <div class="header__logo">
-          <?php the_custom_logo() ?>
-        </div>
+        <a href="/" class="header__logo img">
+          <img src="<?php echo wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' )[0]; ?>" alt="ФлагманСтом">
+        </a>
         <?php if (get_field('address', 38)): ?>
-          <address class="header__address">
+          <address class="header__address tabletG-and-more">
             <div class="city">г. Казань</div>
             <div class="street"><?php the_field('address', 38); ?></div>
           </address>
         <?php endif; ?>
         <?php if (get_field('phone', 38)): ?>
-          <a href="tel:<? echo preg_replace('/[' . $phone_chars . ']/', '', get_field('phone', 38)) ?>"
+          <a href="tel:<? echo preg_replace('/[' . PHONE_CHARS . ']/', '', get_field('phone', 38)) ?>"
              class="header__phone">
             <svg>
-              <use xlink:href="<?php echo $images_path; ?>/sprite-common.svg#phone"></use>
+              <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#phone"></use>
             </svg>
-            <span><?php the_field('phone', 38); ?></span>
+            <span class="tabletG-and-more"><?php the_field('phone', 38); ?></span>
           </a>
         <?php endif; ?>
-        <div class="button button-blue open-callback" data-title="Шапка">Записаться на приём</div>
+        <div class="button button-blue open-callback tabletG-and-more" data-title="Шапка">Записаться на приём</div>
+        <div class="burger less-then-tabletG">
+          <div></div>
+        </div>
       </div>
       <?php wp_nav_menu([
           'theme_location' => '',
-          'menu' => '',
+          'menu' => 'main',
           'container' => '',
-          'menu_class' => 'header__menu',
+          'menu_class' => 'header__menu tabletG-and-more',
       ]) ?>
     </div>
   </div>

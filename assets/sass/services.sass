@@ -1,0 +1,66 @@
+.services
+  background: $bgLight
+  padding: 100px 0 160px
+  @include between($tabletG, $netbook)
+    padding: 80px 0 120px
+  @include max($tabletG - 1)
+    padding: 80px 0
+  &__wrap
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 50px 20px
+    @include between($tabletG, $netbook)
+      grid-gap: 40px 15px
+    @include between($tabletV, $tabletG)
+      grid-template-columns: repeat(3, 1fr)
+      gap: 20px
+    @include max($tabletV - 1)
+      grid-template-columns: 1fr
+      gap: 20px
+  &__item
+    display: flex
+    flex-direction: column
+    gap: 9px
+    justify-content: center
+    align-items: center
+    text-align: center
+    background: $white
+    box-shadow: 0 4px 10px rgba(51, 51, 51, 0.25)
+    border-radius: 20px
+    padding: 18px
+    color: $black
+    transition: all 0.2s ease
+    @include max($tabletV - 1)
+      padding: 33px 18px
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25)
+    @include min($netbook)
+      &:hover
+        background: $bgLight
+        box-shadow: 0 1px 2px rgba(51, 51, 51, 0.25)
+    &:active
+      box-shadow: none
+    &-title
+      font: 800 20px/20px $mainFont
+    &-img
+      width: 35px
+      height: 35px
+  &__buttonrow
+    margin-top: 80px
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 50px
+    @include between($tabletG, $netbook)
+      gap: 30px
+    @include max($tabletG - 1)
+      margin-top: 50px
+      gap: 20px
+  &__button
+    width: 280px
+    &_all svg
+      width: 15px
+      height: 15px
+      fill: transparent
+      stroke: $blue
+      @include max($tabletV - 1)
+        display: none

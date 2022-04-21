@@ -1,0 +1,146 @@
+.doctors
+  padding-bottom: 120px
+  background: $bgLight
+  @include between($tabletV, $netbook)
+    padding-bottom: 80px
+  @include max($tabletV - 1)
+    padding-bottom: 70px
+  blockquote svg
+    width: 30px
+    height: 30px
+  &__desc
+    line-height: 25px
+    margin-bottom: 30px
+  &__quotename
+    margin-bottom: 50px
+    line-height: 25px
+    font-weight: 200
+  &__slider
+    position: relative
+    .pagination
+      justify-content: center
+      @include min($tabletG)
+        display: none
+  .swiper-wrapper
+    @include min($tabletG)
+      display: flex
+      flex-wrap: wrap
+      justify-content: flex-start
+      align-items: flex-start
+      gap: 50px
+    @include between($tabletG, $netbook)
+      gap: 30px
+  .swiper-slide.doctors__item
+    color: $black
+    position: relative
+    background: linear-gradient(87.32deg, rgba(31, 121, 181, 0.15) 43.86%, rgba(158, 155, 155, 0.14) 88.6%)
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+    border-radius: 30px
+    @include max($tabletG - 1)
+      height: 320px
+    &_big
+      @include min($netbook)
+        padding: 30px
+        width: calc(50% - 25px)
+      @include between($tabletG, $netbook)
+        padding: 25px
+        width: calc(50% - 15px)
+      .doctors__item
+        &-lead
+          background: $white
+          display: inline-flex
+          border-radius: 30px
+          padding: 10px 15px
+          gap: 5px
+          justify-content: flex-start
+          align-items: center
+          line-height: 25px
+          margin-bottom: 18px
+          user-select: none
+          @include max($netbook - 1)
+            padding: 5px 10px
+            line-height: 20px
+          &::before
+            content: ''
+            width: 25px
+            height: 25px
+            background: url("./assets/images/lead.png") no-repeat
+            background-size: cover
+        &-title
+          font: 800 20px/25px $mainFont
+          margin-bottom: 3px
+          .surname
+            font: 800 34px/1 $mainFont
+        &-occupation, &-exp, &-excerpt
+          font: 200 14px/25px $mainFont
+        &-excerpt
+          margin: 8px 0 100px
+    &_small
+      color: $black
+      @include min($netbook)
+        width: calc(25% - 40px)
+        padding: 15px 25px 135px
+      @include between($tabletG, $netbook)
+        width: calc(50% - 22.5px)
+        padding: 15px 20px 100px
+      .doctors__item
+        &-title
+          font: 800 20px/25px $mainFont
+          margin-bottom: 9px
+          @include max($tabletV - 1)
+            width: 60%
+        &-img
+          @include between($tabletG, $netbook)
+            max-height: calc(100% - 85px)
+          @include min($tabletG)
+            max-height: calc(100% - 10px)
+        &-occupation, &-exp
+          @include min($tabletG)
+            font-size: 12px
+            line-height: 16px
+    @include max($tabletG - 1)
+      padding: 90px 10px 140px
+      .doctors__item
+        &-lead
+          position: absolute
+          left: 10px
+          top: 30px
+          font-size: 14px
+          line-height: 20px
+          &::before
+            width: 24px
+            height: 24px
+        &-title
+          font-size: 20px
+          margin-bottom: 11px
+          .surname
+            font-size: 20px
+        &-excerpt
+          display: none
+  &__item
+    &-title
+      height: 3em
+    &-img
+      position: absolute
+      right: 0
+      bottom: 0
+      max-width: 50%
+      max-height: calc(100% - 70px)
+      aspect-ratio: 300/400
+      @include between($tabletG, $netbook)
+        max-width: 45%
+      @include between($tabletV, $tabletG)
+        max-height: calc(100% - 10px)
+    &-wrap
+      width: 55%
+      @include max($netbook - 1)
+        width: 60%
+  &__all
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+    width: 320px
+    margin-top: 60px
+    @include max($tabletV - 1)
+      width: 240px
+      margin-top: 50px

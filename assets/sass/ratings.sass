@@ -3,7 +3,9 @@
   align-items: center
   justify-content: center
   flex-wrap: wrap
-  gap: 100px
+  gap: 50px 100px
+  @include between($tabletG, $netbook)
+    gap: 50px 60px
   &__item
     height: 75px
     display: flex

@@ -1,0 +1,51 @@
+.excpectation
+  padding-bottom: 120px
+  background: $bgLight
+  @include between($tabletG, $netbook)
+    padding-bottom: 80px
+  @include max($tabletG - 1)
+    padding: 50px 0
+    background: linear-gradient(87.32deg, rgba(31, 121, 181, 0.1) 43.86%, rgba(158, 155, 155, 0.09) 78.05%)
+  &__wrap
+    background: linear-gradient(87.32deg, rgba(31, 121, 181, 0.1) 43.86%, rgba(158, 155, 155, 0.09) 78.05%)
+    padding: 50px 160px
+    border-radius: 30px
+    text-align: center
+    @include between($tabletG, $netbook)
+      padding: 40px 60px
+    @include max($tabletG - 1)
+      background: transparent
+      padding: 0
+  &__box
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 90px
+    @include between($tabletG, $netbook)
+      gap: 50px
+    @include max($tabletG - 1)
+      grid-template-columns: 1fr
+      gap: 50px
+  &__item
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    gap: 20px
+    line-height: 25px
+    @include between($tabletG, $netbook)
+      gap: 15px
+    @include max($tabletG - 1)
+      gap: 10px
+      max-width: 400px
+      margin: 0 auto
+      font-size: 17px
+    &::before
+      content: ''
+      width: 64px
+      height: 64px
+    &:nth-child(1)::before
+      background: url("./assets/images/excpectation1.png") center center/contain no-repeat
+    &:nth-child(2)::before
+      background: url("./assets/images/excpectation2.png") center center/contain no-repeat
+    &:nth-child(3)::before
+      background: url("./assets/images/excpectation3.png") center center/contain no-repeat

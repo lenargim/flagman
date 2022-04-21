@@ -1,0 +1,9 @@
+.less-then-tabletG
+  @include min($tabletG )
+    display: none
+.tabletG-and-more
+  @include max($tabletG - 1)
+    display: none
+.hidden-on-mobile
+  @include max($tabletV - 1)
+    display: none

@@ -8,8 +8,3 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;800&display=swap" rel="stylesheet">
   <?php wp_head(); ?>
 </head>
-<?php
-$phone_chars = '-() ';
-$theme_path = get_template_directory_uri();
-$images_path = $theme_path . '/assets/images';
-?>

@@ -1,0 +1,48 @@
+.wpcf7-form
+  position: relative
+.wpcf7-response-output
+  display: none
+.wpcf7-not-valid-tip
+  position: absolute
+  left: 0
+  top: 110%
+  font-size: 0.8em
+  text-align: left
+.wpcf7-form-control-wrap
+  display: block
+  margin-bottom: 30px
+.wpcf7-spinner
+  display: none
+
+.pagination
+  position: absolute
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  gap: 16px
+  z-index: 2
+  @include max($tabletG - 1)
+    gap: 8px
+  &__item
+    display: block
+    width: 20px
+    height: 20px
+    border-radius: 50%
+    background: $white
+    cursor: pointer
+    @include max($tabletG - 1)
+      width: 15px
+      height: 15px
+    &_active
+      display: flex
+      align-items: center
+      justify-content: center
+      &::after
+        content: ''
+        width: 12px
+        height: 12px
+        background: $purple
+        border-radius: 50%
+        @include max($tabletG - 1)
+          width: 7px
+          height: 7px

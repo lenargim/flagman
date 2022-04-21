@@ -22,7 +22,6 @@ gulp.task('styles', function () {
 	})
 		.pipe(sass({
 		}).on('error', sass.logError))
-		//.pipe(rename({suffix: '.min', prefix : ''}))
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 10 versions']
 		}))
@@ -34,6 +33,7 @@ gulp.task('styles', function () {
 gulp.task('scripts', function() {
 	return gulp.src([
 		src_folder + 'js/main.js',
+		src_folder + 'libs/*.js',
 	], {
 		allowEmpty: true
 	})

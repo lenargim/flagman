@@ -1,18 +1,24 @@
 // USER VARIABLES SECTION
 
 $mainBg: #E5E5E5
+$bgLight: #f9f8f9
 $blue: rgba(31, 121, 181)
 $lightBlue: #2278B9
 $black: #333333
 $white: #fff
 $purple: #7C598C
 $border: #9E9B9B
-
 $mainFont: 'Manrope', sans-serif
 
+$desktop: 1920
+$notebook: 1366
+$netbook: 1280
+$tabletG: 1024
+$tabletV: 768
+$mobile: 295
 
 @mixin max($breakpoint)
-  @media screen and (max-width: $breakpoint + 'px')
+  @media screen and (max-width: ($breakpoint) + 'px')
     @content
 
 @mixin min($breakpoint)
@@ -20,5 +26,5 @@ $mainFont: 'Manrope', sans-serif
     @content
 
 @mixin between($min, $max)
-  @media screen and (min-width: $min + 'px') and (max-width: $max + 'px')
+  @media screen and (min-width: $min + 'px') and (max-width: $max - 1 + 'px')
     @content

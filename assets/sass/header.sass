@@ -1,14 +1,32 @@
 .header
   border-bottom: 1px solid $border
+  background: $white
+  @include max($tabletG - 1)
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    z-index: 3
   &__wrap
     padding: 16px 0 0
+    @include max($tabletG - 1)
+      padding: 14px 0
   &__top
     display: flex
     align-items: center
     justify-content: flex-start
     gap: 50px
+    @include between($tabletG, $notebook)
+      gap: 30px
+    @include max($tabletG - 1)
+      gap: 20px
     .button
       width: 240px
+  &__logo
+    @include between($tabletG, $netbook)
+      width: 200px
+    @include max($tabletV - 1)
+      width: 178px
   &__phone
     display: flex
     align-items: center
@@ -17,6 +35,7 @@
     color: $black
     font: 800 17px/20px $mainFont
     margin-left: auto
+    white-space: nowrap
     svg
       width: 20px
       height: 20px
@@ -33,34 +52,43 @@
     justify-content: flex-start
     gap: 40px
     .sub-menu
-      position: absolute
-      left: 0
-      top: 50%
-      width: 340px
-      padding: 35px 20px 50px
       display: flex
       flex-direction: column
       justify-content: flex-start
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
-      z-index: -1
-      background: $white
-      opacity: 0
-      transition: all 0.2s ease
-      .menu-item
-        padding: 15px 0
-        border-bottom: 1px solid $border
-        a
-          font-size: 17px
+      @include min($tabletG)
+        position: absolute
+        left: 0
+        top: 50%
+        width: 340px
+        padding: 35px 20px 50px
+        opacity: 0
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+        z-index: -1
+        background: $white
+        transition: all 0.2s ease
+        .menu-item
+          padding: 15px 0
+          border-bottom: 1px solid $border
+          a
+            font-size: 17px
+      @include max($tabletG - 1)
+        padding: 10px 10px 0
+        .menu-item:not(:last-child)
+          padding-bottom: 10px
     .menu-item
       a
         font-weight: 800
-        transition: color 0.2s ease
-        &:hover
-          color: $lightBlue
+        @include min($tabletG)
+          transition: color 0.2s ease
+          &:hover
+            color: $lightBlue
+        @include max($tabletG - 1)
+          display: block
+          width: 100%
     &>.menu-item
       position: relative
       padding-bottom: 20px
-      &:after
+      &:not(:last-of-type):after
         content: ''
         position: absolute
         top: 0
@@ -77,22 +105,23 @@
         &.menu-item-has-children:before
           border-color: $lightBlue
       &.menu-item-has-children
-        display: flex
-        align-items: center
-        justify-content: flex-start
-        flex-direction: row-reverse
-        gap: 7px
-        cursor: pointer
-        &::before
-          content: ''
-          border-top: 1px solid $black
-          border-left: 1px solid $black
-          width: 7px
-          height: 7px
-          display: block
-          border-radius: 1px
-          transform: rotate(-135deg)
-          transition: all 0.2s ease
+        @include min($tabletG)
+          flex-direction: row-reverse
+          display: flex
+          align-items: center
+          justify-content: flex-start
+          gap: 7px
+          cursor: pointer
+          &::before
+            content: ''
+            border-top: 1px solid $black
+            border-left: 1px solid $black
+            width: 7px
+            height: 7px
+            display: block
+            border-radius: 1px
+            transform: rotate(-135deg)
+            transition: all 0.2s ease
         &:hover
           &>a
             color: $lightBlue
@@ -103,3 +132,30 @@
             opacity: 1
             top: 100%
             z-index: 10
+.burger
+  width: 25px
+  height: 16px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  flex-shrink: 0
+  &:before, &:after
+    content: ''
+    width: 100%
+    height: 2px
+    border-radius: 1px
+    background: $black
+    transition: all .2s ease
+    transform-origin: center center
+  div
+    height: 2px
+    border-radius: 1px
+    background: $black
+  &.active
+    height: 25px
+    div
+      display: none
+    &::before
+      transform: translate(0, 11.5px) rotate(135deg)
+    &:after
+      transform: translate(0, -11.5px) rotate(-135deg)
