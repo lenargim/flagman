@@ -45,27 +45,6 @@
       @include between($tabletG, $netbook)
         padding: 25px
         width: calc(50% - 15px)
-      .doctors__item
-        &-lead
-          background: $white
-          display: inline-flex
-          border-radius: 30px
-          padding: 10px 15px
-          gap: 5px
-          justify-content: flex-start
-          align-items: center
-          line-height: 25px
-          margin-bottom: 18px
-          user-select: none
-          @include max($netbook - 1)
-            padding: 5px 10px
-            line-height: 20px
-          &::before
-            content: ''
-            width: 25px
-            height: 25px
-            background: url("./assets/images/lead.png") no-repeat
-            background-size: cover
         &-title
           font: 800 20px/25px $mainFont
           margin-bottom: 3px

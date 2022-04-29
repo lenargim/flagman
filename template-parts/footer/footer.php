@@ -30,7 +30,7 @@
               <span><?php the_field('phone', 38); ?></span>
             </a>
           <?php endif; ?>
-          <div class="button button-blue footer__callback-button open-modal">обратный звонок</div>
+          <div class="button button-blue footer__callback-button open-callback" data-title="Кнопка 'Обратный звонок' подвала">обратный звонок</div>
         </div>
       </div>
     </div>
@@ -99,7 +99,28 @@
     <?php endif; ?>
   </div>
 </footer>
-
+<div class="overlay">
+  <div class="modal modal-callback">
+    <div class="modal__close"></div>
+    <div class="modal__title">Обратный звонок</div>
+    <?php echo do_shortcode('[contact-form-7 id="164" title="Callback block"]')?>
+    <span class="form__policy">Нажимая кнопку, вы даёте согласие на обработку персональных данных в соответствии с <a
+          href="/policy" target="_blank">Политикой конфиденциальности</a></span>
+  </div>
+  <div class="modal modal-thx">
+    <div class="modal__close"></div>
+    <div class="modal-thx__title">Администраторы<br>получили Вашу заявку</div>
+    <div class="modal-thx__desc">
+      Мы перезвоним вам ближайшее время и проконсультируем<br>
+      по всем имеющимся вопросам.
+    </div>
+    <div class="modal-thx__notime">Нет времени ждать звонка? Вы можете позвонить нам:</div>
+    <?php $getPhone = get_field('phone', 38); ?>
+    <a href="tel:<? echo preg_replace('/[' . PHONE_CHARS . ']/', '', $getPhone) ?>"
+       class="modal-thx__phone"><?php echo $getPhone; ?>
+    </a>
+  </div>
+</div>
 <?php wp_footer(); ?>
 
 </body>

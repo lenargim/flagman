@@ -64,3 +64,241 @@
       stroke: $blue
       @include max($tabletV - 1)
         display: none
+.services-block
+  padding: 200px 0 120px
+  background-color: $bgLight
+  &__wrap
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    gap: 10px
+  &__list
+    max-width: 700px
+  &__item
+    &:not(:last-child)
+      margin-bottom: 120px
+  &__title
+    font: 800 34px/34px $mainFont
+    margin-bottom: 30px
+    position: relative
+    display: inline-block
+    &::after
+      content: ''
+      height: 2px
+      position: absolute
+      right: 0.5em
+      left: -75px
+      background: linear-gradient(267.27deg, #7C598C 2.73%, #117DC1 112.12%)
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+      border-radius: 1px
+      bottom: 0
+  &__img
+    margin-bottom: 30px
+  .button
+    margin-top: 50px
+    &::after
+      content: ''
+      width: 12px
+      height: 12px
+      background: url("./assets/images/sprite-content/arrow-right-top.svg") no-repeat
+  &__ul
+    margin-top: 20px
+    list-style-type: initial
+  &__li
+    font: 800 20px/27px $mainFont
+    &:not(:last-child)
+      margin-bottom: 10px
+  .form__submit
+    margin-bottom: 10px
+.services-detailed
+  padding: 195px 0 120px
+  background: $bgLight
+  &__wrap
+    display: grid
+    grid-gap: 50px
+    grid-template-columns: 1fr 400px
+  &__white-wrap
+    display: flex
+    gap: 50px
+    align-items: flex-start
+    justify-content: flex-end
+    margin-bottom: 50px
+  &__text
+    &-desc
+      margin-bottom: 50px
+    &-block
+      display: flex
+      align-items: flex-start
+      justify-content: flex-start
+      gap: 100px
+      margin-right: 100px
+      &:not(:last-child)
+        margin-bottom: 50px
+      &:nth-of-type(odd)
+        flex-direction: row-reverse
+    &-img
+      flex-shrink: 0
+      border-radius: 30px
+  &__aside
+    display: flex
+    flex-direction: column
+    gap: 170px
+  &__cite
+    background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+    border-radius: 50px
+    padding: 50px 100px 80px
+    position: relative
+    &-title
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 30px
+      svg
+        width: 30px
+        height: 30px
+        fill: $purple
+        flex-shrink: 0
+    &-desc
+      margin-bottom: 50px
+      p:not(:last-child)
+        margin-bottom: 20px
+    &-name
+      font-weight: 200
+    &-img
+      position: absolute
+      right: 100px
+      bottom: 0
+      max-height: 100%
+    &-limit
+      max-width: 700px
+  &__steps
+    &-desc
+      font-weight: 800
+      margin-bottom: 65px
+      max-width: 970px
+    &-list
+      max-width: 810px
+      margin-left: auto
+      list-style-type: none
+      counter-reset:  item
+      li
+        margin-bottom: 85px
+        position: relative
+        &:before
+          content: '0'counter(item)
+          counter-increment: item
+          font: 800 60px/65px $mainFont
+          color: $blue
+          opacity: 0.3
+          position: absolute
+          left: 0
+          top: -0.5em
+      span
+        font: 800 14px/17px $mainFont
+    &-title
+        margin-bottom: 24px
+  &__doctors
+    padding-top: 60px
+    &-all
+      margin-top: 100px
+      position: relative
+      left: 50%
+      transform: translateX(-50%)
+  &__advantages
+    &-item
+      display: flex
+      align-items: flex-start
+      justify-content: flex-start
+      gap: 16px
+      &:not(:last-child)
+        margin-bottom: 15px
+      &::before
+        content: ''
+        width: 28px
+        height: 28px
+        background: url("./assets/images/sprite-content/check.svg") no-repeat
+        background-size: contain
+      span
+        display: inline-block
+        max-width: 800px
+.services__slider
+  position: relative
+  &-item
+    position: relative
+    padding: 90px 17px 110px
+    background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+    border-radius: 50px
+    overflow: hidden
+    opacity: 0
+    transition: opacity 0.2s ease
+  .swiper-slide-visible .services__slider-item
+    opacity: 1
+  &-lead
+    position: absolute
+    top: 30px
+    left: 17px
+    padding: 10px 15px
+  &-title
+    font: 800 20px/25px $mainFont
+    margin-bottom: 10px
+  &-occupation
+    font: 400 12px/16px $mainFont
+  &-exp
+    font: 400 12px/16px $mainFont
+    margin-bottom: 20px
+  &-excerpt
+    font: 200 14px/20px $mainFont
+    width: 66%
+    height: 100px
+  &-img
+    position: absolute
+    bottom: 0
+    right: 0
+    width: 40%
+    aspect-ratio: 300/400
+  &-link
+    position: absolute
+    bottom: 30px
+    left: 17px
+    width: 180px
+    height: 50px
+    z-index: 1
+    svg
+      width: 12px
+      height: 12px
+      fill: transparent
+      stroke: $white
+  .pagination
+    justify-content: center
+    bottom: -55px !important
+.warning
+  padding: 25px 150px
+  position: relative
+  margin-top: 100px
+  background: linear-gradient(87.32deg, #E9BCBC 43.86%, #EDEBEC 88.6%)
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+  border-radius: 30px
+  font-weight: 800
+.contraindications
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  gap: 50px
+  li
+    margin-bottom: 15px
+    list-style-type: none
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 17px
+    &::before
+      display: block
+      content: ''
+      width: 10px
+      height: 10px
+      border-radius: 50%
+      border: 2px solid $red
+      flex-shrink: 0
+      box-sizing: border-box

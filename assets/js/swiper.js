@@ -4,7 +4,9 @@ $(document).ready(function () {
   const banner = new Swiper('.banner-slider', {
     loop: true,
     preloadImages: false,
-    lazy: true,
+    lazy: {
+      loadOnTransitionStart: true,
+    },
     pagination: {
       el: '.pagination',
       type: 'bullets',
@@ -60,5 +62,34 @@ $(document).ready(function () {
       }
     }
   });
-});
 
+
+
+  const healSlider = new Swiper('.services__slider', {
+    loop: true,
+    preloadImages: false,
+    lazy: {
+      loadOnTransitionStart: true,
+    },
+    watchSlidesProgress: true,
+    spaceBetween: 20,
+    pagination: {
+      el: '.pagination',
+      type: 'bullets',
+      bulletClass: 'pagination__item',
+      bulletActiveClass: 'pagination__item_active',
+      clickable: true,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+});

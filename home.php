@@ -22,7 +22,7 @@
                         <div class="banner__item-desc"><?php echo $banner_desc; ?></div>
                       <?php endif; ?>
                       <div class="banner__item-buttonrow">
-                        <div class="button button-blue open-callback" data-title="<?php echo $banner_title ?>">
+                        <div class="button button-blue open-callback" data-title="Баннер: <?php echo $banner_title ?>">
                           Консультация
                         </div>
                         <?php if (get_sub_field('is-link')): ?>
@@ -56,7 +56,7 @@
           <div class="banner__box">
             <div class="banner__box-item">
               <svg class="banner__box-svg">
-                <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-home.svg#banner-1"></use>
+                <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#banner-1"></use>
               </svg>
               <div class="banner__box-desc">Высококвалифицированные врачи решают ваши проблемы с зубами уже более 5
                 лет
@@ -64,7 +64,7 @@
             </div>
             <div class="banner__box-item">
               <svg class="banner__box-svg">
-                <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-home.svg#banner-2"></use>
+                <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#banner-2"></use>
               </svg>
               <div class="banner__box-desc">В работе используется только лучшее оборудование и высококлассные
                 материалы
@@ -72,7 +72,7 @@
             </div>
             <div class="banner__box-item">
               <svg class="banner__box-svg">
-                <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-home.svg#banner-3"></use>
+                <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#banner-3"></use>
               </svg>
               <div class="banner__box-desc">Расположение рядом с метро - Вы всегда можете добраться без пробок и потери
                 времени
@@ -195,8 +195,12 @@
             setup_postdata($post);
             ?>
             <a href="<?php the_permalink(); ?>" class="services__item">
-              <img src="<?php the_post_thumbnail_url(); ?>" class="services__item-img">
-              <div class="services__item-title"><?php the_title() ?></div>
+              <img src="<?php the_field('logo'); ?>" class="services__item-img">
+              <?php if (get_field('short-title')): ?>
+                <div class="services__item-title"><?php the_field('short-title'); ?></div>
+              <?php else: ?>
+                <div class="services__item-title"><?php the_title() ?></div>
+            <?php endif; ?>
             </a>
             <?php
           }
@@ -273,7 +277,7 @@
                 ?>
                 <a href="<?php the_permalink(); ?>" class="doctors__item doctors__item_big swiper-slide">
                   <div class="doctors__item-wrap">
-                    <div class="doctors__item-lead">
+                    <div class="lead">
                       <span>Ведущий врач</span>
                     </div>
                     <?php
@@ -336,25 +340,7 @@
           <a href="/doctors" class="doctors__all button button-white">показать всех врачей</a>
         </div>
       </section>
-      <section class="excpectation">
-        <div class="container container_big">
-          <div class="excpectation__wrap">
-            <h3>Что Вас ждёт при посещении клиники “Флагманстом”?</h3>
-            <div class="excpectation__box">
-              <div class="excpectation__item">
-                <p>Дружелюбный административный персонал, который ответит на все Ваши вопросы</p>
-              </div>
-              <div class="excpectation__item">
-                <p>Специалисты высокой квалификации подберут вам индивидуальный план лечения в соответсвии с вашими
-                  требованиями</p>
-              </div>
-              <div class="excpectation__item">
-                <p>Бережный процесс лечения на лучшем оборудовании с гарантией на оказанные услуги</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <?php get_template_part('template-parts/expectation'); ?>
     <?php endif; ?>
   </main>
 <?php get_template_part('template-parts/footer/footer'); ?>

@@ -139,6 +139,8 @@
   flex-direction: column
   justify-content: space-between
   flex-shrink: 0
+  position: relative
+  z-index: 9
   &:before, &:after
     content: ''
     width: 100%
@@ -159,3 +161,56 @@
       transform: translate(0, 11.5px) rotate(135deg)
     &:after
       transform: translate(0, -11.5px) rotate(-135deg)
+.burger-menu
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  background: $white
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+  &__phone
+    display: inline-block
+    padding: 17px 0
+    color: $blue
+    font: 800 17px/20px $mainFont
+  &__menu
+    width: 100%
+    border-top: 1px solid $border
+    padding: 20px 0 25px
+    .menu-item
+      margin-bottom: 15px
+      &>a
+        display: inline-block
+        width: 100%
+        font: 800 17px/25px $mainFont
+        color: $black
+    .menu-item-has-children
+      &>a
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        gap: 8px
+        cursor: pointer
+        &::after
+          content: ''
+          border-top: 2px solid $black
+          border-left: 2px solid $black
+          width: 8px
+          height: 8px
+          display: block
+          border-radius: 1px
+          transform: rotate(135deg)
+          transition: all 0.2s ease
+      &.active
+        a::after
+          transform: rotate(225deg)
+      .sub-menu
+        width: 100%
+        display: none
+        margin-top: 15px
+
+        .menu-item
+          margin-bottom: 10px
+          &>a
+            font: 400 17px/20px $mainFont

@@ -1,0 +1,30 @@
+.input
+  background: #F2F4F6
+  border-radius: 10px
+  padding: 10px 18px
+  &::placeholder
+    color: #9E9B9B
+.form
+  &__submit
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+    gap: 10px
+    &::before
+      content: ''
+      width: 26px
+      height: 26px
+      display: block
+      background: url("./assets/images/sprite-content/call.svg") no-repeat
+  &__policy
+    display: block
+    font-size: 14px
+    font-weight: 200
+    text-align: center
+    @include max($tabletV - 1)
+      font-size: 14px
+      line-height: 17px
+    a
+      white-space: nowrap
+      color: #47577B
+      text-decoration: underline

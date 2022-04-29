@@ -661,10 +661,6 @@ remove_action('wp_enqueue_scripts', 'wp_enqueue_global_styles');
 remove_action('wp_body_open', 'wp_global_styles_render_svg_filters');
 
 
-
-
-
-
 function disable_emojis()
 {
   remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -720,16 +716,17 @@ function disable_emojis_remove_dns_prefetch($urls, $relation_type)
 }
 
 
-add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_scripts' );
-function my_theme_enqueue_scripts() {
+add_action('wp_enqueue_scripts', 'my_theme_enqueue_scripts');
+function my_theme_enqueue_scripts()
+{
   //wp_dequeue_style( 'twenty-twenty-one-style' );
-  wp_dequeue_style( 'wp-block-library-theme' );
+  wp_dequeue_style('wp-block-library-theme');
   wp_enqueue_style('main-styles', get_template_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css'), false);
   //wp_enqueue_style('main-styles', get_template_directory_uri() . '/style.css');
 
   wp_enqueue_script('main-scripts', get_template_directory_uri() . '/main.min.js', array('jquery'));
 
-  if ( is_page_template('home.php') ) {
+  if (is_page_template('home.php') || is_page_template('page-heal.php')) {
     wp_enqueue_style('swiper-styles', 'https://unpkg.com/swiper@8/swiper-bundle.min.css');
     wp_enqueue_script('swiper-lib', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array('jquery'));
     wp_enqueue_script('swiper-script', get_template_directory_uri() . '/assets/js/swiper.js', array('swiper-lib'));
@@ -744,7 +741,8 @@ add_action('wp_default_scripts', function ($scripts) {
 });
 
 add_action('admin_menu', 'remove_menus');
-function remove_menus() {
+function remove_menus()
+{
   remove_menu_page('index.php');                # Консоль
   remove_menu_page('edit.php');                 # Записи
   remove_menu_page('edit-comments.php');        # Комментарии
@@ -760,124 +758,166 @@ function remove_menus() {
 
 
 add_action('init', 'custom_posts');
-function custom_posts(){
+function custom_posts()
+{
   register_post_type('sale', array(
-      'labels'             => array(
-          'name'               => 'Акции', // Основное название типа записи
-          'singular_name'      => 'Акция', // отдельное название записи типа Book
-          'add_new'            => 'Добавить новую',
-          'add_new_item'       => 'Добавить новую акцию',
-          'edit_item'          => 'Редактировать акцию',
-          'new_item'           => 'Новая акция',
-          'view_item'          => 'Посмотреть акцию',
-          'search_items'       => 'Найти акцию',
-          'not_found'          => 'Акций не найдено',
+      'labels' => array(
+          'name' => 'Акции', // Основное название типа записи
+          'singular_name' => 'Акция', // отдельное название записи типа Book
+          'add_new' => 'Добавить новую',
+          'add_new_item' => 'Добавить новую акцию',
+          'edit_item' => 'Редактировать акцию',
+          'new_item' => 'Новая акция',
+          'view_item' => 'Посмотреть акцию',
+          'search_items' => 'Найти акцию',
+          'not_found' => 'Акций не найдено',
           'not_found_in_trash' => 'В корзине акций не найдено',
-          'parent_item_colon'  => '',
-          'menu_name'          => 'Акции'
+          'parent_item_colon' => '',
+          'menu_name' => 'Акции'
 
       ),
-      'public'             => true,
+      'public' => true,
       'publicly_queryable' => true,
-      'show_ui'            => true,
-      'show_in_menu'       => true,
-      'query_var'          => true,
-      'rewrite'            => true,
-      'capability_type'    => 'post',
-      'has_archive'        => true,
-      'hierarchical'       => false,
-      'menu_position'      => null,
-      'supports'           => array('title','editor','thumbnail','excerpt')
-  ) );
+      'show_ui' => true,
+      'show_in_menu' => true,
+      'query_var' => true,
+      'rewrite' => true,
+      'capability_type' => 'post',
+      'has_archive' => true,
+      'hierarchical' => false,
+      'menu_position' => null,
+      'supports' => array('title', 'editor', 'thumbnail', 'excerpt')
+  ));
 
 
   register_post_type('services', array(
-      'labels'             => array(
-          'name'               => 'Услуги', // Основное название типа записи
-          'singular_name'      => 'Услуга', // отдельное название записи типа Book
-          'add_new'            => 'Добавить новую',
-          'add_new_item'       => 'Добавить новую услугу',
-          'edit_item'          => 'Редактировать услугу',
-          'new_item'           => 'Новая услуга',
-          'view_item'          => 'Посмотреть услугу',
-          'search_items'       => 'Найти услугу',
-          'not_found'          => 'Услуг не найдено',
+      'labels' => array(
+          'name' => 'Услуги', // Основное название типа записи
+          'singular_name' => 'Услуга', // отдельное название записи типа Book
+          'add_new' => 'Добавить новую',
+          'add_new_item' => 'Добавить новую услугу',
+          'edit_item' => 'Редактировать услугу',
+          'new_item' => 'Новая услуга',
+          'view_item' => 'Посмотреть услугу',
+          'search_items' => 'Найти услугу',
+          'not_found' => 'Услуг не найдено',
           'not_found_in_trash' => 'В корзине услуг не найдено',
-          'parent_item_colon'  => '',
-          'menu_name'          => 'Услуги'
+          'parent_item_colon' => '',
+          'menu_name' => 'Услуги'
 
       ),
-      'public'             => true,
+      'public' => true,
       'publicly_queryable' => true,
-      'show_ui'            => true,
-      'show_in_menu'       => true,
-      'query_var'          => true,
-      'rewrite'            => true,
-      'capability_type'    => 'post',
-      'has_archive'        => true,
-      'hierarchical'       => false,
-      'menu_position'      => null,
-      'supports'           => array('title','editor','thumbnail','excerpt')
-  ) );
+      'show_ui' => true,
+      'show_in_menu' => true,
+      'query_var' => true,
+      'rewrite' => true,
+      'capability_type' => 'post',
+      'has_archive' => true,
+      'hierarchical' => false,
+      'menu_position' => null,
+      'supports' => array('title', 'editor', 'thumbnail', 'excerpt')
+  ));
 
   register_post_type('doctors', array(
-      'labels'             => array(
-          'name'               => 'Стоматологи', // Основное название типа записи
-          'singular_name'      => 'Врач', // отдельное название записи типа Book
-          'add_new'            => 'Добавить врача',
-          'add_new_item'       => 'Добавить врача',
-          'edit_item'          => 'Редактировать врача',
-          'new_item'           => 'Новый врач',
-          'view_item'          => 'Посмотреть врача',
-          'search_items'       => 'Найти врача',
-          'not_found'          => 'Врачей не найдено',
+      'labels' => array(
+          'name' => 'Стоматологи', // Основное название типа записи
+          'singular_name' => 'Врач', // отдельное название записи типа Book
+          'add_new' => 'Добавить врача',
+          'add_new_item' => 'Добавить врача',
+          'edit_item' => 'Редактировать врача',
+          'new_item' => 'Новый врач',
+          'view_item' => 'Посмотреть врача',
+          'search_items' => 'Найти врача',
+          'not_found' => 'Врачей не найдено',
           'not_found_in_trash' => 'В корзине врачей не найдено',
-          'parent_item_colon'  => '',
-          'menu_name'          => 'Стоматологи'
+          'parent_item_colon' => '',
+          'menu_name' => 'Стоматологи'
 
       ),
-      'public'             => true,
+      'public' => true,
       'publicly_queryable' => true,
-      'show_ui'            => true,
-      'show_in_menu'       => true,
-      'query_var'          => true,
-      'rewrite'            => true,
-      'capability_type'    => 'post',
-      'has_archive'        => true,
-      'hierarchical'       => false,
-      'menu_position'      => null,
-      'supports'           => array('title','editor','thumbnail','excerpt')
-  ) );
+      'show_ui' => true,
+      'show_in_menu' => true,
+      'query_var' => true,
+      'rewrite' => true,
+      'capability_type' => 'post',
+      'has_archive' => true,
+      'hierarchical' => false,
+      'menu_position' => null,
+      'supports' => array('title', 'editor', 'thumbnail', 'excerpt')
+  ));
 
 
   register_post_type('reviews', array(
-      'labels'             => array(
-          'name'               => 'Отзывы', // Основное название типа записи
-          'singular_name'      => 'Отзыв', // отдельное название записи типа Book
-          'add_new'            => 'Добавить отзыв',
-          'add_new_item'       => 'Добавить отзыв',
-          'edit_item'          => 'Редактировать отзыв',
-          'new_item'           => 'Новый отзыв',
-          'view_item'          => 'Посмотреть отзыв',
-          'search_items'       => 'Найти отзыв',
-          'not_found'          => 'Отзывов не найдено',
+      'labels' => array(
+          'name' => 'Отзывы', // Основное название типа записи
+          'singular_name' => 'Отзыв', // отдельное название записи типа Book
+          'add_new' => 'Добавить отзыв',
+          'add_new_item' => 'Добавить отзыв',
+          'edit_item' => 'Редактировать отзыв',
+          'new_item' => 'Новый отзыв',
+          'view_item' => 'Посмотреть отзыв',
+          'search_items' => 'Найти отзыв',
+          'not_found' => 'Отзывов не найдено',
           'not_found_in_trash' => 'В корзине отзывов не найдено',
-          'parent_item_colon'  => '',
-          'menu_name'          => 'Отзывы'
+          'parent_item_colon' => '',
+          'menu_name' => 'Отзывы'
 
       ),
-      'public'             => true,
+      'public' => true,
       'publicly_queryable' => true,
-      'show_ui'            => true,
-      'show_in_menu'       => true,
-      'query_var'          => true,
-      'rewrite'            => true,
-      'capability_type'    => 'post',
-      'has_archive'        => true,
-      'hierarchical'       => false,
-      'menu_position'      => null,
-      'supports'           => array('title','editor' )
-  ) );
+      'show_ui' => true,
+      'show_in_menu' => true,
+      'query_var' => true,
+      'rewrite' => true,
+      'capability_type' => 'post',
+      'has_archive' => true,
+      'hierarchical' => false,
+      'menu_position' => null,
+      'supports' => array('title', 'editor')
+  ));
+
+  register_taxonomy('specialisation', 'doctors', array(
+      'hierarchical' => false,
+      'labels' => array(
+          'name' => _x('Специализация', 'taxonomy general name'),
+          'singular_name' => _x('Специализация', 'taxonomy singular name'),
+          'search_items' => __('Поиск Специализаций'),
+          'popular_items' => __('Популярные специализации'),
+          'all_items' => __('Все специализации'),
+          'parent_item' => null,
+          'parent_item_colon' => null,
+          'edit_item' => __('Изменить специализацию'),
+          'update_item' => __('Обновить специализацию'),
+          'add_new_item' => __('Добавить специализацию'),
+          'new_item_name' => __('Новая специальзация'),
+          'separate_items_with_commas' => __('Separate Специализацию with commas'),
+          'add_or_remove_items' => __('Добавить или удалить Специализацию'),
+          'choose_from_most_used' => __('Choose from the most used Специализация'),
+          'menu_name' => __('Специализация'),
+      ),
+      'show_ui' => true,
+      'query_var' => true,
+    //'rewrite'       => array( 'slug' => 'the_writer' ), // свой слаг в URL
+  ));
 }
 
+add_filter('wpcf7_form_elements', function ($html) {
+
+  preg_match('~<input([^>]+)type=["\']submit["\']([^>/]+)/?>~i', $html, $match);
+
+  if ($match) {
+    $input = $match[0];
+    $attr = trim($match[1] . $match[2]);
+
+    preg_match('/value=["\']([^"\']+)/', $input, $mm);
+    $button_text = $mm[1];
+
+    $html = str_replace($input, "<button $attr>$button_text</button>", $html);
+  }
+
+  return $html;
+
+});
 

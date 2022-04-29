@@ -45,11 +45,11 @@
       <div action="" class="callback__form-wrap">
         <div class="callback__subtitle">Получить консультацию</div>
         <?php echo do_shortcode('[contact-form-7 id="164" title="Callback block"]')?>
-        <span class="callback__policy">Нажимая кнопку, вы даёте согласие на обработку персональных данных в соответствии с <a
+        <span class="callback__policy form__policy">Нажимая кнопку, вы даёте согласие на обработку персональных данных в соответствии с <a
               href="/policy" target="_blank">Политикой конфиденциальности</a></span>
       </div>
     </div>
-    <div class="callback__logo">
+    <div class="signature">
       <img src="<?php echo IMAGES_PATH ?>/logo-big.png" alt="ФлагманСтом">
     </div>
   </div>

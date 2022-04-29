@@ -1,0 +1,63 @@
+.sale-block
+  padding: 240px 0 120px
+  @include max($tabletG - 1)
+    padding: 50px 0 80px
+  &__item
+    position: relative
+    margin-bottom: 50px
+    background: $white
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+    border-radius: 30px
+    padding: 50px 30px
+    @include max($tabletG - 1)
+      padding: 30px 10px
+      margin-bottom: 30px
+      border-radius: 20px
+  &__text
+    @include min($tabletG)
+      height: 380px
+      max-width: 600px
+      padding-bottom: 110px
+    @include max($tabletG - 1)
+      text-align: center
+  &__title
+    font: 800 34px/46px $mainFont
+    margin-bottom: 5px
+    @include max($tabletG - 1)
+      font: 800 20px/25px $mainFont
+      margin-bottom: 10px
+  &__benefit
+    font: 800 60px/1 $mainFont
+    background: linear-gradient(180deg, #117DC1 0%, #7C598C 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    margin-bottom: 20px
+    @include max($tabletG - 1)
+      font: 800 34px/1 $mainFont
+      margin-bottom: 30px
+  &__img
+    @include min($tabletG)
+      border-radius: 30px
+      position: absolute
+      z-index: 0
+      top: 0
+      bottom: 0
+      right: 0
+      max-width: calc(100% - 620px)
+      aspect-ratio: 1/1
+    @include max($tabletG - 1)
+      aspect-ratio: 280/116
+      border-radius: 10px
+      margin-bottom: 30px
+  .button
+    @include min($tabletG)
+      position: absolute
+      bottom: 50px
+      left: 30px
+    @include max($tabletG - 1)
+      margin-top: 30px
+      position: relative
+      left: 50%
+      transform: translateX(-50%)
+      width: 240px
+      height: 50px
