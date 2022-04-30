@@ -11,7 +11,7 @@ Template post type: services
         <div class="page-banner__wrap">
           <div class="page-banner__text">
             <h1><?php the_title() ?></h1>
-            <?php if ('sale'): ?>
+            <?php if (get_field('is-sale')): ?>
               <div class="page-banner__sale">
                 <?php the_field('sale'); ?>
               </div>
@@ -82,10 +82,12 @@ Template post type: services
           эмали полностью исключается. Это существенное преимущество данного способа осветления. Но если не будут
           соблюдены правила безопасности, все равно могут возникнуть болевые ощущения.</p>
       </div>
-      <div class="container container_small">
-        <div class="warning">
-          Именно поэтому доверять здоровье следует только опытным и высококвалифицированным<br>
-          докторам. От самостоятельных домашних манипуляций лучше вовсе отказаться.
+      <div class="block">
+        <div class="container container_small">
+          <div class="warning">
+            Именно поэтому доверять здоровье следует только опытным и высококвалифицированным<br>
+            докторам. От самостоятельных домашних манипуляций лучше вовсе отказаться.
+          </div>
         </div>
       </div>
       <div class="container">

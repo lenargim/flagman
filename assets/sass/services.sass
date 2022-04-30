@@ -139,6 +139,11 @@
     &-img
       flex-shrink: 0
       border-radius: 30px
+    &-last
+      font-weight: 800
+      a
+        text-decoration: underline
+        color: $blue
   &__aside
     display: flex
     flex-direction: column
@@ -276,11 +281,11 @@
 .warning
   padding: 25px 150px
   position: relative
-  margin-top: 100px
   background: linear-gradient(87.32deg, #E9BCBC 43.86%, #EDEBEC 88.6%)
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
   border-radius: 30px
   font-weight: 800
+  text-align: center
 .contraindications
   display: flex
   align-items: flex-start
@@ -302,3 +307,35 @@
       border: 2px solid $red
       flex-shrink: 0
       box-sizing: border-box
+.desna-disease
+  display: flex
+  flex-direction: column
+  gap: 120px
+  &__item
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    gap: 50px
+    flex-wrap: wrap
+  &__text
+    max-width: 750px
+    p:not(:last-child)
+      margin-bottom: 20px
+.stages
+  padding-top: 65px
+  display: grid
+  grid-template-columns: repeat(3, 300px)
+  gap: 150px
+  &__box
+    &:not(:last-child)
+      position: relative
+      &::after
+        content: ''
+        position: absolute
+        width: 280px
+        height: 60px
+        background: url("./assets/images/stages-arrow.png") center/contain no-repeat
+        bottom: calc(100% + 20px)
+        left: 60%
+    h4
+      margin-bottom: 20px

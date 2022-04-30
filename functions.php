@@ -726,7 +726,11 @@ function my_theme_enqueue_scripts()
 
   wp_enqueue_script('main-scripts', get_template_directory_uri() . '/main.min.js', array('jquery'));
 
-  if (is_page_template('home.php') || is_page_template('page-heal.php')) {
+  if (
+          is_page_template('home.php') ||
+          is_page_template('page-heal.php') ||
+          is_page_template('page-desna.php')
+  ) {
     wp_enqueue_style('swiper-styles', 'https://unpkg.com/swiper@8/swiper-bundle.min.css');
     wp_enqueue_script('swiper-lib', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array('jquery'));
     wp_enqueue_script('swiper-script', get_template_directory_uri() . '/assets/js/swiper.js', array('swiper-lib'));
@@ -881,21 +885,21 @@ function custom_posts()
   register_taxonomy('specialisation', 'doctors', array(
       'hierarchical' => false,
       'labels' => array(
-          'name' => _x('Специализация', 'taxonomy general name'),
-          'singular_name' => _x('Специализация', 'taxonomy singular name'),
-          'search_items' => __('Поиск Специализаций'),
-          'popular_items' => __('Популярные специализации'),
-          'all_items' => __('Все специализации'),
+          'name' => _x('Услуги', 'taxonomy general name'),
+          'singular_name' => _x('Услуги', 'taxonomy singular name'),
+          'search_items' => __('Поиск Услуг'),
+          'popular_items' => __('Популярные услуги'),
+          'all_items' => __('Все услуги'),
           'parent_item' => null,
           'parent_item_colon' => null,
-          'edit_item' => __('Изменить специализацию'),
-          'update_item' => __('Обновить специализацию'),
-          'add_new_item' => __('Добавить специализацию'),
-          'new_item_name' => __('Новая специальзация'),
-          'separate_items_with_commas' => __('Separate Специализацию with commas'),
-          'add_or_remove_items' => __('Добавить или удалить Специализацию'),
-          'choose_from_most_used' => __('Choose from the most used Специализация'),
-          'menu_name' => __('Специализация'),
+          'edit_item' => __('Изменить услугу'),
+          'update_item' => __('Обновить услугу'),
+          'add_new_item' => __('Добавить услугу'),
+          'new_item_name' => __('Новая услуга'),
+          'separate_items_with_commas' => __('Separate услугу with commas'),
+          'add_or_remove_items' => __('Добавить или удалить услугу'),
+          'choose_from_most_used' => __('Choose from the most used Услуги'),
+          'menu_name' => __('Услуги'),
       ),
       'show_ui' => true,
       'query_var' => true,

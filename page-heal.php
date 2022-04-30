@@ -11,6 +11,11 @@ Template post type: services
         <div class="page-banner__wrap">
           <div class="page-banner__text">
             <h1><?php the_title() ?></h1>
+            <?php if (get_field('is-sale')): ?>
+              <div class="page-banner__sale">
+                <?php the_field('sale'); ?>
+              </div>
+            <?php endif; ?>
             <div class="page-banner__desc"><?php the_content(); ?></div>
             <div class="page-banner__buttonrow">
               <div class="button button-blue open-callback" data-title="Страница <?php the_title() ?>">Записаться на
