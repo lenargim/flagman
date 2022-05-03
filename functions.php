@@ -729,7 +729,10 @@ function my_theme_enqueue_scripts()
   if (
           is_page_template('home.php') ||
           is_page_template('page-heal.php') ||
-          is_page_template('page-desna.php')
+          is_page_template('page-desna.php') ||
+          is_page_template('page-remove.php') ||
+          is_page_template('page-vinir.php') ||
+          is_page_template('page-protez.php')
   ) {
     wp_enqueue_style('swiper-styles', 'https://unpkg.com/swiper@8/swiper-bundle.min.css');
     wp_enqueue_script('swiper-lib', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array('jquery'));
@@ -790,6 +793,7 @@ function custom_posts()
       'has_archive' => true,
       'hierarchical' => false,
       'menu_position' => null,
+      'menu_icon' => 'dashicons-buddicons-friends',
       'supports' => array('title', 'editor', 'thumbnail', 'excerpt')
   ));
 
@@ -820,6 +824,7 @@ function custom_posts()
       'has_archive' => true,
       'hierarchical' => false,
       'menu_position' => null,
+      'menu_icon' => 'dashicons-admin-tools',
       'supports' => array('title', 'editor', 'thumbnail', 'excerpt')
   ));
 
@@ -849,6 +854,7 @@ function custom_posts()
       'has_archive' => true,
       'hierarchical' => false,
       'menu_position' => null,
+      'menu_icon' => 'dashicons-businessman',
       'supports' => array('title', 'editor', 'thumbnail', 'excerpt')
   ));
 
@@ -879,7 +885,38 @@ function custom_posts()
       'has_archive' => true,
       'hierarchical' => false,
       'menu_position' => null,
+      'menu_icon' => 'dashicons-admin-comments',
       'supports' => array('title', 'editor')
+  ));
+
+  register_post_type('examples', array(
+      'labels' => array(
+          'name' => 'Примеры работ', // Основное название типа записи
+          'singular_name' => 'Пример', // отдельное название записи типа Book
+          'add_new' => 'Добавить пример',
+          'add_new_item' => 'Добавить пример',
+          'edit_item' => 'Редактировать пример',
+          'new_item' => 'Новый пример',
+          'view_item' => 'Посмотреть пример',
+          'search_items' => 'Найти пример',
+          'not_found' => 'Примеров не найдено',
+          'not_found_in_trash' => 'В корзине примеров не найдено',
+          'parent_item_colon' => '',
+          'menu_name' => 'Примеры работ'
+
+      ),
+      'public' => true,
+      'publicly_queryable' => true,
+      'show_ui' => true,
+      'show_in_menu' => true,
+      'query_var' => true,
+      'rewrite' => true,
+      'capability_type' => 'post',
+      'has_archive' => true,
+      'hierarchical' => false,
+      'menu_position' => null,
+      'menu_icon' => 'dashicons-tickets-alt',
+      'supports' => array('title')
   ));
 
   register_taxonomy('specialisation', 'doctors', array(

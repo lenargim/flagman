@@ -112,10 +112,10 @@
                     <?php if ($name): ?>
                       <div class="burning__item-name burning__item-padding"><?php echo $name; ?></div>
                     <?php endif; ?>
-                    <div class="burning__item-button button button-blue open-callback <?php if (!$is_active): ?>disabled <?php endif; ?>"
+                    <button class="burning__item-button button button-blue open-callback" <?php if (!$is_active): ?>disabled <?php endif; ?>
                          data-title="<?php echo 'Горящее время: ' . $title . '. ' . $ru_date . ', ' . $time . '. ' . $name ?>">
                       Забронировать
-                    </div>
+                    </button>
                     <?php if ($href): ?>
                       <img src="<?php echo $href; ?>" class="burning__item-img" alt="<?php echo $name; ?>">
                     <?php endif; ?>
@@ -126,7 +126,7 @@
           <?php endif; ?>
           <?php if (get_field('burning-box')): ?>
             <div class="burning__box">
-              <div class="burning__box-title">Экономьте время и деньги<br>вместе с нами</div>
+              <h4>Экономьте время и деньги<br>вместе с нами</h4>
               <?php while (have_rows('burning-box')) : the_row(); ?>
                 <div class="burning__box-item">
                   <svg>
@@ -155,7 +155,7 @@
         <div class="reviews__wrap">
           <?php global $post;
           $myposts = get_posts([
-              'posts_per_page' => -1,
+              'posts_per_page' => 4,
               'post_type' => 'reviews',
           ]);
           foreach ($myposts as $post) {
@@ -212,7 +212,7 @@
           <a href="/services" class="button button-white services__button services__button_all">
             <span>Все услуги</span>
             <svg>
-              <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-home.svg#arrow-right-top"></use>
+              <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-common.svg#arrow-right-top"></use>
             </svg>
           </a>
         </div>

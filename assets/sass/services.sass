@@ -96,11 +96,11 @@
     margin-bottom: 30px
   .button
     margin-top: 50px
-    &::after
-      content: ''
+    svg
       width: 12px
       height: 12px
-      background: url("./assets/images/sprite-content/arrow-right-top.svg") no-repeat
+      stroke: $blue
+      fill: transparent
   &__ul
     margin-top: 20px
     list-style-type: initial
@@ -126,6 +126,8 @@
   &__text
     &-desc
       margin-bottom: 50px
+    p:not(:last-child)
+      margin-bottom: 20px
     &-block
       display: flex
       align-items: flex-start
@@ -140,10 +142,19 @@
       flex-shrink: 0
       border-radius: 30px
     &-last
-      font-weight: 800
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 20px
+      p
+        font-weight: 800
       a
         text-decoration: underline
         color: $blue
+      svg
+        width: 40px
+        height: 40px
+        flex-shrink: 0
   &__aside
     display: flex
     flex-direction: column
@@ -227,6 +238,14 @@
       span
         display: inline-block
         max-width: 800px
+  &__reviews
+    background: $white
+    padding: 50px 0
+    margin-top: 50px
+    &-wrap
+      display: grid
+      grid-template-columns: repeat(2,1fr)
+      grid-gap: 50px 60px
 .services__slider
   position: relative
   &-item
@@ -279,7 +298,7 @@
     justify-content: center
     bottom: -55px !important
 .warning
-  padding: 25px 150px
+  padding: 25px 100px
   position: relative
   background: linear-gradient(87.32deg, #E9BCBC 43.86%, #EDEBEC 88.6%)
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
@@ -307,7 +326,10 @@
       border: 2px solid $red
       flex-shrink: 0
       box-sizing: border-box
-.desna-disease
+  &__desc
+    margin-bottom: 50px
+    max-width: 550px
+.services-types
   display: flex
   flex-direction: column
   gap: 120px
@@ -339,3 +361,111 @@
         left: 60%
     h4
       margin-bottom: 20px
+.result
+  background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+  border-radius: 50px
+  padding: 50px 100px 220px
+  position: relative
+  &__wrap
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    gap: 10px
+  &__text
+    display: flex
+    flex-direction: column
+    gap: 30px
+    max-width: 600px
+  &__title
+    margin-bottom: 10px
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 20px
+    h4
+      margin: 0
+    svg
+      width: 37px
+      height: 37px
+      fill: #114669
+  &__img
+    border-radius: 30px
+    max-width: 530px
+  &__after
+    background: linear-gradient(267.27deg, #117DC1 2.73%, #7C598C 112.12%)
+    box-shadow: inset 0 4px 10px rgba(51, 51, 51, 0.25)
+    border-radius: 30px
+    color: $white
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    padding: 52px 100px
+    span
+      font: 34px/1 $mainFont
+      margin-right: 160px
+    div
+      font: 800 60px/65px $mainFont
+    &::after
+      content: ''
+      background: url("./assets/images/result-bg.png") no-repeat
+      background-size: contain
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+      height: 100%
+      aspect-ratio: 260/170
+.help
+  background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+  border-radius: 50px
+  padding: 30px 100px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  gap: 1em
+  &__text
+    width: 550px
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      width: 242px
+      height: 74px
+      left: 100%
+      bottom: 5px
+      background: url("./assets/images/help-arrow.png") no-repeat
+  h2
+    margin-bottom: 20px
+  &__button
+    width: 320px
+.protez
+  &__info
+    background: linear-gradient(267.27deg, #117DC1 2.73%, #7C598C 112.12%)
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+    border-radius: 50px
+    padding: 40px 50px
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    gap: 115px
+    color: $white
+    position: relative
+    overflow: hidden
+    &::after
+      content: ''
+      position: absolute
+      left: 0
+      bottom: 0
+      width: 250px
+      height: 170px
+      background: url("./assets/images/protez8.png") no-repeat
+    &-text
+      max-width: 450px
+    h2
+      margin-bottom: 10px

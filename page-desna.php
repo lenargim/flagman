@@ -66,14 +66,15 @@ Template post type: services
               первую консультацию в нашей стоматологии.
             </div>
             <div class="services-detailed__text-last">
-              Основной причиной возникновения является скопление зубного налета, который затвердевает и образует зубной
-              камень. Для профилактики рекомендуется регулярно проводить <a
-                      href="<?php echo get_post_permalink(159) ?>">профессиональную чистку полости рта</a>
+              <p>Основной причиной возникновения является скопление зубного налета, который затвердевает и образует
+                зубной камень. Для профилактики рекомендуется регулярно проводить
+                <a href="<?php echo get_post_permalink(159) ?>">профессиональную чистку полости рта</a>
+              </p>
             </div>
           </div>
           <div class="services-detailed__aside">
             <div class="burning__box">
-              <div class="burning__box-title">Какие сигналы говорят о том, что пора лечить десна?</div>
+              <h4>Какие сигналы говорят о том, что пора лечить десна?</h4>
               <div class="burning__box-item">
                 <svg>
                   <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-heal.svg#check"></use>
@@ -108,9 +109,9 @@ Template post type: services
       <div class="block">
         <div class="container">
           <h2>Какие заболевания дёсен бывают</h2>
-          <div class="desna-disease">
-            <div class="desna-disease__item">
-              <div class="desna-disease__text">
+          <div class="services-types">
+            <div class="services-types__item">
+              <div class="services-types__text">
                 <h4>Гингивит</h4>
                 <p>Воспалительное заболевание дёсен, которое <span class="bold">проявляется болезненностью, отёчностью, кровоточивостью</span>
                   и выделением экссудата (жидкости, которую продуцируют ткани в ответ на воспаление).</p>
@@ -119,10 +120,10 @@ Template post type: services
                   процессы мягких тканей ротовой полости, а утрата зубов из-за воспаления дёсен и пародонта (тканей,
                   окружающих зуб) случается в 5 раз чаще, чем от кариозных поражений</p>
               </div>
-              <div class="desna-disease__img img">
+              <div class="services-types__img img">
                 <img src="<?php echo IMAGES_PATH ?>/desna1.png" alt="Гингивит">
               </div>
-              <div class="container container_sm">
+              <div class="container container_small">
                 <div class="warning">
                   Следует помнить, что воспалённая десна — это источник инфекции, которая может распространяться в
                   ротовой полости и вызывать серьёзные последствия. Именно поэтому при первых симптомах нужно обращаться
@@ -130,8 +131,8 @@ Template post type: services
                 </div>
               </div>
             </div>
-            <div class="desna-disease__item">
-              <div class="desna-disease__text">
+            <div class="services-types__item">
+              <div class="services-types__text">
                 <h4>Пародонтит</h4>
                 <p>Это воспалительное поражение окружающих тканей зуба, приводящее к нарушению и ослаблению связочного
                   аппарата зуба, что может привести к патологической сдвигаемости и расшатыванию зубов.</p>
@@ -140,18 +141,18 @@ Template post type: services
                   небольших “карманов”, в которых скапливается большое количество бактерий, провоцирующих инфекцию.</span>
                   Как последствие - расшатывание зуба и дальнейшее выпадение. </p>
               </div>
-              <div class="desna-disease__img img">
+              <div class="services-types__img img">
                 <img src="<?php echo IMAGES_PATH ?>/desna2.png" alt="Пародонтит">
               </div>
-              <div class="container container_sm">
+              <div class="container container_small">
                 <div class="warning">
                   Основной причиной возникновения является скопление зубного налета, который затвердевает и образует
                   зубной камень. Для профилактики рекомендуется регулярно проводить профессиональную чистку полости рта
                 </div>
               </div>
             </div>
-            <div class="desna-disease__item">
-              <div class="desna-disease__text">
+            <div class="services-types__item">
+              <div class="services-types__text">
                 <h4>Флюс</h4>
                 <p>Воспалительное поражение надкостницы зуба. Заболевание, называющееся также периостит, имеет
                   инфекционное происхождение, развивается, когда во внутренние ткани зуба или карман десны забиваются
@@ -159,7 +160,7 @@ Template post type: services
                   гноя. Гнойный мешок расширяется, достигает надкостницы, вызывая отек и распухание мягких тканей десны
                   и внутренней стороны щеки.</p>
               </div>
-              <div class="desna-disease__img img">
+              <div class="services-types__img img">
                 <img src="<?php echo IMAGES_PATH ?>/desna1.png" alt="Флюс">
               </div>
             </div>
@@ -274,7 +275,7 @@ Template post type: services
                     <a href="<?php the_permalink(); ?>" class="services__slider-link button button-blue">
                       <span>подробнее</span>
                       <svg>
-                        <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-home.svg#arrow-right-top"></use>
+                        <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-common.svg#arrow-right-top"></use>
                       </svg>
                     </a>
                     <?php if (has_post_thumbnail()): ?>
@@ -295,21 +296,21 @@ Template post type: services
         </div>
       </div>
       <?php $faq = get_field('faq') ?>
-      <?php if ($faq) ?>
-      <div class="block faq">
-        <div class="container">
-          <h2>Ответы на часто задаваемые вопросы</h2>
-          <div class="faq__wrap">
-            <?php while (have_rows('faq')) : the_row() ?>
-              <div class="faq__block">
-                <div class="faq__question"><?php the_sub_field('question'); ?></div>
-                <div class="faq__answer"><?php the_sub_field('answer'); ?></div>
-              </div>
-            <?php endwhile; ?>
+      <?php if ($faq): ?>
+        <div class="block faq">
+          <div class="container">
+            <h2>Ответы на часто задаваемые вопросы</h2>
+            <div class="faq__wrap">
+              <?php while (have_rows('faq')) : the_row() ?>
+                <div class="faq__block">
+                  <div class="faq__question"><?php the_sub_field('question'); ?></div>
+                  <div class="faq__answer"><?php the_sub_field('answer'); ?></div>
+                </div>
+              <?php endwhile; ?>
+            </div>
           </div>
         </div>
-      </div>
-      <?php ?>
+      <?php endif; ?>
     </div>
   </main>
 <?php get_template_part('template-parts/footer/footer'); ?>

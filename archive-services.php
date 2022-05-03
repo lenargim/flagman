@@ -66,7 +66,12 @@
                       <?php endwhile; ?>
                     </ul>
                   <?php endif; ?>
-                  <a href="<?php the_permalink(); ?>" class="button button-white">Подробнее</a>
+                  <a href="<?php the_permalink(); ?>" class="button button-white">
+                    <span>Подробнее</span>
+                    <svg>
+                      <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-common.svg#arrow-right-top"></use>
+                    </svg>
+                  </a>
                 </div>
               <?php endwhile; ?>
             </div>

@@ -104,7 +104,7 @@ Template post type: services
           </div>
           <div class="services-detailed__aside">
             <div class="burning__box">
-              <div class="burning__box-title">Каких проблем можно избежать, если своевременно лечить кариес</div>
+              <h4>Каких проблем можно избежать, если своевременно лечить кариес</h4>
               <div class="burning__box-item">
                 <svg>
                   <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-heal.svg#check"></use>
@@ -131,7 +131,7 @@ Template post type: services
               </div>
             </div>
             <div class="burning__box">
-              <div class="burning__box-title">Причины появления кариеса</div>
+              <h4>Причины появления кариеса</h4>
               <div class="burning__box-item">
                 <svg>
                   <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-heal.svg#check"></use>
@@ -282,7 +282,7 @@ Template post type: services
                     <a href="<?php the_permalink(); ?>" class="services__slider-link button button-blue">
                       <span>подробнее</span>
                       <svg>
-                        <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-home.svg#arrow-right-top"></use>
+                        <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-common.svg#arrow-right-top"></use>
                       </svg>
                     </a>
                     <?php if (has_post_thumbnail()): ?>
@@ -306,7 +306,7 @@ Template post type: services
         <?php get_template_part('template-parts/expectation'); ?>
       </div>
       <?php $faq = get_field('faq') ?>
-      <?php if ($faq) ?>
+      <?php if ($faq): ?>
       <div class="block faq">
         <div class="container">
           <h2>Ответы на часто задаваемые вопросы</h2>
@@ -320,7 +320,7 @@ Template post type: services
           </div>
         </div>
       </div>
-      <?php ?>
+      <?php endif; ?>
     </div>
   </main>
 <?php get_template_part('template-parts/footer/footer'); ?>

@@ -102,3 +102,40 @@
     @include max($tabletV - 1)
       width: 240px
       height: 50px
+.reviews-page
+  padding: 200px 0 120px
+  background: $bgLight
+  &__desc
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    gap: 35px
+    padding-bottom: 50px
+  &__text
+    max-width: 700px
+    p:not(:last-child)
+      padding-bottom: 20px
+  &__img
+    border-radius: 30px
+  &__rating
+    padding: 50px 0
+    background: $white
+  &__wrap
+    margin: 90px 0 50px
+    display: grid
+    grid-gap: 30px
+    grid-template-columns: 1fr
+  &__item
+    border-radius: 30px
+    background: $bgLight
+    padding: 50px 30px
+  &__link
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+    width: 320px
+    svg
+      width: 12px
+      height: 12px
+      fill: transparent
+      stroke: $blue

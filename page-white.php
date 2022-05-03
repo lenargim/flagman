@@ -175,7 +175,7 @@ Template post type: services
         <?php get_template_part('template-parts/callback'); ?>
       </div>
       <?php $faq = get_field('faq') ?>
-      <?php if ($faq) ?>
+      <?php if ($faq): ?>
       <div class="block faq">
         <div class="container">
           <h2>Ответы на часто задаваемые вопросы</h2>
@@ -189,7 +189,7 @@ Template post type: services
           </div>
         </div>
       </div>
-      <?php ?>
+      <?php endif; ?>
     </div>
   </main>
 <?php get_template_part('template-parts/footer/footer'); ?>

@@ -121,6 +121,10 @@ h4
   font: 800 20px/27px $mainFont
   letter-spacing: 0.02em
   margin: 0 0 30px
+  @include max($tabletV - 1)
+    font-size: 15px
+    line-height: 20px
+    margin-bottom: 18px
 blockquote
   margin: 0 0 50px
   letter-spacing: 0.02em
@@ -134,6 +138,7 @@ blockquote
   align-items: center
   justify-content: center
   overflow: hidden
+  flex-shrink: 0
 
   img, picture
     width: 100%
@@ -332,6 +337,29 @@ img::selection
       margin: 0 auto
       width: 100%
       max-width: 300px
+.smile
+  background: linear-gradient(267.27deg, #117DC1 2.73%, #7C598C 112.12%)
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+  padding: 42px 100px 17px
+  border-radius: 30px
+  position: relative
+  top: -30px
+  display: grid
+  grid-template-columns: repeat(3, 310px)
+  grid-gap: 135px
+  color: $white
+  font: 400 17px/25px $mainFont
+  &__item
+    position: relative
+    h4
+      margin-bottom: 6px
+    svg
+      width: 60px
+      height: 60px
+      position: absolute
+      top: -32px
+      left: 0
+      fill: rgba(255, 255, 255, 0.3)
 .blue
   color: $blue
 .equipment
@@ -363,3 +391,17 @@ img::selection
     height: 25px
     background: url("./assets/images/lead.png") no-repeat
     background-size: cover
+.pros
+  li
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 20px
+    &:not(:last-of-type)
+      margin-bottom: 20px
+    &::before
+      content: ''
+      width: 20px
+      height: 20px
+      background: url("./assets/images/sprite-content/pros.svg") center/contain no-repeat
+      flex-shrink: 0
