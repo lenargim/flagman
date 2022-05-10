@@ -728,11 +728,7 @@ function my_theme_enqueue_scripts()
 
   if (
           is_page_template('home.php') ||
-          is_page_template('page-heal.php') ||
-          is_page_template('page-desna.php') ||
-          is_page_template('page-remove.php') ||
-          is_page_template('page-vinir.php') ||
-          is_page_template('page-protez.php')
+          is_singular('services')
   ) {
     wp_enqueue_style('swiper-styles', 'https://unpkg.com/swiper@8/swiper-bundle.min.css');
     wp_enqueue_script('swiper-lib', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array('jquery'));

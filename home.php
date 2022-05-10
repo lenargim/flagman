@@ -130,7 +130,7 @@
               <?php while (have_rows('burning-box')) : the_row(); ?>
                 <div class="burning__box-item">
                   <svg>
-                    <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-home.svg#check"></use>
+                    <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#check"></use>
                   </svg>
                   <?php the_sub_field('text') ?>
                 </div>

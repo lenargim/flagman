@@ -106,7 +106,7 @@ h1
 h2, h3
   font: 800 34px/50px $mainFont
   letter-spacing: 0.02em
-  margin-bottom: 50px
+  margin-bottom: 30px
   @include between($tabletG, $netbook)
     font: 800 30px/44px $mainFont
     margin-bottom: 40px
@@ -189,6 +189,12 @@ img::selection
   position: relative
 .bold
   font-weight: 700
+.uppercase
+  text-transform: uppercase
+.blue
+  color: $blue
+.block
+  margin-top: 120px
 .button
   display: flex
   align-items: center
@@ -303,16 +309,13 @@ img::selection
       .button
         width: 240px
         height: 50px
-.block
-  margin-top: 120px
-
 .signature
   background: linear-gradient(267.27deg, #117DC1 2.73%, #7C598C 112.12%)
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
-  padding: 58px 100px
+  padding: 50px 100px
   border-radius: 30px
   position: relative
-  top: -30px
+  top: -50px
   display: flex
   align-items: center
   justify-content: flex-start
@@ -360,8 +363,6 @@ img::selection
       top: -32px
       left: 0
       fill: rgba(255, 255, 255, 0.3)
-.blue
-  color: $blue
 .equipment
   background: $bgLight
   &__wrap
@@ -405,3 +406,6 @@ img::selection
       height: 20px
       background: url("./assets/images/sprite-content/pros.svg") center/contain no-repeat
       flex-shrink: 0
+.youtube
+  width: 100%
+  height: 680px

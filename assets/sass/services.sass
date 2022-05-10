@@ -222,6 +222,8 @@
       left: 50%
       transform: translateX(-50%)
   &__advantages
+    &-desc
+      margin-bottom: 30px
     &-item
       display: flex
       align-items: flex-start
@@ -266,7 +268,6 @@
     padding: 10px 15px
   &-title
     font: 800 20px/25px $mainFont
-    margin-bottom: 10px
   &-occupation
     font: 400 12px/16px $mainFont
   &-exp
@@ -388,7 +389,7 @@
     svg
       width: 37px
       height: 37px
-      fill: #114669
+      fill: $darkBlue
   &__img
     border-radius: 30px
     max-width: 530px
@@ -462,10 +463,356 @@
       position: absolute
       left: 0
       bottom: 0
-      width: 250px
+      width: 222px
       height: 170px
       background: url("./assets/images/protez8.png") no-repeat
     &-text
       max-width: 450px
+    &-link
+      width: 280px
+      svg
+        width: 12px
+        height: 12px
+        fill: transparent
+        stroke: $blue
     h2
+      line-height: 1
+      letter-spacing: initial
       margin-bottom: 10px
+    &_children
+      margin-top: 50px
+      .protez__info:after
+        background: url("./assets/images/protez8.png") no-repeat
+.airflow
+  background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+  border-radius: 50px
+  position: relative
+  padding: 50px 100px 250px
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  gap: 30px
+  &__img
+    max-width: 530px
+    border-radius: 50px
+  &__wrap
+    width: 100%
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 30px
+  &__text
+    max-width: 600px
+  &__item
+    background: $white
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25)
+    border-radius: 20px
+    padding: 20px 20px 25px
+    &-title
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 20px
+      margin-bottom: 20px
+    svg
+      width: 43px
+      height: 43px
+      fill: $darkBlue
+    h4
+      margin-bottom: 0
+  &__after
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    background: $white
+    border-radius: 50px
+    padding: 30px 100px 30px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 120px
+    &-title
+      max-width: 600px
+      font: 800 34px/50px $mainFont
+      margin-bottom: 13px
+      display: inline-block
+      .price
+        letter-spacing: 0.1em
+        font: 800 40px/1 $mainFont
+        background: linear-gradient(180deg, #117DC1 0%, #7C598C 100%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        display: inline-block
+        margin-left: 1em
+    &-box
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      grid-gap: 30px
+    &-feature
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 10px
+      white-space: nowrap
+      font-weight: 800
+      &::before
+        content: ''
+        width: 6px
+        height: 6px
+        border-radius: 50%
+        border: 2px solid $black
+.implant
+  h2
+    margin-bottom: 60px
+  &__list
+    margin-left: auto
+    list-style-type: none
+    counter-reset:  item
+    max-width: 810px
+    display: flex
+    flex-direction: column
+    gap: 160px
+  &__item
+    position: relative
+    &:before
+      content: '0'counter(item)
+      counter-increment: item
+      font: 800 60px/65px $mainFont
+      color: $blue
+      opacity: 0.3
+      position: absolute
+      left: 0
+      top: -0.5em
+    &-img
+      width: 270px
+      height: 107px
+    &-info
+      display: grid
+      grid-template-columns: 1fr 270px
+      grid-gap: 50px
+  &__after
+    position: relative
+    color: $white
+    display: flex
+    gap: 100px
+    align-items: flex-end
+    justify-content: flex-start
+    background: linear-gradient(267.27deg, #117DC1 2.73%, #7C598C 112.12%)
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+    border-radius: 50px
+    padding: 50px 100px
+    &-price
+      font: 800 60px/65px $mainFont
+      background: linear-gradient(180deg, #F7C70A 0%, #FFFFFF 81.56%)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      &::selection
+        -webkit-text-fill-color: $white
+
+    &::after
+      content: ''
+      position: absolute
+      right: 0
+      top: 0
+      bottom: 0
+      aspect-ratio: 376/200
+      background: url("./assets/images/implant5.png") center/cover no-repeat
+    h3
+      margin-bottom: 0
+  &__slider
+    position: relative
+    margin-bottom: 30px
+    &-pagination
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 50px
+      margin-bottom: 50px
+      .button
+        display: flex !important
+        background: $white !important
+        opacity: 1 !important
+        width: 280px
+        height: 70px
+        color: $blue
+        border: 1px solid #1F79B5
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+        border-radius: 15px
+        &.active
+          background: #e3e3e3 !important
+    &-wrap
+      display: flex
+      align-items: flex-start
+      justify-content: flex-start
+      gap: 120px
+    &-img
+      border-radius: 30px
+    &-item
+      background: $white
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25)
+      border-radius: 50px
+      padding: 50px 100px
+      opacity: 0
+      transition: opacity 0.3s ease-out
+      &.swiper-slide-visible
+        opacity: 1
+    &-desc
+      margin-bottom: 50px
+    &-feature
+      &-wrap
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        gap: 70px
+        margin-bottom: 50px
+      &-img
+        display: block
+        margin-bottom: 10px
+    &-box
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 80px
+      margin-bottom: 50px
+      &-item
+        width: 320px
+        display: flex
+        align-items: flex-start
+        justify-content: flex-start
+        gap: 20px
+        font-weight: 800
+      svg
+        width: 50px
+        height: 50px
+        fill: transparent
+    &-arrows
+      .swiper-arrow
+        width: 35px
+        height: 35px
+        background: linear-gradient(180deg, #1F79B5 0%, #7C598C 100%)
+        border-radius: 50%
+        position: absolute
+        top: 550px
+        z-index: 2
+      .swiper-prev
+        left: 30px
+      .swiper-next
+        right: 30px
+        transform: rotate(180deg)
+      .swiper-button-disabled
+        opacity: 0.5
+  &__prices
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    gap: 20px
+    &-item
+      background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+      border-radius: 50px
+      padding: 20px 0 30px
+    h4
+      margin-bottom: 0
+    .country
+      font: 400 14px/21px $mainFont
+    &-top
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding: 0 30px 15px
+    .flag
+      width: 30px
+      height: 30px
+    &-free
+      font: 800 17px/40px $mainFont
+      background: $blue
+      text-align: center
+      text-transform: uppercase
+      color: $white
+    &-box
+      padding: 15px 30px 30px
+      display: flex
+      flex-direction: column
+      gap: 12px
+    &-row
+      display: flex
+      align-items: flex-end
+      justify-content: space-between
+      gap: 100px
+      padding-bottom: 10px
+      border-bottom: 1px solid $border
+      span:first-child
+        font: 200 14px/1 $mainFont
+      span:last-child
+        font: 800 14px/1 $mainFont
+        white-space: nowrap
+    &-total
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: 100px
+      padding: 0 30px
+      color: $darkBlue
+      span:first-child
+        font: 800 14px/1 $mainFont
+      span:last-child
+        font: 800 20px/1.5 $mainFont
+        white-space: nowrap
+    &-old-price
+      font: 400 17px/1 $mainFont
+      text-decoration: line-through
+      padding: 0 30px 5px
+      text-align: right
+    &-notification
+      margin: 20px 60px 0
+      border-radius: 20px
+      background: $blue
+      color: $white
+      text-transform: uppercase
+      font: 800 14px/20px $mainFont
+      text-align: center
+  &__info
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    gap: 1em
+    &-text
+      max-width: 600px
+    &-box
+      padding: 50px 17px
+      background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+      border-radius: 30px
+    &-row
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: 100px
+      white-space: nowrap
+      &:not(:last-child)
+        margin-bottom: 14px
+    &-after
+      position: relative
+      padding: 50px
+      background: linear-gradient(267.27deg, #117DC1 2.73%, #7C598C 112.12%)
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+      border-radius: 50px
+      color: $white
+      display: flex
+      align-items: center
+      justify-content: flex-end
+      gap: 137px
+      &::after
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        bottom: 0
+        aspect-ratio: 212/170
+        background: url("./assets/images/implant-after.png") center/contain no-repeat
+      &-title
+        width: 502px
+        font: 800 34px/1 $mainFont
+      .button
+        width: 280px

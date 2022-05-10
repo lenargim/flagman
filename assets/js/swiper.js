@@ -4,6 +4,7 @@ $(document).ready(function () {
   const banner = new Swiper('.banner-slider', {
     loop: true,
     preloadImages: false,
+    allowTouchMove: false,
     lazy: {
       loadOnTransitionStart: true,
     },
@@ -12,7 +13,7 @@ $(document).ready(function () {
       type: 'bullets',
       bulletClass: 'pagination__item',
       bulletActiveClass: 'pagination__item_active',
-      clickable: true,
+        clickable: true,
     },
     breakpoints: {
       320: {
@@ -63,8 +64,6 @@ $(document).ready(function () {
     }
   });
 
-
-
   const healSlider = new Swiper('.services__slider', {
     loop: true,
     preloadImages: false,
@@ -91,5 +90,33 @@ $(document).ready(function () {
         slidesPerView: 3,
       }
     }
+  });
+
+  const implantSlider = new Swiper('.implant__slider', {
+    loop: false,
+    preloadImages: false,
+    slidesPerView: 1,
+    allowTouchMove: false,
+    lazy: {
+      loadOnTransitionStart: true,
+    },
+    navigation: {
+      nextEl: '.swiper-next',
+      prevEl: '.swiper-prev',
+    },
+    watchSlidesProgress: true,
+    spaceBetween: 50,
+    pagination: {
+      el: '.implant__slider-pagination',
+      type: 'custom',
+      clickable: true,
+      currentClass: 'active',
+    },
+  });
+
+  implantSlider.on('slideChange', function () {
+    let pagItem = $('.implant__slider-pagination .button');
+    pagItem.removeClass('active');
+    pagItem.eq(implantSlider.activeIndex ).addClass('active')
   });
 });
