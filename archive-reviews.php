@@ -94,9 +94,7 @@
           </a>
         </div>
       </div>
-      <div class="block">
         <?php get_template_part('template-parts/callback'); ?>
-      </div>
     </div>
   </main>
-<?php get_template_part('template-parts/footer/footer'); ?>
+<?php get_template_part('template-parts/footer'); ?>

@@ -3,7 +3,7 @@
 ?>
 
 <?php get_template_part('template-parts/header/header'); ?>
-  <main class="home">
+  <main>
     <section class="banner">
       <div class="container">
         <?php if (have_rows('banner')): ?>
@@ -112,8 +112,9 @@
                     <?php if ($name): ?>
                       <div class="burning__item-name burning__item-padding"><?php echo $name; ?></div>
                     <?php endif; ?>
-                    <button class="burning__item-button button button-blue open-callback" <?php if (!$is_active): ?>disabled <?php endif; ?>
-                         data-title="<?php echo 'Горящее время: ' . $title . '. ' . $ru_date . ', ' . $time . '. ' . $name ?>">
+                    <button class="burning__item-button button button-blue open-callback"
+                            <?php if (!$is_active): ?>disabled <?php endif; ?>
+                            data-title="<?php echo 'Горящее время: ' . $title . '. ' . $ru_date . ', ' . $time . '. ' . $name ?>">
                       Забронировать
                     </button>
                     <?php if ($href): ?>
@@ -182,7 +183,7 @@
           все отзывы</a>
       </div>
     </section>
-    <section class="services">
+    <section class="services block">
       <div class="container">
         <h2>Популярные<br>стоматологические услуги</h2>
         <div class="services__wrap">
@@ -200,7 +201,7 @@
                 <div class="services__item-title"><?php the_field('short-title'); ?></div>
               <?php else: ?>
                 <div class="services__item-title"><?php the_title() ?></div>
-            <?php endif; ?>
+              <?php endif; ?>
             </a>
             <?php
           }
@@ -220,7 +221,7 @@
     </section>
     <?php get_template_part('template-parts/callback'); ?>
     <?php if (get_field('text-block')): ?>
-      <section class="home__text">
+      <section class="home__text block">
         <div class="container">
           <div class="home__text-wrap">
             <?php while (have_rows('text-block')) : the_row() ?>
@@ -245,74 +246,42 @@
           </div>
         </div>
       </section>
-      <section class="doctors">
-        <div class="container">
-          <h2>Наши стоматологи помогут решить самую сложную проблему с зубами</h2>
-          <blockquote class="tabletG-and-more">
-            <svg>
-              <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-home.svg#quote"></use>
-            </svg>
-            <span>Наши врачи- наша гордость!</span>
-          </blockquote>
-          <div class="doctors__desc tabletG-and-more">Мы очень ответственно подходим к выбору врачей и гордимся нашей
-            командой. В клинике
-            “Флагманстом” работают только высококвалифицированные специалисты, поэтому мы даём гарантию на все работы
-            специалистов и всегда отвечаем за результат
-          </div>
-          <div class="doctors__quotename tabletG-and-more">
-            Главный врач<br>
-            Гильфанов Динар Мансурович
-          </div>
-          <div class="doctors__slider">
-            <div class="swiper-wrapper">
-              <?php global $post;
-              $myposts = get_posts([
-                  'posts_per_page' => -1,
-                  'post_type' => 'doctors',
-                  'meta_key' => 'lead-doc',
-                  'meta_value' => true
-              ]);
-              foreach ($myposts as $post) {
-                setup_postdata($post);
-                ?>
-                <a href="<?php the_permalink(); ?>" class="doctors__item doctors__item_big swiper-slide">
-                  <div class="doctors__item-wrap">
-                    <div class="lead">
-                      <span>Ведущий врач</span>
-                    </div>
-                    <?php
-                    $title = get_the_title();
-                    $surname = strtok($title, " ");
-                    ?>
-                    <div class="doctors__item-title">
-                      <div class="surname"><?php echo $surname ?></div>
-                      <?php echo str_replace($surname, '', $title) ?>
-                    </div>
-                    <div class="doctors__item-occupation"><?php the_field('spec'); ?></div>
-                    <div class="doctors__item-exp">Опыт работы: <?php the_field('exp'); ?></div>
-                    <div class="doctors__item-excerpt"><?php the_excerpt(); ?></div>
-                  </div>
-                  <?php if (has_post_thumbnail()): ?>
-                    <div class="doctors__item-img img"><img src="<?php echo get_the_post_thumbnail_url() ?>" alt="">
-                    </div>
-                  <?php endif; ?>
-                </a>
-                <?php
-              }
-              wp_reset_postdata();
+    <?php endif; ?>
+    <section class="doctors block">
+      <div class="container">
+        <h2>Наши стоматологи помогут решить самую сложную проблему с зубами</h2>
+        <blockquote class="tabletG-and-more">
+          <svg>
+            <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-home.svg#quote"></use>
+          </svg>
+          <span>Наши врачи- наша гордость!</span>
+        </blockquote>
+        <div class="doctors__desc tabletG-and-more">Мы очень ответственно подходим к выбору врачей и гордимся нашей
+          командой. В клинике
+          “Флагманстом” работают только высококвалифицированные специалисты, поэтому мы даём гарантию на все работы
+          специалистов и всегда отвечаем за результат
+        </div>
+        <div class="doctors__quotename tabletG-and-more">
+          Главный врач<br>
+          Гильфанов Динар Мансурович
+        </div>
+        <div class="doctors__slider">
+          <div class="swiper-wrapper">
+            <?php global $post;
+            $myposts = get_posts([
+                'posts_per_page' => -1,
+                'post_type' => 'doctors',
+                'meta_key' => 'lead-doc',
+                'meta_value' => true
+            ]);
+            foreach ($myposts as $post) {
+              setup_postdata($post);
               ?>
-              <?php global $post;
-              $myposts = get_posts([
-                  'posts_per_page' => -1,
-                  'post_type' => 'doctors',
-                  'meta_key' => 'lead-doc',
-                  'meta_value' => '0'
-              ]);
-              foreach ($myposts as $post) {
-                setup_postdata($post);
-                ?>
-
-                <a href="<?php the_permalink(); ?>" class="doctors__item doctors__item_small swiper-slide">
+              <a href="<?php the_permalink(); ?>" class="doctors__item doctors__item_big swiper-slide">
+                <div class="doctors__item-wrap">
+                  <div class="lead">
+                    <span>Ведущий врач</span>
+                  </div>
                   <?php
                   $title = get_the_title();
                   $surname = strtok($title, " ");
@@ -321,26 +290,60 @@
                     <div class="surname"><?php echo $surname ?></div>
                     <?php echo str_replace($surname, '', $title) ?>
                   </div>
-                  <div class="doctors__item-wrap">
-                    <div class="doctors__item-occupation"><?php the_field('spec'); ?></div>
-                    <div class="doctors__item-exp">Опыт работы: <?php the_field('exp'); ?></div>
+                  <div class="doctors__item-occupation"><?php the_field('spec'); ?></div>
+                  <div class="doctors__item-exp">Опыт работы: <?php the_field('exp'); ?></div>
+                  <div class="doctors__item-excerpt"><?php the_excerpt(); ?></div>
+                </div>
+                <?php if (has_post_thumbnail()): ?>
+                  <div class="doctors__item-img img"><img src="<?php echo get_the_post_thumbnail_url() ?>" alt="">
                   </div>
-                  <?php if (has_post_thumbnail()): ?>
-                    <div class="doctors__item-img img"><img src="<?php echo get_the_post_thumbnail_url() ?>" alt="">
-                    </div>
-                  <?php endif; ?>
-                </a>
-                <?php
-              }
-              wp_reset_postdata();
+                <?php endif; ?>
+              </a>
+              <?php
+            }
+            wp_reset_postdata();
+            ?>
+            <?php global $post;
+            $myposts = get_posts([
+                'posts_per_page' => -1,
+                'post_type' => 'doctors',
+                'meta_key' => 'lead-doc',
+                'meta_value' => '0'
+            ]);
+            foreach ($myposts as $post) {
+              setup_postdata($post);
               ?>
-            </div>
-            <div class="pagination"></div>
+
+              <a href="<?php the_permalink(); ?>" class="doctors__item doctors__item_small swiper-slide">
+                <?php
+                $title = get_the_title();
+                $surname = strtok($title, " ");
+                ?>
+                <div class="doctors__item-title">
+                  <div class="surname"><?php echo $surname ?></div>
+                  <?php echo str_replace($surname, '', $title) ?>
+                </div>
+                <div class="doctors__item-wrap">
+                  <div class="doctors__item-occupation"><?php the_field('spec'); ?></div>
+                  <div class="doctors__item-exp">Опыт работы: <?php the_field('exp'); ?></div>
+                </div>
+                <?php if (has_post_thumbnail()): ?>
+                  <div class="doctors__item-img img"><img src="<?php echo get_the_post_thumbnail_url() ?>" alt="">
+                  </div>
+                <?php endif; ?>
+              </a>
+              <?php
+            }
+            wp_reset_postdata();
+            ?>
           </div>
-          <a href="/doctors" class="doctors__all button button-white">показать всех врачей</a>
+          <div class="pagination"></div>
         </div>
-      </section>
+        <a href="/doctors" class="doctors__all button button-white">показать всех врачей</a>
+      </div>
+    </section>
+    <div class="block">
       <?php get_template_part('template-parts/expectation'); ?>
-    <?php endif; ?>
+    </div>
   </main>
-<?php get_template_part('template-parts/footer/footer'); ?>
+<?php get_template_part('template-parts/footer'); ?>

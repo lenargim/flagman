@@ -727,8 +727,8 @@ function my_theme_enqueue_scripts()
   wp_enqueue_script('main-scripts', get_template_directory_uri() . '/main.min.js', array('jquery'));
 
   if (
-          is_page_template('home.php') ||
-          is_singular('services')
+      is_page_template('home.php') ||
+      is_singular('services')
   ) {
     wp_enqueue_style('swiper-styles', 'https://unpkg.com/swiper@8/swiper-bundle.min.css');
     wp_enqueue_script('swiper-lib', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array('jquery'));
@@ -958,3 +958,13 @@ add_filter('wpcf7_form_elements', function ($html) {
 
 });
 
+add_filter('acf_archive_post_types', 'change_acf_archive_cpt');
+function change_acf_archive_cpt($cpts)
+{
+  // Remove cpt
+  unset($cpts['sale']);
+  unset($cpts['services']);
+  unset($cpts['reviews']);
+  unset($cpts['examples']);
+  return $cpts;
+}

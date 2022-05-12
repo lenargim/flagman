@@ -1,10 +1,4 @@
 .doctors
-  padding-bottom: 120px
-  background: $bgLight
-  @include between($tabletV, $netbook)
-    padding-bottom: 80px
-  @include max($tabletV - 1)
-    padding-bottom: 70px
   blockquote svg
     width: 30px
     height: 30px
@@ -42,9 +36,7 @@
       @include min($netbook)
         padding: 30px
         width: calc(50% - 25px)
-      @include between($tabletG, $netbook)
-        padding: 25px
-        width: calc(50% - 15px)
+      .doctors__item
         &-title
           font: 800 20px/25px $mainFont
           margin-bottom: 3px
@@ -54,6 +46,9 @@
           font: 200 14px/25px $mainFont
         &-excerpt
           margin: 8px 0 100px
+      @include between($tabletG, $netbook)
+        padding: 25px
+        width: calc(50% - 15px)
     &_small
       color: $black
       @include min($netbook)
@@ -124,7 +119,6 @@
       width: 240px
       margin-top: 50px
 .doctors-page
-  padding: 195px 0 120px
   &__desc
     margin-bottom: 50px
   &__box

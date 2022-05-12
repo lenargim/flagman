@@ -1,10 +1,4 @@
 .services
-  background: $bgLight
-  padding: 100px 0 160px
-  @include between($tabletG, $netbook)
-    padding: 80px 0 120px
-  @include max($tabletG - 1)
-    padding: 80px 0
   &__wrap
     display: grid
     grid-template-columns: repeat(4, 1fr)
@@ -65,7 +59,6 @@
       @include max($tabletV - 1)
         display: none
 .services-block
-  padding: 200px 0 120px
   background-color: $bgLight
   &__wrap
     display: flex
@@ -111,15 +104,13 @@
   .form__submit
     margin-bottom: 10px
 .services-detailed
-  padding: 195px 0 120px
-  background: $bgLight
   &__wrap
     display: grid
-    grid-gap: 50px
-    grid-template-columns: 1fr 400px
+    grid-gap: 100px
+    grid-template-columns: 700px 1fr
   &__white-wrap
     display: flex
-    gap: 50px
+    gap: 60px
     align-items: flex-start
     justify-content: flex-end
     margin-bottom: 50px
@@ -141,6 +132,7 @@
     &-img
       flex-shrink: 0
       border-radius: 30px
+      max-width: 530px
     &-last
       display: flex
       align-items: center
@@ -159,35 +151,6 @@
     display: flex
     flex-direction: column
     gap: 170px
-  &__cite
-    background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
-    border-radius: 50px
-    padding: 50px 100px 80px
-    position: relative
-    &-title
-      display: flex
-      align-items: center
-      justify-content: flex-start
-      gap: 30px
-      svg
-        width: 30px
-        height: 30px
-        fill: $purple
-        flex-shrink: 0
-    &-desc
-      margin-bottom: 50px
-      p:not(:last-child)
-        margin-bottom: 20px
-    &-name
-      font-weight: 200
-    &-img
-      position: absolute
-      right: 100px
-      bottom: 0
-      max-height: 100%
-    &-limit
-      max-width: 700px
   &__steps
     &-desc
       font-weight: 800
@@ -214,13 +177,6 @@
         font: 800 14px/17px $mainFont
     &-title
         margin-bottom: 24px
-  &__doctors
-    padding-top: 60px
-    &-all
-      margin-top: 100px
-      position: relative
-      left: 50%
-      transform: translateX(-50%)
   &__advantages
     &-desc
       margin-bottom: 30px
@@ -248,6 +204,42 @@
       display: grid
       grid-template-columns: repeat(2,1fr)
       grid-gap: 50px 60px
+  &__doctors
+    margin-top: 120px
+    &-all
+      margin-top: 100px
+      position: relative
+      left: 50%
+      transform: translateX(-50%)
+.cite
+  background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
+  border-radius: 50px
+  padding: 50px 100px 80px
+  position: relative
+  &__title
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 30px
+    svg
+      width: 30px
+      height: 30px
+      fill: $purple
+      flex-shrink: 0
+  &__desc
+    margin-bottom: 50px
+    p:not(:last-child)
+      margin-bottom: 20px
+  &__name
+    font-weight: 200
+  &__img
+    position: absolute
+    right: 100px
+    bottom: 0
+    max-height: 100%
+  &__limit
+    max-width: 700px
 .services__slider
   position: relative
   &-item
@@ -572,7 +564,7 @@
     max-width: 810px
     display: flex
     flex-direction: column
-    gap: 160px
+    gap: 114px
   &__item
     position: relative
     &:before
@@ -602,6 +594,8 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
     border-radius: 50px
     padding: 50px 100px
+    h3
+      max-width: 592px
     &-price
       font: 800 60px/65px $mainFont
       background: linear-gradient(180deg, #F7C70A 0%, #FFFFFF 81.56%)
@@ -628,7 +622,7 @@
       align-items: center
       justify-content: center
       gap: 50px
-      margin-bottom: 50px
+      margin-bottom: 30px
       .button
         display: flex !important
         background: $white !important
@@ -658,6 +652,7 @@
       &.swiper-slide-visible
         opacity: 1
     &-desc
+      min-height: 150px
       margin-bottom: 50px
     &-feature
       &-wrap
@@ -686,6 +681,24 @@
         width: 50px
         height: 50px
         fill: transparent
+    &-adv
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 20px
+      &::before
+        content: ''
+        width: 20px
+        height: 20px
+        background: url("./assets/images/sprite-content/pros.svg") center/cover no-repeat
+        flex-shrink: 0
+      &-wrap
+        margin-bottom: 36px
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+        gap: 20px
     &-arrows
       .swiper-arrow
         width: 35px
@@ -693,7 +706,7 @@
         background: linear-gradient(180deg, #1F79B5 0%, #7C598C 100%)
         border-radius: 50%
         position: absolute
-        top: 550px
+        top: calc(50% - 50px)
         z-index: 2
       .swiper-prev
         left: 30px
@@ -816,3 +829,19 @@
         font: 800 34px/1 $mainFont
       .button
         width: 280px
+.gigiena
+  ul
+    margin-top: 30px
+  li
+    display: flex
+    align-items: center
+    gap: 20px
+    &:not(:last-child)
+      margin-bottom: 20px
+    &::before
+      content: ''
+      width: 7px
+      height: 7px
+      border-radius: 50%
+      background: $purple
+      flex-shrink: 0

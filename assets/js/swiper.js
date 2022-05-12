@@ -64,8 +64,8 @@ $(document).ready(function () {
     }
   });
 
-  const healSlider = new Swiper('.services__slider', {
-    loop: true,
+  const servicesSlider = new Swiper('.services__slider', {
+    loop: false,
     preloadImages: false,
     lazy: {
       loadOnTransitionStart: true,
