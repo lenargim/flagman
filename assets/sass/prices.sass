@@ -22,3 +22,51 @@
     max-width: 800px
   &__extra
     margin-top: 45px
+.price-page
+  &__wrap
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    gap: 30px
+  &__text
+    display: flex
+    flex-direction: column
+    gap: 120px
+  &__box
+    &-title
+      text-align: center
+      color: $white
+      font: 800 20px/25px $mainFont
+      padding: 8px
+      background: linear-gradient(267.27deg, #117DC1 2.73%, #7C598C 112.12%)
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
+      border-radius: 10px
+      margin-bottom: 30px
+    &-list
+      display: flex
+      flex-direction: column
+      gap: 15px
+      position: relative
+      &::after
+        content: ''
+        width: 1px
+        height: calc(100% + 20px)
+        position: absolute
+        right: 110px
+        top: -10px
+        background: $border
+    &-item
+      display: flex
+      align-items: flex-end
+      justify-content: space-between
+      gap: 1em
+      border-bottom: 1px solid $border
+      span
+        &:first-child
+          width: 655px
+          padding-left: 5px
+        &:last-child
+          width: 110px
+          padding-right: 10px
+          text-align: right
+          white-space: nowrap

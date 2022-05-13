@@ -5,6 +5,7 @@ $(document).ready(function () {
     loop: true,
     preloadImages: false,
     allowTouchMove: false,
+    watchSlidesProgress: true,
     lazy: {
       loadOnTransitionStart: true,
     },
@@ -21,7 +22,7 @@ $(document).ready(function () {
         navigation: false
       },
       768: {
-        spaceBetween: windowWidth - slideWidth,
+        spaceBetween: 100,
         navigation: {
           nextEl: '.swiper-next',
           prevEl: '.swiper-prev',

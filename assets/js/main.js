@@ -71,4 +71,22 @@ $(document).ready(function () {
     $('.modal-thx').addClass('active');
     $('html, body').css('overflowY', 'hidden')
   })
+
+  $(window).on('scroll', function (event) {
+    let block = $('.scrolling');
+    if (block.length > 0  ) {
+      let parent = block.parent();
+      let initialTop = parent.offset().top;
+      let top = $(window).scrollTop() - initialTop + 50;
+      checkViewport(block, parent) ?  block.css('top', top) : block.css('top', 0)
+    }
+  });
+
+  function checkViewport(el, box) {
+    let elementTop = el.offset().top;
+    let viewportTop = $(window).scrollTop();
+    let boxTop =  box.offset().top;
+    let boxBottom = boxTop + box.outerHeight();
+    return boxTop < viewportTop && viewportTop < boxBottom - el.outerHeight()
+  }
 });

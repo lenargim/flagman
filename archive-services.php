@@ -75,7 +75,7 @@
                 </div>
               <?php endwhile; ?>
             </div>
-            <div class="services-block__side">
+            <div class="services-block__side scrolling">
               <div class="callback__form-wrap">
                 <div class="callback__subtitle">Получить консультацию</div>
                 <?php echo do_shortcode('[contact-form-7 id="164" title="Callback block"]') ?>

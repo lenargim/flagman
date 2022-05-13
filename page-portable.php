@@ -190,7 +190,7 @@ Template post type: services
           <div class="protez__info-desc">лучшим и более выгодным решением при отсутствии всех зубов является
             имплантация <span class="bold">“Всё на 4”</span></div>
         </div>
-        <a href="#" class="protez__info-link button button-white">
+        <a href="<?php echo get_post_permalink('449') ?>" class="protez__info-link button button-white">
           <span>подробнее</span>
           <svg>
             <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-common.svg#arrow-right-top"></use>

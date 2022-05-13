@@ -146,3 +146,8 @@
       @include between($tabletG, $netbook)
         width: 40px
         height: 40px
+  &__item
+    opacity: 0
+    transition: opacity 0.2s ease
+  .swiper-slide-active .banner__item
+    opacity: 1
