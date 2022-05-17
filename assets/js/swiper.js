@@ -67,6 +67,7 @@ $(document).ready(function () {
 
   const servicesSlider = new Swiper('.services__slider', {
     loop: false,
+    centerInsufficientSlides: true,
     preloadImages: false,
     lazy: {
       loadOnTransitionStart: true,
@@ -119,5 +120,24 @@ $(document).ready(function () {
     let pagItem = $('.implant__slider-pagination .button');
     pagItem.removeClass('active');
     pagItem.eq(implantSlider.activeIndex ).addClass('active')
+  });
+
+
+  const sertificate = new Swiper('.single-doctor__sertificate', {
+    speed: 600,
+    allowTouchMove: false,
+    slidesPerView: 'auto',
+    loop: true,
+    preloadImages: false,
+    loopedSlides: 0,
+    lazy: {
+      loadOnTransitionStart: true,
+    },
+    watchSlidesProgress: true,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: '.swiper-next',
+      prevEl: '.swiper-prev',
+    },
   });
 });

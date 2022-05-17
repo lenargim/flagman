@@ -728,7 +728,8 @@ function my_theme_enqueue_scripts()
 
   if (
       is_page_template('home.php') ||
-      is_singular('services')
+      is_singular('services') ||
+      is_singular('doctors')
   ) {
     wp_enqueue_style('swiper-styles', 'https://unpkg.com/swiper@8/swiper-bundle.min.css');
     wp_enqueue_script('swiper-lib', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array('jquery'));
@@ -807,7 +808,7 @@ function custom_posts()
           'not_found' => 'Услуг не найдено',
           'not_found_in_trash' => 'В корзине услуг не найдено',
           'parent_item_colon' => '',
-          'menu_name' => 'Услуги'
+          'menu_name' => 'Услуги(страницы)'
 
       ),
       'public' => true,
@@ -918,8 +919,8 @@ function custom_posts()
   register_taxonomy('specialisation', 'doctors', array(
       'hierarchical' => false,
       'labels' => array(
-          'name' => _x('Услуги', 'taxonomy general name'),
-          'singular_name' => _x('Услуги', 'taxonomy singular name'),
+          'name' => _x('Услуги(слайдер)', 'taxonomy general name'),
+          'singular_name' => _x('Услуга', 'taxonomy singular name'),
           'search_items' => __('Поиск Услуг'),
           'popular_items' => __('Популярные услуги'),
           'all_items' => __('Все услуги'),
@@ -932,7 +933,7 @@ function custom_posts()
           'separate_items_with_commas' => __('Separate услугу with commas'),
           'add_or_remove_items' => __('Добавить или удалить услугу'),
           'choose_from_most_used' => __('Choose from the most used Услуги'),
-          'menu_name' => __('Услуги'),
+          'menu_name' => __('Услуги(сладер)'),
       ),
       'show_ui' => true,
       'query_var' => true,

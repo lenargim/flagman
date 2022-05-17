@@ -56,7 +56,7 @@
           <div class="container">
             <div class="map">
               <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A95efda0bbed9d6a0fc944ba08dd7a26e81c0e35dbaa787b26b275d022ee50e16&amp;source=constructor"
-                      width="100%" height="585" frameborder="0"></iframe>
+                      width="100%" height="100%" frameborder="0"></iframe>
             </div>
           </div>
         </div>

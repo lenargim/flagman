@@ -22,7 +22,7 @@
                         <div class="banner__item-desc"><?php echo $banner_desc; ?></div>
                       <?php endif; ?>
                       <div class="banner__item-buttonrow">
-                        <div class="button button-blue open-callback" data-title="Баннер: <?php echo $banner_title ?>">
+                        <div class="button button-blue open-callback" data-title="Главная страница. Баннер: <?php echo $banner_title ?>">
                           Консультация
                         </div>
                         <?php if (get_sub_field('is-link')): ?>
@@ -249,7 +249,7 @@
     <?php endif; ?>
     <section class="doctors block">
       <div class="container">
-        <h2>Наши стоматологи помогут решить самую сложную проблему с зубами</h2>
+        <h2>Наши стоматологи помогут решить самую<br>сложную проблему с зубами</h2>
         <blockquote class="tabletG-and-more">
           <svg>
             <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-home.svg#quote"></use>

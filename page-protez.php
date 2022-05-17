@@ -212,7 +212,7 @@ Template post type: services
               подходящий вариант
             </div>
           </div>
-          <div class="help__button button button-blue open-callback" data-title="Страница: Протезирование">записаться
+          <div class="help__button button button-blue open-callback" data-title="Страница: Протезирование. Необходима помощь специалиста">записаться
             на прием
           </div>
         </div>
@@ -427,7 +427,7 @@ Template post type: services
               подходящий вариант
             </div>
           </div>
-          <div class="help__button button button-blue open-callback" data-title="Страница: Протезирование">записаться
+          <div class="help__button button button-blue open-callback" data-title="Страница: Протезирование. Необходима помощь специалиста.">записаться
             на прием
           </div>
         </div>

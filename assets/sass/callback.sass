@@ -12,6 +12,9 @@
     align-items: flex-start
     justify-content: space-between
     gap: 170px
+    @include between($notebook, $desktop)
+      gap: 130px
+      padding: 70px 70px 110px
     @include between($netbook, $notebook)
       gap: 100px
       padding: 80px 80px 110px
@@ -29,6 +32,8 @@
     display: grid
     grid-template-columns: repeat(2, 1fr)
     gap: 50px 70px
+    @include between($netbook, $desktop)
+      gap: 30px
     @include between($tabletG, $netbook)
       gap: 25px
     @include between($tabletV, $tabletG)
@@ -48,7 +53,7 @@
       justify-content: flex-start
       gap: 20px
       font-weight: 800
-      @include between($tabletG, $netbook)
+      @include between($tabletG, $notebook)
         gap: 10px
       @include max($tabletV - 1)
         font-size: 15px
@@ -57,7 +62,7 @@
         height: 40px
         flex-shrink: 0
         fill: $darkBlue
-        @include between($tabletG, $netbook)
+        @include between($tabletG, $notebook)
           width: 35px
           height: 35px
   &__form
@@ -106,6 +111,9 @@
   gap: 10px
   align-items: flex-start
   justify-content: space-between
+  @include between($netbook, $desktop)
+    padding: 40px 70px
+    gap: 30px
   &__text
     max-width: 750px
     h2
@@ -122,3 +130,6 @@
       height: 28px
       fill: $darkBlue
       flex-shrink: 0
+      @include between($netbook, $desktop)
+        width: 22px
+        height: 22px

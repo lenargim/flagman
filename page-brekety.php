@@ -1,6 +1,6 @@
 <?php
 /*
-Template name: Несъёмный
+Template name: Брекеты
 Template post type: services
 */
 ?>
@@ -55,67 +55,41 @@ Template post type: services
       </div>
     </section>
     <div class="container">
-      <div class="services-detailed__wrap">
+      <div class="services-detailed__white-wrap">
         <div class="services-detailed__text">
-          <h2>Что такое система несъемное протезирование?</h2>
+          <h2>Устройство и принцип работы брекет-систем</h2>
           <div class="services-detailed__text-desc">
-            <?php the_field('nonportable-desc'); ?>
+            <?php the_field('breket-desc'); ?>
           </div>
         </div>
-        <div class="services-detailed__aside">
-          <div class="burning__box">
-            <h4>Какие проблемы решает имплантация системой <span class="nowrap">“All-on-4”?</span></h4>
-            <div class="burning__box-item">
-              <svg>
-                <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#check"></use>
-              </svg>
-              <p>Восстановление зубов при частичной или полной адентии</p>
-            </div>
-            <div class="burning__box-item">
-              <svg>
-                <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#check"></use>
-              </svg>
-              <p>Нет необходимости в проведении костной пластики</p>
-            </div>
-            <div class="burning__box-item">
-              <svg>
-                <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#check"></use>
-              </svg>
-              <p>Невозможно отличить от настоящих зубов, поскольку кострукция плотно крепится к основанию челюсти</p>
-            </div>
-            <div class="burning__box-item">
-              <svg>
-                <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#check"></use>
-              </svg>
-              <p>Конструкция прослужит вам всю жизнь, позволяя вам забыть о дискомфорте</p>
-            </div>
-          </div>
-        </div>
+        <div class="services-detailed__text-img img"><img src="<?php echo IMAGES_PATH ?>/breket.jpg"
+                                                          alt="Устройство и принцип работы брекет-систем"></div>
       </div>
     </div>
-    <div class="implant block">
+    <div class="services-detailed__steps block">
       <div class="container">
-        <h2>Протезирование системой “All-on-4”<br>проводится в несколько этапов</h2>
-        <ol class="implant__list">
-          <?php while (have_rows('nonportable-steps')) : the_row() ?>
+        <h2>Этапы ортодонтического лечения<br>с&nbsp;помощью брекет-систем</h2>
+        <ol class="services-detailed__steps-list">
+          <?php while (have_rows('breket-steps')) : the_row() ?>
             <li class="implant__item">
-              <h4 class="implant__item-title"><?php the_sub_field('title'); ?></h4>
-              <div class="implant__item-info">
+              <h4 class="services-detailed__steps-list-title"><?php the_sub_field('title'); ?></h4>
+              <div class="services-detailed__steps-list-text">
                 <?php the_sub_field('desc'); ?>
-                <div class="implant__item-img img"><img src="<?php the_sub_field('img'); ?>"
-                                                        alt="<?php the_sub_field('title'); ?>"></div>
               </div>
             </li>
           <?php endwhile; ?>
         </ol>
       </div>
     </div>
-    <div class="block">
-      <div class="container container_big">
-        <div class="implant__after">
-          <h3><?php the_field('promo-title'); ?></h3>
-          <div class="implant__after-price"><?php the_field('promo-price'); ?> ₽</div>
+    <div class="container">
+      <div class="protez__info protez__info_jaw">
+        <div class="protez__info-text">
+          <h2>Боль в челюстном суставе?</h2>
+          <div class="protez__info-desc">В клинике “Флагманстом” вы получите бесплатную консультацию уникального
+            специалиста - гнатолога. Это нобходимо для комплексного решения проблемы.
+          </div>
         </div>
+        <div class="protez__info-link button button-white open-callback" data-title="Боль в челюстном суставе">записаться на прием</div>
       </div>
     </div>
 
@@ -177,23 +151,28 @@ Template post type: services
         </div>
       </div>
     <?php endif; ?>
-    <div class="container">
-      <div class="protez__info">
-        <div class="protez__info-text">
-          <h2>Отсутствует КТ-снимок?</h2>
-          <div class="protez__info-desc">В нашей клинике вы можете получить направление на Компьютерно-томографический
-            снимок с <span class="bold">15% скидкой</span></div>
+    <div class="block">
+      <div class="container container_big">
+        <div class="help">
+          <div class="help__text">
+            <h2>Необходима помощь специалиста при решении?</h2>
+            <div class="help__desc">Наши врачи проконсультируют Вас по вопросам протезирования и подберут с Вами
+              подходящий вариант
+            </div>
+          </div>
+          <div class="help__button button button-blue open-callback" data-title="Страница: Брекеты. Необходима помощь специалиста.">записаться
+            на прием
+          </div>
         </div>
-        <div class="protez__info-link button button-white open-callback" data-title="КТ-снимок">обратный звонок</div>
       </div>
     </div>
+
     <?php get_template_part('template-parts/prices'); ?>
     <?php get_template_part('template-parts/cite'); ?>
 
     <div class="services-detailed__doctors">
       <div class="container">
-        <h2>Залог успешной и долговечной имплантации — <span class="blue">грамотные имплантологи</span>. В клинике
-          «Флагманстом» вы в надежных руках</h2>
+        <h2>Исправление прикуса проводится <span class="blue">при комплексном подходе</span>&nbsp;ортодонтов и гнатолога Казани</h2>
         <?php global $post;
         $myposts = get_posts([
             'posts_per_page' => -1,
@@ -202,7 +181,7 @@ Template post type: services
                 [
                     'taxonomy' => 'specialisation',
                     'field' => 'slug',
-                    'terms' => 'implant',
+                    'terms' => 'breket',
                 ]
             ]
         ]);
@@ -247,43 +226,6 @@ Template post type: services
       </div>
     </div>
     <?php get_template_part('template-parts/callback'); ?>
-    <div class="block">
-      <section class="reviews">
-        <div class="container">
-          <h2>Отзывы пациентов о работе специалистов клиники «Флагманстом»</h2>
-          <div class="reviews__desc"><?php the_field('reviews-desc', 76); ?></div>
-          <?php get_template_part('template-parts/rating'); ?>
-          <div class="reviews__wrap">
-            <?php global $post;
-            $myposts = get_posts([
-                'posts_per_page' => 4,
-                'post_type' => 'reviews',
-            ]);
-            foreach ($myposts as $post) {
-              setup_postdata($post);
-              ?>
-              <div class="reviews__item">
-                <p class="reviews__item-content"><?php the_content(); ?></p>
-                <div class="reviews__item-row">
-                  <a href="<?php the_field('review-link'); ?>" target="_blank"
-                     class="reviews__item-platform reviews__item-text"><?php the_field('platform'); ?></a>
-                  <div class="reviews__item-name reviews__item-text"><?php the_title(); ?></div>
-                  <div class="reviews__item-date reviews__item-text"><?php echo get_the_date('d.m.Y'); ?></div>
-                  <div class="reviews__item-rating">
-                    <i></i><i></i><i></i><i></i><i></i>
-                  </div>
-                </div>
-              </div>
-              <?php
-            }
-            wp_reset_postdata();
-            ?>
-          </div>
-          <a href="<?php echo get_post_type_archive_link('reviews') ?>" class="reviews__more button button-white">Посмотреть
-            все отзывы</a>
-        </div>
-      </section>
-    </div>
     <?php get_template_part('template-parts/equipment'); ?>
     <?php get_template_part('template-parts/faq'); ?>
   </main>

@@ -26,7 +26,7 @@
             <span class="tabletG-and-more"><?php echo $getPhone ?></span>
           </a>
         <?php endif; ?>
-        <div class="button button-blue open-callback tabletG-and-more" data-title="Шапка">Записаться на приём</div>
+        <div class="button button-blue open-callback tabletG-and-more" data-title="Запись на прием из шапки сайта">Записаться на приём</div>
         <div class="burger less-then-tabletG">
           <div></div>
         </div>

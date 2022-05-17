@@ -55,22 +55,29 @@
       display: flex
       flex-direction: column
       justify-content: flex-start
+      padding: 35px 20px 50px
       @include min($tabletG)
         position: absolute
         left: 0
         top: 50%
         width: 340px
-        padding: 35px 20px 50px
         opacity: 0
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
         z-index: -1
         background: $white
         transition: all 0.2s ease
         .menu-item
-          padding: 20px 0 0
           border-bottom: 1px solid $border
+          &:not(:first-child)
+            padding: 20px 0 0
           a
             font-size: 17px
+      @include between($netbook, $desktop)
+        padding: 10px 15px 20px
+        .menu-item
+          padding: 15px 0 0
+          a
+            font-size: 15px
       @include max($tabletG - 1)
         padding: 10px 10px 0
         .menu-item:not(:last-child)

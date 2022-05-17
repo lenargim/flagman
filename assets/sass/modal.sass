@@ -27,6 +27,8 @@
   box-shadow: 0 4px 10px rgba(51, 51, 51, 0.25)
   border-radius: 30px
   z-index: -1
+  @include between($netbook, $desktop)
+    width: 600px
   @include max($tabletG - 1)
     width: calc(100% - 40px)
     height: auto
@@ -70,6 +72,8 @@
     margin-bottom: 50px
     font: 800 45px/65px $mainFont
     color: $blue
+    @include between($netbook, $desktop)
+      margin-bottom: 30px
     @include max($tabletG - 1)
       font: 800 20px/1 $mainFont
   form
@@ -95,6 +99,8 @@
     font: 800 45px/65px $mainFont
     color: $blue
     margin-bottom: 20px
+    @include between($netbook, $desktop)
+      font: 800 40px/50px $mainFont
     @include max($tabletG - 1)
       font: 800 20px/1 $mainFont
   &__desc

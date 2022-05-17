@@ -15,7 +15,7 @@
                 <?php endif; ?>
               </div>
             <?php else: ?>
-              <a href="<?php get_sub_field('link') ?>" class="prices__item">
+              <a href="<?php echo get_permalink(get_sub_field('link')->ID) ?>" class="prices__item">
                 <span class="blue underline"><?php the_sub_field('service'); ?></span>
                 <?php if (!get_sub_field('is-free')): ?>
                   <span class="black"><?php the_sub_field('price'); ?> ₽</span>
@@ -31,10 +31,25 @@
             <h4>Вам может быть интересно:</h4>
             <div class="prices__wrap">
               <?php while (have_rows('extra-prices')) : the_row() ?>
-                <div class="prices__item">
-                  <span><?php the_sub_field('service'); ?></span>
-                  <span><?php the_sub_field('price'); ?> ₽</span>
-                </div>
+                <?php if (!get_sub_field('is-link')): ?>
+                  <div class="prices__item">
+                    <span><?php the_sub_field('service'); ?></span>
+                    <?php if (!get_sub_field('is-free')): ?>
+                      <span><?php the_sub_field('price'); ?> ₽</span>
+                    <?php else: ?>
+                      <span class="blue">бесплатно</span>
+                    <?php endif; ?>
+                  </div>
+                <?php else: ?>
+                  <a href="<?php echo get_permalink(get_sub_field('link')->ID) ?>" class="prices__item">
+                    <span class="blue underline"><?php the_sub_field('service'); ?></span>
+                    <?php if (!get_sub_field('is-free')): ?>
+                      <span class="black"><?php the_sub_field('price'); ?> ₽</span>
+                    <?php else: ?>
+                      <span class="blue">бесплатно</span>
+                    <?php endif; ?>
+                  </a>
+                <?php endif; ?>
               <?php endwhile; ?>
             </div>
           </div>

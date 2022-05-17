@@ -22,7 +22,9 @@
       justify-content: flex-start
       align-items: flex-start
       gap: 50px
-    @include between($tabletG, $netbook)
+    @include between($notebook, $desktop)
+      gap: 40px
+    @include between($tabletG, $notebook)
       gap: 30px
   .swiper-slide.doctors__item
     color: $black
@@ -125,6 +127,8 @@
     display: grid
     grid-template-columns: 1fr 1fr
     grid-gap: 50px 120px
+    @include between($netbook, $desktop)
+      grid-gap: 40px 80px
   &__type
     display: flex
     align-items: center
@@ -135,6 +139,9 @@
       height: 60px
       flex-shrink: 0
       fill: transparent
+      @include between($netbook, $desktop)
+        width: 40px
+        height: 40px
     &-title
       font-weight: 800
       margin-bottom: 10px
@@ -142,6 +149,8 @@
     display: grid
     grid-gap: 50px 40px
     grid-template-columns: 1fr 1fr
+    @include between($netbook, $desktop)
+      grid-gap: 30px
   &__item
     position: relative
     overflow: hidden
@@ -189,3 +198,66 @@
       bottom: 0
       right: 0
       max-height: calc(100% - 50px)
+.single-doctor
+  &__info
+    font-weight: 200
+    margin-bottom: 30px
+  &__edu li
+    list-style-type: disc
+    &:not(:last-child)
+      margin-bottom: 20px
+  &__review
+    background: $white
+    padding: 50px 0 70px
+  &__item
+    width: 570px
+    &-wrap
+      display: flex
+      align-items: flex-start
+      justify-content: space-between
+  &__images
+    width: 500px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    h4
+      width: 100%
+    &-img
+      display: inline-block
+      width: 246px
+      aspect-ratio: 246/143
+      border-radius: 30px
+  &__button
+    margin-top: 50px
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+    width: 320px
+  &__sertificate
+    position: relative
+    overflow: hidden
+    margin: 0 45px
+    &-wrap
+      position: relative
+      .swiper-arrow
+        width: 35px
+        height: 35px
+        background: linear-gradient(180deg, #1F79B5 0%, #7C598C 100%)
+        border-radius: 50%
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        z-index: 2
+      .swiper-prev
+        left: 0
+      .swiper-next
+        transform: rotate(180deg)
+        right: 0
+    &-img
+      width: auto !important
+      height: 212px !important
+      overflow: hidden
+      opacity: 0
+      transition: opacity 0.6s ease
+      &.swiper-slide-visible
+        opacity: 1

@@ -117,6 +117,9 @@
       height: 28px
       fill: $darkBlue
       flex-shrink: 0
+      @include between($netbook, $desktop)
+        width: 22px
+        height: 22px
     a
       color: $blue
   &__row

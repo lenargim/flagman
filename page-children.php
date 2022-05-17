@@ -106,7 +106,7 @@ Template post type: services
           <div class="protez__info-desc">Наши ортопеды, с опытом работы более 35 лет, помогут Вам в исправлении
             прикуса</span></div>
         </div>
-        <a href="#" class="protez__info-link button button-white">
+        <a href="<?php echo get_post_permalink('163') ?>" class="protez__info-link button button-white">
           <span>подробнее</span>
           <svg>
             <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-common.svg#arrow-right-top"></use>

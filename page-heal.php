@@ -166,7 +166,7 @@ Template post type: services
         <h2>Этапы лечения зубов в клинике «Флагманстом»</h2>
         <div class="services-detailed__steps-desc">В нашей клинике Вы можете пройти лечение
           <span class="blue">нескольких зубов за один день</span>
-          - Вам не нужно будет приезжать несколько раз!
+          - Вам не нужно будет&nbsp;приезжать&nbsp;несколько&nbsp;раз!
         </div>
         <ol class="services-detailed__steps-list">
           <li>
