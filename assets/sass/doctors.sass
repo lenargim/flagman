@@ -15,11 +15,13 @@
       justify-content: center
       @include min($tabletG)
         display: none
+      @include max($tabletG - 1)
+        bottom: -30px !important
   .swiper-wrapper
     @include min($tabletG)
       display: flex
       flex-wrap: wrap
-      justify-content: flex-start
+      justify-content: space-between
       align-items: flex-start
       gap: 50px
     @include between($notebook, $desktop)
@@ -44,9 +46,10 @@
           margin-bottom: 3px
           .surname
             font: 800 34px/1 $mainFont
-        &-occupation, &-exp, &-excerpt
+        &-occupation, &-exp
           font: 200 14px/25px $mainFont
         &-excerpt
+          font: 400 14px/25px $mainFont
           margin: 8px 0 100px
       @include between($tabletG, $netbook)
         padding: 25px
@@ -75,7 +78,7 @@
             font-size: 12px
             line-height: 16px
     @include max($tabletG - 1)
-      padding: 90px 10px 140px
+      padding: 20px 10px
       .doctors__item
         &-lead
           position: absolute
@@ -129,17 +132,27 @@
     grid-gap: 50px 120px
     @include between($netbook, $desktop)
       grid-gap: 40px 80px
+    @include between($tabletG, $netbook)
+      grid-gap: 30px
+    @include between($tabletV, $tabletG)
+      grid-gap: 40px 20px
   &__type
     display: flex
     align-items: center
     justify-content: flex-start
     gap: 30px
+    @include between($tabletG, $netbook)
+      gap: 20px
+    @include between($tabletV, $tabletG)
+      flex-direction: column
+      text-align: center
+      gap: 20px
     svg
       width: 60px
       height: 60px
       flex-shrink: 0
       fill: transparent
-      @include between($netbook, $desktop)
+      @include between($tabletG, $desktop)
         width: 40px
         height: 40px
     &-title
@@ -149,15 +162,24 @@
     display: grid
     grid-gap: 50px 40px
     grid-template-columns: 1fr 1fr
-    @include between($netbook, $desktop)
+    grid-auto-rows: minmax(390px, auto)
+    @include between($tabletG, $desktop)
       grid-gap: 30px
+      grid-auto-rows: minmax(350px, auto)
+    @include max($tabletG - 1)
+      grid-template-columns: 1fr
+      grid-gap: 20px
   &__item
     position: relative
     overflow: hidden
-    padding: 100px 30px 30px
+    padding: 30px
     background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
     box-shadow: 0 4px 10px rgba(51, 51, 51, 0.25)
-    border-radius: 50px
+    border-radius: 30px
+    @include between($tabletG, $netbook)
+      padding: 20px
+    @include max($tabletV - 1)
+      padding: 20px 10px 30px
     .lead
       position: absolute
       top: 30px
@@ -171,11 +193,19 @@
       max-width: 350px
       position: relative
       z-index: 1
+      @include between($tabletG, $netbook)
+        max-width: 66.6%
+      @include max($tabletV - 1)
+        max-width: 66.6%
     &-title
       font: 800 34px/1 $mainFont
       margin-bottom: 10px
-    &-occupation, &-exp, &-excerpt
+      @include max($tabletV - 1)
+        font: 800 17px/20px $mainFont
+    &-occupation, &-exp
       font: 200 14px/20px $mainFont
+    &-excerpt
+      font: 400 14px/20px $mainFont
     &-exp
       margin-bottom: 10px
     &-excerpt
@@ -186,6 +216,9 @@
       left: 30px
       width: 180px
       height: 60px
+      @include max($tabletV - 1)
+        left: 10px
+        height: 50px
       svg
         width: 12px
         height: 12px
@@ -198,6 +231,15 @@
       bottom: 0
       right: 0
       max-height: calc(100% - 50px)
+      @include between($tabletG, $netbook)
+        max-width: 40%
+        width: unset
+      @include max($tabletV - 1)
+        max-width: 44%
+        width: unset
+  &__info
+    @include max($tabletV - 1)
+      display: none
 .single-doctor
   &__info
     font-weight: 200
@@ -209,17 +251,28 @@
   &__review
     background: $white
     padding: 50px 0 70px
+    @include max($netbook - 1)
+      padding: 40px 0
   &__item
     width: 570px
+    @include max($tabletV - 1)
+      width: 100%
     &-wrap
       display: flex
       align-items: flex-start
       justify-content: space-between
+      gap: 20px
+      @include max($netbook - 1)
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
   &__images
     width: 500px
     display: flex
     flex-wrap: wrap
     justify-content: space-between
+    @include max($tabletV - 1)
+      width: 100%
     h4
       width: 100%
     &-img
@@ -227,6 +280,9 @@
       width: 246px
       aspect-ratio: 246/143
       border-radius: 30px
+      @include max($tabletV - 1)
+        width: calc(50% - 5px)
+        border-radius: 10px
   &__button
     margin-top: 50px
     position: relative
@@ -261,3 +317,18 @@
       transition: opacity 0.6s ease
       &.swiper-slide-visible
         opacity: 1
+  .page-banner__text
+    @include min($tabletV)
+      width: 66%
+    @include between($tabletV, $tabletG)
+      text-align: left
+  .page-banner__img
+    @include between($tabletV, $tabletG)
+      width: 40%
+    @include max($tabletV)
+      display: none
+  @include between($tabletG, $netbook)
+    .services-detailed__text
+      width: 50vw
+      margin: 0 auto
+      text-align: center

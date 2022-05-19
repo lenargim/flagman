@@ -126,10 +126,10 @@ Template post type: services
                 <svg>
                   <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-airflow.svg#airflow2"></use>
                 </svg>
-                <h4>Абсолютно безопасная процедура</h4>
+                <h4>Универсальна<br>в любых ситуациях</h4>
               </div>
-              <div class="airflow__item-text">В составе нет агрессивных химических веществ. Он не разрушает эмаль
-                зубов, поэтому удалять с них налет таким образом можно достаточно часто.
+              <div class="airflow__item-text">Подходит для очистки протезов и имплантатов. Тщательно и безопасно
+                устраняет налет и отложения вокруг брекетов.
               </div>
             </div>
             <div class="airflow__item">
@@ -137,10 +137,10 @@ Template post type: services
                 <svg>
                   <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-airflow.svg#airflow3"></use>
                 </svg>
-                <h4>Абсолютно безопасная процедура</h4>
+                <h4>Отбеливающий эффект<br>на 1-3 тона</h4>
               </div>
-              <div class="airflow__item-text">В составе нет агрессивных химических веществ. Он не разрушает эмаль
-                зубов, поэтому удалять с них налет таким образом можно достаточно часто.
+              <div class="airflow__item-text">Процедура поможет вам устранить с зубов пигментацию от красного вина, чая,
+                кофе, а также эффективно удалит поверхностный табачный налет.
               </div>
             </div>
           </div>
@@ -171,7 +171,7 @@ Template post type: services
         </div>
       <?php endwhile; ?>
     <?php endif; ?>
-      <?php get_template_part('template-parts/callback'); ?>
+    <?php get_template_part('template-parts/callback'); ?>
     <?php get_template_part('template-parts/equipment'); ?>
     <div class="services-detailed__doctors">
       <div class="container">
@@ -196,11 +196,6 @@ Template post type: services
               ?>
               <div class="swiper-slide">
                 <div class="services__slider-item">
-                  <?php if (get_field('lead-doc')): ?>
-                    <div class="lead services__slider-lead">
-                      <span>Ведущий врач</span>
-                    </div>
-                  <?php endif; ?>
                   <div class="services__slider-title"><?php the_title() ?></div>
                   <div class="services__slider-occupation"><?php the_field('spec'); ?></div>
                   <div class="services__slider-exp">Опыт работы: <?php the_field('exp'); ?></div>

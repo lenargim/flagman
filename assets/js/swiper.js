@@ -4,7 +4,6 @@ $(document).ready(function () {
   const banner = new Swiper('.banner-slider', {
     loop: true,
     preloadImages: false,
-    allowTouchMove: false,
     watchSlidesProgress: true,
     lazy: {
       loadOnTransitionStart: true,
@@ -19,9 +18,11 @@ $(document).ready(function () {
     breakpoints: {
       320: {
         spaceBetween: 30,
-        navigation: false
+        navigation: false,
+        allowTouchMove: true,
       },
       768: {
+        allowTouchMove: false,
         spaceBetween: 100,
         navigation: {
           nextEl: '.swiper-next',
@@ -95,7 +96,7 @@ $(document).ready(function () {
   });
 
   const implantSlider = new Swiper('.implant__slider', {
-    loop: false,
+    loop: true,
     preloadImages: false,
     slidesPerView: 1,
     allowTouchMove: false,
@@ -118,8 +119,14 @@ $(document).ready(function () {
 
   implantSlider.on('slideChange', function () {
     let pagItem = $('.implant__slider-pagination .button');
+    let dublicate = $('.swiper-slide-duplicate').length;
+    let ind = implantSlider.activeIndex - --dublicate;
     pagItem.removeClass('active');
-    pagItem.eq(implantSlider.activeIndex ).addClass('active')
+    if (ind === -1 || ind === 3) {
+      ind === -1 ? pagItem.eq(2).addClass('active') : pagItem.eq(0).addClass('active')
+    } else {
+      pagItem.eq(ind).addClass('active')
+    }
   });
 
 

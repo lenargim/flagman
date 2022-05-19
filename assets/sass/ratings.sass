@@ -6,6 +6,8 @@
   gap: 50px 100px
   @include between($tabletG, $netbook)
     gap: 50px 60px
+  @include max($tabletG - 1)
+    justify-content: space-evenly
   &__item
     height: 75px
     display: flex

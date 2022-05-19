@@ -27,7 +27,7 @@
                         </div>
                         <?php if (get_sub_field('is-link')): ?>
                           <a href="<?php the_sub_field('button-link'); ?>"
-                             class="button button-purple open-callback"><?php the_sub_field('button-text'); ?></a>
+                             class="button button-purple"><?php the_sub_field('button-text'); ?></a>
                         <?php endif; ?>
                       </div>
                       <?php if ($img && !wp_is_mobile()): ?>
@@ -138,13 +138,13 @@
               <?php endwhile; ?>
             </div>
           <?php endif; ?>
-        </div>
-        <div class="burning__row">
-          <a href="<?php echo get_post_type_archive_link('sale'); ?>" class="button button-blue">Узнать о всех
-            скидках</a>
-          <p class="tabletG-and-more">Вы можете не откладывать лечение зубов на потом,<br>
-            а записаться на выгодных условиях уже сегодня.
-          </p>
+          <div class="burning__row">
+            <a href="<?php echo get_post_type_archive_link('sale'); ?>" class="button button-blue">Узнать о всех
+              скидках</a>
+            <p class="tabletG-and-more">Вы можете не откладывать лечение зубов на потом,<br>
+              а записаться на выгодных условиях уже сегодня.
+            </p>
+          </div>
         </div>
       </div>
     </section>

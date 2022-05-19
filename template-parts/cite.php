@@ -16,7 +16,6 @@
       <?php the_field('cite-title'); ?>" class="cite__img">
     </div>
     <div class="signature">
-      <img src="<?php echo IMAGES_PATH ?>/logo-big.png" alt="ФлагманСтом">
       <div>Заботимся о Ваших улыбках <span class="nowrap">с 2017 года</span></div>
     </div>
   </div>

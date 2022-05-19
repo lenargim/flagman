@@ -48,8 +48,12 @@
   <div class="reviews-page">
     <div class="container">
       <div class="reviews-page__desc">
+        <h2>В нашей клинике работают лучшие врачи, чтобы Вам было не страшно</h2>
+        <div class="reviews-page__img img">
+          <img src="<?php echo IMAGES_PATH ?>/reviews1.jpg"
+               alt="В нашей клинике работают лучшие врачи, чтобы Вам было не страшно">
+        </div>
         <div class="reviews-page__text">
-          <h2>В нашей клинике работают лучшие врачи, чтобы Вам было не страшно</h2>
           <p>Повседневная практика показывает, что укрепление и развитие структуры позволяет выполнять важные задания
             по
             разработке системы обучения кадров, соответствует насущным потребностям. Не следует, однако забывать, что
@@ -58,9 +62,6 @@
             создание существенных финансовых и административных условий. Таким образом постоянный количественный рост
             и
             сфера нашей активности позволяет оценить значение дальнейших направлений развития.</p>
-        </div>
-        <div class="reviews-page__img img"><img src="<?php echo IMAGES_PATH ?>/reviews1.jpg"
-                                                alt="В нашей клинике работают лучшие врачи, чтобы Вам было не страшно">
         </div>
       </div>
     </div>
@@ -87,7 +88,8 @@
           </div>
         <?php endif; ?>
         <?php if (get_field('prodoktorov', 38)): ?>
-          <a href="<?php echo get_field('prodoktorov', 38) ?>" target="_blank" class="button button-white reviews-page__link">
+          <a href="<?php echo get_field('prodoktorov', 38) ?>" target="_blank"
+             class="button button-white reviews-page__link">
             <span>оставить отзыв</span>
             <svg>
               <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-common.svg#arrow-right-top"></use>

@@ -11,7 +11,8 @@
               предоставляются в комфортной, роскошной обстановке.
             </div>
             <div class="page-banner__buttonrow">
-              <div class="button button-blue open-callback" data-title="Страница Услуг">Записаться на прием</div>
+              <div class="button button-blue open-callback" data-title="Страница Услуг">Записаться <span
+                        class="hidden-on-mobile">на прием</span></div>
               <a class="button button-purple" href="/prices">Узнать цены</a>
             </div>
           </div>
@@ -60,9 +61,9 @@
                   <?php if (get_field('advantages')): ?>
                     <ul class="services-block__ul">
                       <?php while (have_rows('advantages')) : the_row() ?>
-                      <li class="services-block__li">
-                        <?php echo get_sub_field('advantages-text')?>
-                      </li>
+                        <li class="services-block__li">
+                          <?php echo get_sub_field('advantages-text') ?>
+                        </li>
                       <?php endwhile; ?>
                     </ul>
                   <?php endif; ?>

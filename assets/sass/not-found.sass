@@ -11,10 +11,16 @@
   &__head
     font: 800 250px/1 $mainFont
     color: $purple
+    @include max($tabletV - 1)
+      font: 800 25vw/1 $mainFont
   &__oops
     font: 800 100px/1 $mainFont
+    @include max($tabletV - 1)
+      font: 800 20vw/1 $mainFont
   &__span
     font: 800 34px/50px $mainFont
+    @include max($tabletV - 1)
+      font: 800 8vw/10vw $mainFont
   &__info
     margin-top: 50px
     font: 800 34px/50px $mainFont
@@ -22,5 +28,8 @@
     flex-direction: column
     align-items: center
     gap: 20px
+    @include max($tabletV - 1)
+      margin-top: 10vw
+      font: 800 8vw/10vw $mainFont
     a
       color: $blue

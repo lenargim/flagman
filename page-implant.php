@@ -166,12 +166,12 @@ Template post type: services
     <div class="block">
       <div class="container container_big">
         <h2>Цена зависит от способа имплантации.<br>Существует три основных вида</h2>
+        <div class="implant__slider-pagination swiper-custom">
+          <span class="swiper-pagination-bullet button button-white active">Шаблонная</span>
+          <span class="swiper-pagination-bullet button button-white">Одномоментная</span>
+          <span class="swiper-pagination-bullet button button-white">Классическая</span>
+        </div>
         <div class="implant__slider">
-          <div class="implant__slider-pagination swiper-custom">
-            <span class="swiper-pagination-bullet button button-white active">Шаблонная</span>
-            <span class="swiper-pagination-bullet button button-white">Одномоментная</span>
-            <span class="swiper-pagination-bullet button button-white">Классическая</span>
-          </div>
           <div class="implant__slider-arrows">
             <svg class="swiper-arrow swiper-prev pointer">
               <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-implant.svg#arrow"></use>
@@ -191,12 +191,12 @@ Template post type: services
                     <div class="implant__slider-feature">
                       <img src="<?php echo IMAGES_PATH ?>/implant5.jpg" class="implant__slider-feature-img"
                            alt="Частичное или полное отсутствие зуба">
-                      <span class="bold">Частичное или полное отсутствие зуба</span>
+                      <span class="bold">Частичное или полное отсутствие&nbsp;зуба</span>
                     </div>
                     <div class="implant__slider-feature">
                       <img src="<?php echo IMAGES_PATH ?>/implant6.jpg" class="implant__slider-feature-img"
                            alt="Недостаток кости или сложное строение челюсти">
-                      <span class="bold">Недостаток кости или сложное строение челюсти</span>
+                      <span class="bold">Недостаток кости или сложное строение&nbsp;челюсти</span>
                     </div>
                   </div>
                 </div>
@@ -479,11 +479,6 @@ Template post type: services
               ?>
               <div class="swiper-slide">
                 <div class="services__slider-item">
-                  <?php if (get_field('lead-doc')): ?>
-                    <div class="lead services__slider-lead">
-                      <span>Ведущий врач</span>
-                    </div>
-                  <?php endif; ?>
                   <div class="services__slider-title"><?php the_title() ?></div>
                   <div class="services__slider-occupation"><?php the_field('spec'); ?></div>
                   <div class="services__slider-exp">Опыт работы: <?php the_field('exp'); ?></div>

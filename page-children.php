@@ -138,11 +138,6 @@ Template post type: services
               ?>
               <div class="swiper-slide">
                 <div class="services__slider-item">
-                  <?php if (get_field('lead-doc')): ?>
-                    <div class="lead services__slider-lead">
-                      <span>Ведущий врач</span>
-                    </div>
-                  <?php endif; ?>
                   <div class="services__slider-title"><?php the_title() ?></div>
                   <div class="services__slider-occupation"><?php the_field('spec'); ?></div>
                   <div class="services__slider-exp">Опыт работы: <?php the_field('exp'); ?></div>

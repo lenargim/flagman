@@ -33,13 +33,12 @@
       @include max($tabletV - 1)
         text-align: center
         align-items: center
+        font: 400 14px/20px $mainFont
       span
         font: 800 34px/50px $mainFont
         @include max($tabletV - 1)
           font: 800 20px/25px $mainFont
           text-align: center
-      p
-        line-height: 25px
     &-contact
       display: flex
       align-items: center
@@ -50,14 +49,18 @@
     &-button
       @include max($tabletV - 1)
         width: 240px
+    .header__phone svg
+      fill: $black
   &__main
     background: $darkBlue
     padding: 70px 0
     color: #e3e3e3
     @include between($tabletG, $desktop)
       padding: 50px 0
-    @include max($tabletG - 1)
+    @include between($tabletV, $tabletG)
       padding: 50px 0
+    @include max($tabletV - 1)
+      padding: 30px 0
     &-wrap
       display: grid
       grid-template-columns: 270px 2fr 3fr
@@ -66,7 +69,7 @@
         gap: 50px
       @include max($tabletG - 1)
         grid-template-columns: 1fr
-        gap: 50px
+        gap: 30px
     &-info
       display: flex
       flex-direction: column
@@ -84,7 +87,7 @@
         margin-bottom: 20px
       @include max($tabletG - 1)
         width: 206px
-        margin-bottom: 50px
+        margin-bottom: 30px
     &-desc
       font: 200 12px/17px $mainFont
       margin-bottom: 30px
@@ -101,6 +104,7 @@
     &-address
       @include max($tabletG - 1)
         text-align: center
+        font: 200 14px/20px $mainFont
       &-title
         font-weight: 800
         margin-bottom: 5px
@@ -120,6 +124,8 @@
     a
       font: 200 17px/1 $mainFont
       color: #e3e3e3
+      @include max($tabletG - 1)
+        font: 200 14px/20px $mainFont
     &-table
       @include max($tabletG - 1)
         max-width: 400px
@@ -146,5 +152,8 @@
       line-height: 1.1
       text-align: center
       color: $white
+      @include max($tabletV - 1)
+        padding: 25px 15px
+        font-size: 12px
 
 @import "last"

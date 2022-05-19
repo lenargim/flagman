@@ -98,12 +98,12 @@ Template post type: services
         <div class="container container_big">
           <h2>Для вас мы собрали <span class="blue">самые оптимальные варианты систем<br>имплантации</span> из разных
             ценовых категорий </h2>
+          <div class="implant__slider-pagination swiper-custom">
+            <?php while (have_rows('type')) : the_row() ?>
+              <span class="swiper-pagination-bullet button button-white <?php if (get_row_index() == 1) echo 'active' ?>"><?php the_sub_field('name'); ?></span>
+            <?php endwhile; ?>
+          </div>
           <div class="implant__slider">
-            <div class="implant__slider-pagination swiper-custom">
-              <?php while (have_rows('type')) : the_row() ?>
-                <span class="swiper-pagination-bullet button button-white <?php if (get_row_index() == 1) echo 'active' ?>"><?php the_sub_field('name'); ?></span>
-              <?php endwhile; ?>
-            </div>
             <div class="implant__slider-arrows">
               <svg class="swiper-arrow swiper-prev pointer">
                 <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-implant.svg#arrow"></use>
@@ -193,11 +193,6 @@ Template post type: services
               ?>
               <div class="swiper-slide">
                 <div class="services__slider-item">
-                  <?php if (get_field('lead-doc')): ?>
-                    <div class="lead services__slider-lead">
-                      <span>Ведущий врач</span>
-                    </div>
-                  <?php endif; ?>
                   <div class="services__slider-title"><?php the_title() ?></div>
                   <div class="services__slider-occupation"><?php the_field('spec'); ?></div>
                   <div class="services__slider-exp">Опыт работы: <?php the_field('exp'); ?></div>

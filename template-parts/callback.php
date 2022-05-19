@@ -81,7 +81,6 @@
         </div>
       </div>
       <div class="signature">
-        <img src="<?php echo IMAGES_PATH ?>/logo-big.png" alt="ФлагманСтом">
       </div>
     </div>
   </section>

@@ -4,7 +4,7 @@
 $name = get_the_title();
 $arr = explode(' ', $name);
 ?>
-  <main>
+  <main class="single-doctor">
     <section class="page-banner">
       <div class="container">
         <div class="page-banner__wrap">
@@ -211,7 +211,6 @@ $arr = explode(' ', $name);
             </div>
           </div>
           <div class="signature">
-            <img src="<?php echo IMAGES_PATH ?>/logo-big.png" alt="ФлагманСтом">
           </div>
         </div>
       </section>

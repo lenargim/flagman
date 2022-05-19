@@ -203,6 +203,7 @@ Template post type: services
       </div>
     </div>
     <?php get_template_part('template-parts/cite'); ?>
+    <?php get_template_part('template-parts/prices'); ?>
     <div class="block">
       <div class="container container_big">
         <div class="help">
@@ -258,181 +259,6 @@ Template post type: services
         </a>
       </div>
     </div>
-    <div class="block">
-      <div class="container">
-        <div class="services-detailed__wrap">
-          <div class="services-detailed__text">
-            <h2>Виды съемного протезировании</h2>
-            <div class="services-detailed__text-desc">
-              <p>Протезирование зубов весьма дорогое удовольствие, если речь идет о несъемных протезах или имплантах.
-                Однако, съемные протезы доступны для всех категорий граждан, и в особенности для пожилых людей,
-                которые желают получить качественные образцы за умеренную плату.</p>
-            </div>
-            <h4>Преимущества съёмного протезирования</h4>
-            <ul class="pros">
-              <li>Возможность восстановления функциональности зубного ряда, даже при полностью оголенных деснах</li>
-              <li>Протезы подходят для людей с любыми индивидуальными особенностями строения челюстей</li>
-              <li>Короткий период адаптации и подходят пациентам всех возрастов</li>
-              <li>Простота в уходе</li>
-            </ul>
-          </div>
-          <div class="services-detailed__aside">
-            <div class="burning__box">
-              <h4>В каких случаях преимущественно съемное протезирование?</h4>
-              <div class="burning__box-item">
-                <svg>
-                  <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#check"></use>
-                </svg>
-                <p>В случае хронических заболеваний мягких тканей (пародонтит и пародонтоз)</p>
-              </div>
-              <div class="burning__box-item">
-                <svg>
-                  <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#check"></use>
-                </svg>
-                <p>Более бюджетный вариант восстановления улыбки и жевательной функции</p>
-              </div>
-              <div class="burning__box-item">
-                <svg>
-                  <use xlink:href="<?php echo IMAGES_PATH; ?>/sprite-common.svg#check"></use>
-                </svg>
-                <p>При переломе зуба</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="block">
-      <div class="container">
-        <div class="services-detailed__white-wrap">
-          <div class="services-detailed__text">
-            <h2>Бюгельный протез на металлической дуге с кламмерами</h2>
-            <div class="services-detailed__text-desc">
-              <p>
-                Бюгельное протезирование зубов — широко применяемый метод лечения в ортопедической стоматологии.
-                Предназначено для восстановления зубов как на нижней, так и на верхней челюсти. Само название
-                происходит
-                от немецкого «bugel», что в переводе означает «дуга», то есть бюгельные — это дословно «имеющие дугу».
-                В
-                конструкции бюгельных зубных протезов есть металлическая или пластмассовая дуга, искусственные зубы,
-                которые крепятся к базису, имитирующему десну, и фиксирующие элементы в виде крючков, замочков или
-                коронок.</p>
-            </div>
-            <h4>Преимущества бюггельного протеза</h4>
-            <ul class="pros">
-              <li>Минимальное время адаптации к протезу, в сравнении с другими видами съемного протезирования</li>
-              <li>Малый размер зубных протезов, обеспечивающий более комфортное ношение</li>
-              <li>Долговечность протеза из-за надежного основания</li>
-              <li>Они не снижают вкусовые, температурные и тактильные ощущения и не влияют на артикуляцию и дикцию
-              </li>
-              <li>Укрепление оставшихся зубов и протеза в одну сплошную систему</li>
-              <li>Отличные эстетические качества - улыбка выглядит естественно и протез остается незаметным</li>
-              <li>Легкая повседневная гигиена протеза, не требующая много времени</li>
-            </ul>
-          </div>
-          <div class="services-detailed__text-img img"><img src="<?php echo IMAGES_PATH ?>/protez2.jpg"
-                                                            alt="Бюгельный протез на металлической дуге с кламмерами">
-          </div>
-        </div>
-      </div>
-      <div class="container container_small">
-        <div class="warning">Все виды съемных протезов активно используются как временный вариант, но при постоянном
-          ношении любой съемный протез обладает рядом недостатков - неизбежна постепенная убыль костной ткани под
-          протезом.
-        </div>
-      </div>
-    </div>
-    <div class="block">
-      <div class="container">
-        <div class="services-detailed__white-wrap">
-          <div class="services-detailed__text">
-            <h2>Силиконовые или нейлоновые протезы</h2>
-            <div class="services-detailed__text-desc">
-              <p>
-                К категории силиконовых протезов относятся мягкие ортодонтические устройства для частичного съемного
-                протезирования. Они имеют полупрозрачную эластичную основу, полностью имитируют слизистую полости рта
-                и форму челюсти. Данный вид протезов имеет повышенную гибкость, мягкость и эластичность. Для более
-                полного понимания требуется оговориться, что структура силиконовых конструкций занимает только основу
-                протеза. Искусственные зубы изготавливаются из высококачественной полимерной пластмассы, а фиксирующие
-                элементы обычно изготавливаются из сплавов нержавеющих или драгоценных металлов.</p>
-            </div>
-            <h4>Преимущества силиконовых протезов</h4>
-            <ul class="pros">
-              <li>Трудно отличить их от естественных зубов; они не видны во время разговора. Их также называют
-                «невидимыми» зубными протезами
-              </li>
-              <li>Надежная фиксация протеза, следовательно, нет необходимости использовать дополнительные материалы
-                для закрепления — гели, кремы, клей для зубных протезов
-              </li>
-              <li>Гипоаллергенность</li>
-              <li>Гибкость и легкость материала протеза сокращает период адаптации</li>
-              <li>Могут использоваться до 8лет</li>
-            </ul>
-          </div>
-          <div class="services-detailed__text-img img"><img src="<?php echo IMAGES_PATH ?>/protez6.jpg"
-                                                            alt="Силиконовые или нейлоновые протезы"></div>
-        </div>
-      </div>
-    </div>
-    <div class="block">
-      <div class="container">
-        <div class="services-detailed__white-wrap">
-          <div class="services-detailed__text">
-            <h2>Протезы на присосках</h2>
-            <div class="services-detailed__text-desc">
-              <p>
-                Это съемная ортопедическая конструкция, которая крепится на слизистую, присасываясь к небу. На
-                сегодняшний день это самый бюджетный и доступный метод восстановления целостности зубного ряда.
-                При производстве используются передовые технологии, дающие возможность создать натуральную и
-                комфортную для человека вставку. При длительной носке и верной подгонке она практически не ощущается
-                во рту.
-              </p>
-            </div>
-            <h4>Преимущества силиконовых протезов</h4>
-            <ul class="pros">
-              <li>Доступная цена</li>
-              <li>Не требует обточки имеющихся зубов</li>
-              <li>Подходят для решения дефектов, которые невозможно решить мостовидными протезами</li>
-            </ul>
-          </div>
-          <div class="services-detailed__text-img img"><img src="<?php echo IMAGES_PATH ?>/protez7.jpg"
-                                                            alt="Протезы на присосках"></div>
-        </div>
-      </div>
-    </div>
-    <div class="block">
-      <div class="container">
-        <div class="protez__info">
-          <div class="protez__info-text">
-            <h2>Отсутсвуют все зубы?</h2>
-            <div class="protez__info-desc">лучшим и более выгодным решением при отсутствии всех зубов является
-              имплантация <span class="bold">“Всё на 4”</span></div>
-          </div>
-          <a href="<?php echo get_post_permalink('449') ?>" class="protez__info-link button button-white">
-            <span>подробнее</span>
-            <svg>
-              <use xlink:href="<?php echo IMAGES_PATH ?>/sprite-common.svg#arrow-right-top"></use>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-    <?php get_template_part('template-parts/prices'); ?>
-    <div class="block">
-      <div class="container container_big">
-        <div class="help">
-          <div class="help__text">
-            <h2>Необходима помощь специалиста при решении?</h2>
-            <div class="help__desc">Наши врачи проконсультируют Вас по вопросам протезирования и подберут с Вами
-              подходящий вариант
-            </div>
-          </div>
-          <div class="help__button button button-blue open-callback" data-title="Страница: Протезирование. Необходима помощь специалиста.">записаться
-            на прием
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="services-detailed__doctors">
       <div class="container">
         <h2>Установкой виниров занимаются только высококвалифицированные стоматолог- ортопеды</h2>
@@ -456,11 +282,6 @@ Template post type: services
               ?>
               <div class="swiper-slide">
                 <div class="services__slider-item">
-                  <?php if (get_field('lead-doc')): ?>
-                    <div class="lead services__slider-lead">
-                      <span>Ведущий врач</span>
-                    </div>
-                  <?php endif; ?>
                   <div class="services__slider-title"><?php the_title() ?></div>
                   <div class="services__slider-occupation"><?php the_field('spec'); ?></div>
                   <div class="services__slider-exp">Опыт работы: <?php the_field('exp'); ?></div>
@@ -521,7 +342,7 @@ Template post type: services
               </div>
             </div>
           </div>
-          <div action="" class="callback__form-wrap">
+          <div class="callback__form-wrap">
             <div class="callback__subtitle">Получить консультацию</div>
             <?php echo do_shortcode('[contact-form-7 id="164" title="Callback block"]') ?>
             <span class="callback__policy form__policy">Нажимая кнопку, вы даёте согласие на обработку персональных данных в соответствии с <a

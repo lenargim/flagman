@@ -28,10 +28,17 @@
     align-items: flex-start
     justify-content: space-between
     gap: 30px
+    @include max($netbook - 1)
+      width: 100%
+      align-items: center
+      flex-wrap: wrap
   &__text
     display: flex
     flex-direction: column
     gap: 120px
+    @include max($netbook - 1)
+      gap: 70px
+      margin: 0 auto
   &__box
     &-title
       text-align: center
@@ -42,6 +49,9 @@
       box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
       border-radius: 10px
       margin-bottom: 30px
+      @include max($netbook - 1)
+        font: 800 15px/20px $mainFont
+        margin-bottom: 20px
     &-list
       display: flex
       flex-direction: column
@@ -55,6 +65,8 @@
         right: 110px
         top: -10px
         background: $border
+        @include max($netbook - 1)
+          content: none
     &-item
       display: flex
       align-items: flex-end
@@ -65,8 +77,14 @@
         &:first-child
           width: 655px
           padding-left: 5px
+          @include max($netbook - 1)
+            width: 66.6%
+          @include max($tabletV - 1)
+            font: 400 12px/16px $mainFont
         &:last-child
           width: 110px
           padding-right: 10px
           text-align: right
           white-space: nowrap
+          @include max($netbook - 1)
+            width: 20%

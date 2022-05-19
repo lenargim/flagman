@@ -14,7 +14,7 @@ $(document).ready(function () {
     xy = x + " " + y;
 
     bgWebKit = `-webkit-gradient(radial, ${xy}, 0, ${xy}, ${gradientSize}, from(${lightColor}), to(${originalBG})), ${originalBG}`;
-    bgMoz    = "-moz-radial-gradient(" + x + "px " + y + "px 45deg, circle, " + lightColor + " 0%, " + originalBG + " " + gradientSize + "px)";
+    bgMoz = "-moz-radial-gradient(" + x + "px " + y + "px 45deg, circle, " + lightColor + " 0%, " + originalBG + " " + gradientSize + "px)";
 
     $(this)
       .css({background: bgWebKit})
@@ -27,10 +27,8 @@ $(document).ready(function () {
   $('.menu-item-has-children>a').click(function (e) {
     if (windowWidth <= 1024) {
       e.preventDefault();
-      if (windowWidth <= 768) {
-        $(this).siblings('.sub-menu').slideToggle();
-        $(this).parent().toggleClass('active');
-      }
+      $(this).siblings('.sub-menu').slideToggle();
+      $(this).parent().toggleClass('active');
     }
   });
 
@@ -39,11 +37,11 @@ $(document).ready(function () {
     $('.burger-menu').slideToggle();
   });
 
-  $(document).mouseup( function(e){
-    var div = $( ".header" );
-    if ( !div.is(e.target)
+  $(document).mouseup(function (e) {
+    var div = $(".header");
+    if (!div.is(e.target)
       && div.has(e.target).length === 0
-      && windowWidth < 1024 ) {
+      && windowWidth < 1024) {
       $('.burger').removeClass('active');
       $('.burger-menu').slideUp();
     }
@@ -65,7 +63,7 @@ $(document).ready(function () {
   });
 
   let wpcf7Elm = $('.wpcf7');
-  wpcf7Elm.on( 'wpcf7mailsent ', function( event ) {
+  wpcf7Elm.on('wpcf7mailsent ', function (event) {
     $('.modal').removeClass('active');
     $('.overlay').addClass('active');
     $('.modal-thx').addClass('active');
@@ -74,18 +72,18 @@ $(document).ready(function () {
 
   $(window).on('scroll', function (event) {
     let block = $('.scrolling');
-    if (block.length > 0  ) {
+    if (block.length > 0) {
       let parent = block.parent();
       let initialTop = parent.offset().top;
       let top = $(window).scrollTop() - initialTop + 50;
-      checkViewport(block, parent) ?  block.css('top', top) : block.css('top', 0)
+      checkViewport(block, parent) ? block.css('top', top) : block.css('top', 0)
     }
   });
 
   function checkViewport(el, box) {
     let elementTop = el.offset().top;
     let viewportTop = $(window).scrollTop();
-    let boxTop =  box.offset().top;
+    let boxTop = box.offset().top;
     let boxBottom = boxTop + box.outerHeight();
     return boxTop < viewportTop && viewportTop < boxBottom - el.outerHeight()
   }

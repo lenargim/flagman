@@ -4,11 +4,17 @@
     padding: 34px
     @include between($netbook, $desktop)
       padding: 30px
+    @include max($netbook - 1)
+      padding: 20px
+      img
+        width: 300px
     img
       display: block
       margin: 0 auto
   &__main
     padding-top: 70px
+    @include max($netbook - 1)
+      padding-top: 40px
   h1
     margin-bottom: 30px
   &__row
@@ -16,36 +22,64 @@
     align-items: center
     justify-content: space-between
     gap: 1em
+    @include max($tabletV - 1)
+      flex-direction: column
+      justify-content: flex-start
+      gap: 25px
     svg
       width: 35px
       height: 35px
       @include between($netbook, $desktop)
         width: 30px
         height: 30px
+      @include max($netbook - 1)
+        width: 25px
+        height: 25px
     &-item
       display: flex
       align-items: center
       justify-content: flex-start
       gap: 20px
+      @include max($netbook - 1)
+        gap: 15px
       svg
         fill: transparent
     &-link
       font: 800 17px/25px $mainFont
       color: $black
       white-space: nowrap
+      @include max($netbook - 1)
+        font-size: 15px
     .socials
       display: flex
       align-items: center
       justify-content: flex-end
       gap: 20px
+      @include max($netbook - 1)
+        gap: 15px
       svg
         fill: $darkBlue
   .map
     height: 585px
     @include between($netbook, $desktop)
       height: 500px
+    @include max($netbook - 1)
+      height: 400px
   &__licence
     margin-top: 30px
     display: grid
     grid-gap: 20px
     grid-template-columns: repeat(3, 1fr)
+    @include max($tabletV - 1)
+      text-align: center
+      display: flex
+      align-items: flex-start
+      justify-content: flex-start
+      gap: 10%
+      overflow-x: auto
+      -ms-overflow-style: none
+      scrollbar-width: none
+      &::-webkit-scrollbar
+        display: none
+      &-img
+        width: 80%
