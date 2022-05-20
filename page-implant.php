@@ -99,7 +99,7 @@ Template post type: services
     </div>
     <div class="implant block">
       <div class="container">
-        <h2>Имплантация зубов включает в себя<br>несколько этапов</h2>
+        <h2>Имплантация зубов включает в&nbsp;себя<br>несколько этапов</h2>
         <ol class="implant__list">
           <li class="implant__item">
             <h4 class="implant__item-title">Вживление искусственного корня</h4>
@@ -155,10 +155,10 @@ Template post type: services
       </div>
     </div>
     <div class="block">
-      <div class="container container_big">
+      <div class="container">
         <div class="implant__after">
-          <h3>Итоговая стоимость за готовый <span class="uppercase"><br>
-                зуб с коронкой</span></h3>
+          <h3>Стоимость за готовый <span class="uppercase"><br>
+                зуб&nbsp;с&nbsp;коронкой</span></h3>
           <div class="implant__after-price"><?php the_field('service-price'); ?> ₽</div>
         </div>
       </div>
@@ -324,7 +324,7 @@ Template post type: services
       <div class="protez__info">
         <div class="protez__info-text">
           <h2>Отсутсвуют все зубы?</h2>
-          <div class="protez__info-desc">лучшим и более выгодным решением при отсутствии всех зубов является
+          <div class="protez__info-desc">лучшим и более выгодным решением при&nbsp;отсутствии всех зубов является
             имплантация <span class="bold">“Всё на 4”</span></div>
         </div>
         <a href="<?php echo get_post_permalink('449') ?>" class="protez__info-link button button-white">
@@ -448,7 +448,7 @@ Template post type: services
     <div class="block">
       <div class="container">
         <div class="implant__info-after">
-          <div class="implant__info-after-title">Хотите избежать костной<br>пластики? Спросите нас как!</div>
+          <div class="implant__info-after-title">Хотите избежать костной<br>пластики? Спросите&nbsp;нас&nbsp;как!</div>
           <div class="button button-white open-callback"
                data-title="Страница имплантации. Хотите избежать костной пластики? Спросите нас как">обратный звонок
           </div>

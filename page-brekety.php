@@ -89,7 +89,7 @@ Template post type: services
             специалиста - гнатолога. Это нобходимо для комплексного решения проблемы.
           </div>
         </div>
-        <div class="protez__info-link button button-white open-callback" data-title="Боль в челюстном суставе">записаться на прием</div>
+        <div class="protez__info-link button button-white open-callback" data-title="Боль в челюстном суставе">записаться <span class="tabletG-and-more"> на прием</span></div>
       </div>
     </div>
 

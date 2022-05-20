@@ -128,6 +128,8 @@
     @include max($netbook - 1)
       grid-gap: 70px
       grid-template-columns: 1fr
+    @include between($tabletV, $tabletG)
+      grid-gap: 50px
   &__white-wrap
     display: flex
     gap: 60px
@@ -137,6 +139,10 @@
     @include between($notebook, $desktop)
       margin-bottom: 30px
     @include between($netbook, $notebook)
+      gap: 30px
+    @include max($tabletG - 1)
+      flex-direction: column
+      justify-content: flex-start
       gap: 30px
   &__text
     &-desc
@@ -159,16 +165,29 @@
         margin-right: 70px
         img
           max-width: 120px
+      @include max($tabletV - 1)
+        gap: 30px
+        flex-direction: column
+        margin: 0
+        img
+          width: 150px
+          margin: 0 auto
       &:not(:last-child)
         margin-bottom: 50px
       &:nth-of-type(odd)
-        flex-direction: row-reverse
+        @include min($tabletV)
+          flex-direction: row-reverse
+
     &-img
       flex-shrink: 0
       border-radius: 30px
       max-width: 530px
       @include between($netbook, $desktop)
         max-width: 500px
+      @include between($tabletG, $netbook)
+        max-width: 400px
+      @include between($tabletV, $tabletG)
+        margin: 0 auto
     &-last
       display: flex
       align-items: center
@@ -212,6 +231,8 @@
           position: absolute
           left: 0
           top: -0.5em
+          @include max($tabletV - 1)
+            font: 800 35px/40px $mainFont
       span
         font: 800 14px/17px $mainFont
     &-title
@@ -232,7 +253,8 @@
         height: 28px
         background: url("./assets/images/sprite-content/check.svg") no-repeat
         background-size: contain
-        @include between($netbook, $desktop)
+        flex-shrink: 0
+        @include max($desktop - 1)
           width: 22px
           height: 22px
       span
@@ -246,8 +268,15 @@
       display: grid
       grid-template-columns: repeat(2,1fr)
       grid-gap: 50px 60px
+      @include max($tabletG - 1)
+        grid-gap: 30px
+        grid-template-columns: 1fr
   &__doctors
     margin-top: 120px
+    @include between($tabletV, $tabletG)
+      margin-top: 80px
+    @include max($tabletV - 1)
+      margin-top: 70px
     &-all
       margin-top: 100px
       position: relative
@@ -265,18 +294,28 @@
     padding: 30px 50px 80px
   @include between($tabletG, $netbook)
     padding: 30px 25% 30px 30px
-  @include max($tabletG - 1)
+    border-radius: 20px
+  @include between($tabletV, $netbook)
+    left: -20px
+    right: -20px
+    width: calc(100% + 40px)
+    padding: 30px 33.3% 30px 10px
+    border-radius: 0
+  @include max($tabletV - 1)
     border-radius: 0
     position: relative
     left: -10px
-    right: -10px
     width: calc(100% + 20px)
-    padding: 30px 33.3% 30px 10px
+    padding: 30px 10px 160px
   &__title
     display: flex
     align-items: center
     justify-content: flex-start
     gap: 30px
+    @include max($tabletG - 1)
+      gap: 10px
+      text-align: left
+      align-items: flex-start
     svg
       width: 30px
       height: 30px
@@ -284,6 +323,8 @@
       flex-shrink: 0
   &__desc
     margin-bottom: 50px
+    @include max($tabletG - 1)
+      margin-bottom: 20px
     p:not(:last-child)
       margin-bottom: 20px
   &__name
@@ -297,8 +338,9 @@
       right: 0
       max-width: 25%
     @include max($tabletG - 1)
+      max-width: 45%
       right: 0
-      max-width: 33%
+      bottom: 0
   &__limit
     max-width: 700px
 .services__slider
@@ -321,6 +363,7 @@
     padding: 10px 15px
   &-title
     font: 800 20px/25px $mainFont
+    height: 50px
   &-occupation
     font: 400 12px/16px $mainFont
   &-exp
@@ -365,11 +408,18 @@
   border-radius: 30px
   font-weight: 800
   text-align: center
+  @include between($tabletV, $tabletG)
+    padding: 25px 40px
+  @include max($tabletV - 1)
+    padding: 20px
 .contraindications
   display: flex
   align-items: flex-start
   justify-content: space-between
   gap: 50px
+  @include max($tabletG - 1)
+    flex-direction: column
+    justify-content: flex-start
   li
     margin-bottom: 15px
     list-style-type: none
@@ -393,15 +443,26 @@
   display: flex
   flex-direction: column
   gap: 120px
+  @include max($netbook - 1)
+    gap: 70px
   &__item
     display: flex
     align-items: flex-start
     justify-content: space-between
     gap: 50px
+    @include max( $tabletG - 1)
+      gap: 30px
+      flex-direction: column
+      justify-content: flex-start
   &__text
     max-width: 750px
     p:not(:last-child)
       margin-bottom: 20px
+  &__img
+    @include max($tabletG - 1)
+      margin: 0 auto
+    @include max($tabletV - 1)
+      max-width: 300px
 .stages
   padding-top: 65px
   display: grid
@@ -410,6 +471,12 @@
   @include between($netbook, $desktop)
     gap: 70px
     grid-template-columns: repeat(3, 1fr)
+  @include max($netbook - 1)
+    gap: 30px
+    grid-template-columns: repeat(3, 1fr)
+    padding: 0
+  @include max($tabletG - 1)
+    grid-template-columns: 1fr
   &__box
     &:not(:last-child)
       position: relative
@@ -421,6 +488,8 @@
         background: url("./assets/images/stages-arrow.png") center/contain no-repeat
         bottom: calc(100% + 20px)
         left: 60%
+        @include max($netbook - 1)
+          content: unset
     h4
       margin-bottom: 20px
 .result
@@ -431,16 +500,28 @@
   position: relative
   @include between($netbook, $desktop)
     padding: 50px 60px 200px
+  @include between($tabletV, $netbook)
+    padding: 30px 30px 300px
+    border-radius: 30px
+  @include max($tabletV - 1)
+    padding: 20px 10px 150px
+    border-radius: 0
+    left: -10px
+    width: calc(100% + 20px)
   &__wrap
     display: flex
     align-items: flex-start
     justify-content: space-between
     gap: 20px
+    @include max($netbook - 1)
+      flex-direction: column
+      gap: 30px
   &__text
     display: flex
     flex-direction: column
     gap: 30px
-    max-width: 600px
+    @include min($netbook)
+      max-width: 600px
   &__title
     margin-bottom: 10px
     display: flex
@@ -461,6 +542,9 @@
     max-width: 530px
     @include between($netbook, $desktop)
       max-width: 500px
+    @include max($netbook - 1)
+      max-width: 400px
+      margin: 0 auto
   &__after
     background: linear-gradient(267.27deg, #117DC1 2.73%, #7C598C 112.12%)
     box-shadow: inset 0 4px 10px rgba(51, 51, 51, 0.25)
@@ -474,20 +558,37 @@
     right: 0
     bottom: 0
     padding: 52px 100px
+    overflow: hidden
     @include between($netbook, $desktop)
       padding: 35px 75px
+    @include max($netbook - 1)
+      flex-direction: column
+      align-items: flex-start
+      gap: 20px
+    @include between($tabletV, $tabletG)
+      padding: 20px 30px
+    @include max($tabletV - 1)
+      flex-direction: column
+      align-items: flex-start
+      padding: 20px 10px
+      border-radius: 0
+      gap: 20px
     span
       font: 34px/1 $mainFont
       margin-right: 160px
       @include between($netbook, $desktop)
         font: 30px/1 $mainFont
+      @include max($tabletV - 1)
+        font-size: 20px
     div
       font: 800 60px/65px $mainFont
       @include between($netbook, $desktop)
         font: 800 50px/55px $mainFont
+      @include max($tabletV - 1)
+        font: 800 30px/35px $mainFont
     &::after
       content: ''
-      background: url("./assets/images/result-bg.png") no-repeat
+      background: url("./assets/images/result-bg.png") center/contain no-repeat
       background-size: contain
       position: absolute
       right: 0
@@ -495,6 +596,9 @@
       bottom: 0
       height: 100%
       aspect-ratio: 260/170
+      @include max($tabletV - 1)
+        top: unset
+        width: 40%
 .help
   background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
@@ -506,9 +610,23 @@
   gap: 1em
   @include between($netbook, $desktop)
     padding: 30px 60px
+  @include between($tabletV, $tabletG)
+    padding: 30px
+    border-radius: 30px
+  @include max($tabletV - 1)
+    padding: 20px
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
+    position: relative
+    left: -10px
+    width: calc(100% + 20px)
+    border-radius: 0
   &__text
     width: 550px
     position: relative
+    @include max($tabletV - 1)
+      width: 100%
     &::after
       position: absolute
       width: 242px
@@ -522,6 +640,9 @@
     margin-bottom: 20px
   &__button
     width: 320px
+    @include max($tabletV - 1)
+      width: 160px
+      height: 40px
 .protez
   &__info
     background: linear-gradient(267.27deg, #117DC1 2.73%, #7C598C 112.12%)
@@ -535,20 +656,46 @@
     color: $white
     position: relative
     overflow: hidden
+    @include max($netbook - 1)
+      flex-direction: column
+      justify-content: flex-start
+      gap: 20px
+      align-items: flex-start
+    @include between($tabletV, $tabletG)
+      padding: 30px
+      border-radius: 30px
+    @include max($tabletV - 1)
+      border-radius: 0
+      padding: 20px 10px
+      left: -10px
+      width: calc(100% + 20px)
+      h2
+        text-align: left
+      &-desc
+        max-width: 320px
     &::after
       content: ''
       position: absolute
-      left: 0
       bottom: 0
-      width: 222px
-      height: 100%
-      background: url("./assets/images/protez8.png") no-repeat
+      width: 200px
+      aspect-ratio: 200/153
+      background: url("./assets/images/protez8.png") center/contain no-repeat
+      @include min($netbook)
+        left: 0
+      @include max($netbook - 1)
+        right: 0
+        transform: rotateY(180deg)
+      @include max($tabletG - 1)
+        width: 136px
     &-text
       max-width: 450px
     &-link
       width: 280px
       @include between($netbook, $desktop)
         width: 240px
+      @include max($tabletG - 1)
+        width: 180px
+        height: 40px
       svg
         width: 12px
         height: 12px
@@ -564,10 +711,12 @@
         background: url("./assets/images/protez8.png") no-repeat
     &_jaw
       padding: 30px 50px
+      @include max($tabletV - 1)
+        padding: 20px 10px
       .protez__info-text
         max-width: 480px
       &:after
-        background: url("./assets/images/jaw.png") no-repeat
+        background: url("./assets/images/jaw.png") center/contain no-repeat
 .airflow
   background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
@@ -581,26 +730,51 @@
   @include between($netbook, $desktop)
     padding: 30px 50px 230px
     border-radius: 30px
+  @include between($tabletV, $netbook)
+    padding: 30px 30px 300px
+    border-radius: 30px
+  @include between($tabletV, $tabletG)
+    padding: 30px
+    border-radius: 30px
+  @include max($tabletV - 1)
+    border-radius: 0
+    padding: 20px 10px
+    left: -10px
+    width: calc(100% + 20px)
   &__img
     max-width: 530px
     border-radius: 50px
     @include between($netbook, $desktop)
       max-width: 500px
       width: 50%
+    @include max($netbook - 1)
+      max-width: 400px
+      margin: 0 auto
+    @include max($tabletV - 1)
+      width: 100%
+      border-radius: 30px
   &__wrap
     width: 100%
     display: grid
     grid-template-columns: repeat(3, 1fr)
     grid-gap: 30px
+    @include max($tabletG - 1)
+      grid-template-columns: 1fr
+      grid-gap: 20px
   &__text
     max-width: 600px
     @include between($netbook, $notebook)
       max-width: calc(50% - 30px)
+    @include max($netbook - 1)
+      text-align: center
+      max-width: unset
   &__item
     background: $white
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25)
     border-radius: 20px
     padding: 20px 20px 25px
+    @include max($netbook - 1)
+      padding: 20px
     &-title
       display: flex
       align-items: center
@@ -615,7 +789,7 @@
       height: 43px
       fill: $darkBlue
       flex-shrink: 0
-      @include between($netbook, $desktop)
+      @include max($desktop - 1)
         width: 30px
         height: 30px
     h4
@@ -636,11 +810,22 @@
       padding: 30px 75px
       border-radius: 30px
       gap: 50px
+    @include max($netbook - 1)
+      flex-direction: column
+      padding: 20px 30px
+      border-radius: 30px
+      align-items: flex-start
+      gap: 30px
+    @include max($tabletG - 1)
+      position: unset
     &-title
       max-width: 600px
       font: 800 34px/50px $mainFont
       margin-bottom: 13px
       display: inline-block
+      @include max($tabletV - 1)
+        max-width: 100%
+        font: 800 20px/25px $mainFont
       .price
         letter-spacing: 0.1em
         font: 800 40px/1 $mainFont
@@ -649,12 +834,18 @@
         -webkit-text-fill-color: transparent
         display: inline-block
         margin-left: 1em
+        @include max($tabletV - 1)
+          display: inline
+          font: 800 20px/25px $mainFont
         &::selection
           -webkit-text-fill-color: $white
     &-box
       display: grid
       grid-template-columns: repeat(3, 1fr)
       grid-gap: 30px
+      @include max($tabletG - 1)
+        grid-gap: 20px
+        grid-template-columns: 1fr
     &-feature
       display: flex
       align-items: center
@@ -680,6 +871,8 @@
     gap: 114px
     @include min($notebook)
       max-width: 810px
+    @include max($tabletG - 1)
+      gap: 70px
   &__item
     position: relative
     &:before
@@ -691,35 +884,58 @@
       position: absolute
       left: 0
       top: -0.5em
+      @include max($tabletV - 1)
+        font: 800 45px/1 $mainFont
     &-img
-      width: 270px
-      height: 107px
+      aspect-ratio: 250/100
+      @include max($tabletV - 1)
+        grid-row: 1/2
+        width: 270px
+        margin: 0 auto
     &-info
       display: grid
       grid-template-columns: 1fr 270px
       grid-gap: 50px
+      @include between($tabletV, $tabletG)
+        grid-template-columns: 1fr 250px
+        grid-gap: 20px
+      @include max($tabletV - 1)
+        grid-template-columns: 1fr
+        grid-gap: 20px
   &__after
     position: relative
     color: $white
     display: flex
-    gap: 100px
+    gap: 120px
     align-items: flex-end
     justify-content: flex-start
     background: linear-gradient(267.27deg, #117DC1 2.73%, #7C598C 112.12%)
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25)
     border-radius: 50px
-    padding: 50px 100px
+    padding: 50px 30px
     overflow: hidden
-    @include between($netbook, $desktop)
-      padding: 35px 90px
-      gap: 80px
     @include max($netbook - 1)
       padding: 30px
       flex-direction: column
       align-items: flex-start
       gap: 20px
+    @include between($tabletV, $tabletG)
+      border-radius: 30px
+    @include max($tabletV - 1)
+      padding: 10px 10px 20px
+      border-radius: 0
+      position: relative
+      left: -10px
+      right: -10px
+      width: calc(100% + 20px)
+      gap: 30px
     h3
       max-width: 592px
+      @include max($tabletV - 1)
+        text-align: left
+        font: 800 17px/25px $mainFont
+        position: relative
+        z-index: 1
     &-price
       font: 800 60px/65px $mainFont
       background: linear-gradient(180deg, #F7C70A 0%, #FFFFFF 81.56%)
@@ -731,18 +947,16 @@
         font: 800 50px/55px $mainFont
       &::selection
         -webkit-text-fill-color: $white
+      @include max($tabletV - 1)
+        font: 800 30px/1 $mainFont
     &::after
       content: ''
       position: absolute
       right: 0
       top: 0
       bottom: 0
-      aspect-ratio: 376/200
+      aspect-ratio: 325/200
       background: url("./assets/images/implant5.png") center/cover no-repeat
-      @include max($netbook - 1)
-        top: unset
-        height: 80%
-        right: -50px
     h3
       margin-bottom: 0
   &__slider
@@ -756,7 +970,11 @@
       margin-bottom: 30px
       @include between($netbook, $desktop)
         gap: 40px
-
+      @include between($tabletV, $tabletG)
+        gap: 30px
+      @include max($tabletV - 1)
+        gap: 5px 20px
+        flex-wrap: wrap
       .button
         display: flex !important
         background: $white !important
@@ -770,6 +988,11 @@
         @include between($netbook, $desktop)
           height: 55px !important
           width: 220px !important
+        @include max($tabletV - 1)
+          width: 160px !important
+          height: 30px !important
+          border-radius: 5px
+          font: 800 12px/16px $mainFont
         &.active
           background: #e3e3e3 !important
     &-wrap
@@ -779,8 +1002,15 @@
       gap: 120px
       @include between($netbook, $desktop)
         gap: 70px
+      @include max($netbook - 1)
+        flex-direction: column-reverse
+        gap: 10px
     &-img
       border-radius: 30px
+      @include max($netbook - 1)
+        margin: 0 auto
+      @include max($tabletV - 1)
+        max-width: 250px
     &-item
       background: $white
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25)
@@ -790,6 +1020,14 @@
       transition: opacity 0.3s ease-out
       @include between($netbook, $desktop)
         padding: 30px 60px
+      @include between($tabletV, $netbook)
+        padding: 30px
+      @include max($netbook - 1)
+        text-align: center
+      @include max($tabletV - 1)
+        padding: 20px 10px
+        text-align: left
+        border-radius: 30px
       &.swiper-slide-visible
         opacity: 1
     &-desc
@@ -798,10 +1036,19 @@
       @include between($netbook, $desktop)
         margin-bottom: 20px
         min-height: 120px
+      @include max($netbook - 1)
+        min-height: unset
+      @include max($tabletV - 1)
+        margin-bottom: 20px
     &-feature
       width: 250px
       @include between($netbook, $desktop)
         width: 200px
+      @include max($tabletV - 1)
+        width: 100%
+        display: flex
+        align-items: center
+        gap: 20px
       &-wrap
         display: flex
         align-items: flex-start
@@ -811,15 +1058,32 @@
         @include between($netbook, $desktop)
           gap: 50px
           margin-bottom: 30px
+        @include max($netbook - 1)
+          margin: 0 auto 30px
+          justify-content: center
+        @include max($tabletV - 1)
+          flex-direction: column
+          gap: 10px
+          margin-bottom: 10px
       &-img
         display: block
         margin-bottom: 10px
         width: 100%
+        @include max($tabletV - 1)
+          width: 100px
     &-box
       display: flex
       align-items: center
       justify-content: flex-start
       gap: 80px
+      @include max($netbook - 1)
+        gap: 30px
+      @include between($tabletV, $tabletG)
+        gap: 20px
+      @include max($tabletV - 1)
+        flex-direction: column
+        align-items: flex-start
+        gap: 20px
       &-item
         width: 320px
         display: flex
@@ -827,12 +1091,16 @@
         justify-content: flex-start
         gap: 20px
         font-weight: 800
+        @include max($netbook - 1)
+          text-align: left
+        @include max($tabletG - 1)
+          width: 250px
       img, svg
         width: 50px
         height: 50px
         fill: transparent
         flex-shrink: 0
-        @include between($netbook, $desktop)
+        @include max($desktop - 1)
           width: 30px
           height: 30px
     &-adv
@@ -854,6 +1122,8 @@
         align-items: flex-start
         gap: 20px
     &-arrows
+      @include max($netbook - 1)
+        display: none
       .swiper-arrow
         width: 35px
         height: 35px
@@ -876,11 +1146,39 @@
     align-items: flex-start
     justify-content: space-between
     gap: 20px
+    position: relative
+    margin-bottom: -15px
+    @include max($netbook - 1)
+      justify-content: flex-start
+      align-items: stretch
+      overflow-x: auto
+      overflow-y: visible
+      -ms-overflow-style: none
+      scrollbar-width: none
+      &::-webkit-scrollbar
+        display: none
+    @include between($tabletV, $netbook)
+      left: -20px
+      right: -20px
+      padding: 0 20px
+      width: calc(100% + 40px)
+    @include max($tabletV - 1)
+      left: -10px
+      right: -10px
+      padding: 0 10px
+      width: calc(100% + 20px)
+      gap: 15px
     &-item
       background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
       border-radius: 50px
       padding: 20px 0 30px
+      margin-bottom: 15px
+      position: relative
+      @include max($tabletG - 1)
+        padding-bottom: 60px
+        width: 300px
+        flex-shrink: 0
     h4
       margin-bottom: 0
     .country
@@ -911,8 +1209,10 @@
       gap: 100px
       padding-bottom: 10px
       border-bottom: 1px solid $border
+      @include max($tabletG - 1)
+        gap: 1em
       span:first-child
-        font: 200 14px/1 $mainFont
+        font: 400 14px/1 $mainFont
       span:last-child
         font: 800 14px/1 $mainFont
         white-space: nowrap
@@ -920,7 +1220,7 @@
       display: flex
       align-items: center
       justify-content: space-between
-      gap: 100px
+      gap: 1em
       padding: 0 30px
       color: $darkBlue
       span:first-child
@@ -933,6 +1233,10 @@
       text-decoration: line-through
       padding: 0 30px 5px
       text-align: right
+      @include max($tabletG - 1)
+        position: absolute
+        right: 0
+        bottom: 95px
     &-notification
       margin: 20px 60px 0
       border-radius: 20px
@@ -941,11 +1245,23 @@
       text-transform: uppercase
       font: 800 14px/20px $mainFont
       text-align: center
+      white-space: nowrap
+      @include max($tabletG - 1)
+        margin: 0
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        bottom: 20px
+        padding: 3px 30px
   &__info
     display: flex
     align-items: flex-start
     justify-content: space-between
     gap: 1em
+    @include max($tabletG - 1)
+      flex-direction: column
+    @include max($tabletV - 1)
+      gap: 30px
     &-text
       max-width: 600px
     &-box
@@ -953,12 +1269,21 @@
       background: linear-gradient(87.32deg, #D6EDFD 2.01%, #EDEBEC 88.6%)
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25)
       border-radius: 30px
+      @include between($tabletV, $tabletG)
+        margin: 0 auto
+      @include max($tabletV - 1)
+        width: 100%
+        background: transparent
+        box-shadow: unset
+        padding: 0
     &-row
       display: flex
       align-items: center
       justify-content: space-between
       gap: 100px
       white-space: nowrap
+      @include max($tabletV - 1)
+        gap: 1em
       &:not(:last-child)
         margin-bottom: 14px
     &-after
@@ -972,11 +1297,21 @@
       align-items: center
       justify-content: flex-end
       gap: 137px
+      overflow-y: hidden
       @include max($netbook - 1)
         gap: 40px
         flex-direction: column
         align-items: flex-start
         justify-content: flex-start
+      @include between($tabletV, $tabletG)
+        padding: 30px
+        border-radius: 30px
+      @include max($tabletV - 1)
+        padding: 20px 10px 30px
+        gap: 40px
+        border-radius: 0
+        left: -10px
+        width: calc(100% + 20px)
       &::after
         content: ''
         position: absolute
@@ -989,11 +1324,21 @@
           left: unset
           right: 0
           transform: rotateY(180deg)
+        @include max($tabletV - 1)
+          width: 174px
+          top: unset
       &-title
         width: 502px
         font: 800 34px/1 $mainFont
+        @include max($tabletV - 1)
+          width: 100%
+          font: 800 20px/25px $mainFont
+          max-width: 280px
       .button
         width: 280px
+        @include max($tabletV - 1)
+          width: 160px
+          height: 40px
 .gigiena
   ul
     margin-top: 30px

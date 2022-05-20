@@ -12,14 +12,21 @@
     align-items: center
     justify-content: space-between
     gap: 1em
+    @include max($tabletV - 1)
+      font-size: 14px
     span:first-child
       padding-right: 200px
+      @include max($tabletV - 1)
+        padding: 0
     span:last-child
       white-space: nowrap
   &__after
     font: 800 14px/17px $mainFont
     margin-top: 50px
     max-width: 800px
+    @include max($tabletV - 1)
+      font: 400 12px/15px $mainFont
+      margin-top: 30px
   &__extra
     margin-top: 45px
 .price-page

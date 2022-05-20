@@ -4,7 +4,7 @@
 
 <?php get_template_part('template-parts/header/header'); ?>
   <main>
-    <section class="banner">
+    <div class="banner">
       <div class="container">
         <?php if (have_rows('banner')): ?>
           <div class="banner__wrap">
@@ -22,7 +22,8 @@
                         <div class="banner__item-desc"><?php echo $banner_desc; ?></div>
                       <?php endif; ?>
                       <div class="banner__item-buttonrow">
-                        <div class="button button-blue open-callback" data-title="Главная страница. Баннер: <?php echo $banner_title ?>">
+                        <div class="button button-blue open-callback"
+                             data-title="Главная страница. Баннер: <?php echo $banner_title ?>">
                           Консультация
                         </div>
                         <?php if (get_sub_field('is-link')): ?>
@@ -81,7 +82,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
     <section class="burning">
       <div class="container">
         <h2>Горящее время</h2>
@@ -163,7 +164,7 @@
             setup_postdata($post);
             ?>
             <div class="reviews__item">
-              <p class="reviews__item-content"><?php the_content(); ?></p>
+              <div class="reviews__item-content"><?php the_content(); ?></div>
               <div class="reviews__item-row">
                 <a href="<?php the_field('review-link'); ?>" target="_blank"
                    class="reviews__item-platform reviews__item-text"><?php the_field('platform'); ?></a>
@@ -196,7 +197,7 @@
             setup_postdata($post);
             ?>
             <a href="<?php the_permalink(); ?>" class="services__item">
-              <img src="<?php the_field('logo'); ?>" class="services__item-img">
+              <img src="<?php the_field('logo'); ?>" class="services__item-img" alt="<?php the_field('short-title'); ?>">
               <?php if (get_field('short-title')): ?>
                 <div class="services__item-title"><?php the_field('short-title'); ?></div>
               <?php else: ?>

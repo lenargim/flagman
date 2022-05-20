@@ -120,12 +120,12 @@ Template post type: services
             <div class="services-types__img img">
               <img src="<?php echo IMAGES_PATH ?>/desna1.png" alt="Гингивит">
             </div>
-            <div class="container container_small">
-              <div class="warning">
-                Следует помнить, что воспалённая десна — это источник инфекции, которая может распространяться в
-                ротовой полости и вызывать серьёзные последствия. Именно поэтому при первых симптомах нужно обращаться
-                за медицинской помощью.
-              </div>
+          </div>
+          <div class="container container_small">
+            <div class="warning">
+              Следует помнить, что воспалённая десна — это источник инфекции, которая может распространяться в
+              ротовой полости и вызывать серьёзные последствия. Именно поэтому при первых симптомах нужно обращаться
+              за медицинской помощью.
             </div>
           </div>
           <div class="services-types__item">
@@ -141,11 +141,11 @@ Template post type: services
             <div class="services-types__img img">
               <img src="<?php echo IMAGES_PATH ?>/desna2.png" alt="Пародонтит">
             </div>
-            <div class="container container_small">
-              <div class="warning">
-                Основной причиной возникновения является скопление зубного налета, который затвердевает и образует
-                зубной камень. Для профилактики рекомендуется регулярно проводить профессиональную чистку полости рта
-              </div>
+          </div>
+          <div class="container container_small">
+            <div class="warning">
+              Основной причиной возникновения является скопление зубного налета, который затвердевает и образует
+              зубной камень. Для профилактики рекомендуется регулярно проводить профессиональную чистку полости рта
             </div>
           </div>
           <div class="services-types__item">
