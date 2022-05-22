@@ -105,7 +105,7 @@
                   <div class="burning__item">
                     <div class="burning__item-title burning__item-padding"><?php echo $title; ?></div>
                     <?php if (get_sub_field('is-sale') && $sale): ?>
-                      <div class="burning__item-sale">Скидка <?php echo $sale ?>%</div>
+                      <div class="burning__item-sale">Скидка <?php echo $sale ?></div>
                     <?php endif; ?>
                     <?php if ($date): ?>
                       <div class="burning__item-date burning__item-padding"><?php echo $ru_date . ', ' . $time ?></div>

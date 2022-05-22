@@ -306,7 +306,7 @@
     position: relative
     left: -10px
     width: calc(100% + 20px)
-    padding: 30px 10px 160px
+    padding: 30px 10px 180px
   &__title
     display: flex
     align-items: center
@@ -316,11 +316,16 @@
       gap: 10px
       text-align: left
       align-items: flex-start
+      position: relative
+      top: 5px
     svg
       width: 30px
       height: 30px
       fill: $purple
       flex-shrink: 0
+      @include max($tabletV - 1)
+        width: 24px
+        height: 24px
   &__desc
     margin-bottom: 50px
     @include max($tabletG - 1)
@@ -685,7 +690,8 @@
       @include max($netbook - 1)
         right: 0
         transform: rotateY(180deg)
-      @include max($tabletG - 1)
+        width: 30%
+      @include max($tabletV - 1)
         width: 136px
     &-text
       max-width: 450px
@@ -1179,6 +1185,13 @@
         padding-bottom: 60px
         width: 300px
         flex-shrink: 0
+      @include max($netbook - 1)
+        &:nth-of-type(1)
+          order: 1
+        &:nth-of-type(2)
+          order: 3
+        &:nth-of-type(3)
+          order: 2
     h4
       margin-bottom: 0
     .country

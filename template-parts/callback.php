@@ -1,6 +1,6 @@
 <div class="block">
   <section class="callback">
-    <div class="container container_big">
+    <div class="container">
       <div class="callback__box">
         <div class="callback__text">
           <h2>Запишитесь на консультацию <span class="nowrap">без очередей</span> и в удобное время</h2>

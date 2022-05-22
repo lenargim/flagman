@@ -3,8 +3,20 @@
     padding-top: 50px
   h1
     max-width: 600px
-    font: 800 34px/50px $mainFont
+    font: 800 34px/40px $mainFont
     margin-bottom: 30px
+    @include between($netbook, $desktop)
+      font: 800 32px/38px $mainFont
+    @include between($tabletG, $netbook)
+      font: 800 30px/36px $mainFont
+      margin-bottom: 40px
+    @include between($tabletV, $tabletG)
+      font: 800 25px/30px $mainFont
+      margin-bottom: 30px
+    @include max($tabletV - 1)
+      font: 800 20px/25px $mainFont
+      margin-bottom: 20px
+      text-align: center
   h4
     font: 800 17px/25px $mainFont
     margin: 0
